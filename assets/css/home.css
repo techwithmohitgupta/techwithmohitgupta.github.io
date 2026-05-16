@@ -1,0 +1,5972 @@
+/* =========================================================
+   HOMEPAGE CSS — FINAL PREMIUM A-Z REBUILD
+   Mohit Gupta Portfolio Website
+
+   Scope:
+   - Homepage only
+   - Header handled globally by components.css
+   - Homepage footer included because footer is home-specific
+   - Works with current index.html + upgraded home.js
+
+   Important:
+   - Do not paste this in components.css
+   - Replace only assets/css/home.css
+========================================================= */
+
+/* =========================================================
+   01. HOMEPAGE BASE
+========================================================= */
+
+body[data-page="home"] {
+  --home-text: #0f172a;
+  --home-muted: #64748b;
+  --home-soft: #eef2ff;
+  --home-border: rgba(148, 163, 184, 0.36);
+  --home-border-strong: rgba(99, 102, 241, 0.22);
+  --home-indigo: #4f46e5;
+  --home-blue: #0ea5e9;
+  --home-violet: #7c3aed;
+  --home-shadow: 0 24px 70px rgba(15, 23, 42, 0.075);
+  --home-shadow-soft: 0 16px 42px rgba(15, 23, 42, 0.055);
+  --home-radius-xl: 34px;
+  --home-radius-lg: 28px;
+  --home-radius-md: 20px;
+
+  color: var(--home-text);
+  background:
+    radial-gradient(circle at 8% 6%, rgba(79, 70, 229, 0.14), transparent 28%),
+    radial-gradient(circle at 92% 12%, rgba(14, 165, 233, 0.12), transparent 30%),
+    radial-gradient(circle at 16% 48%, rgba(168, 85, 247, 0.075), transparent 28%),
+    radial-gradient(circle at 88% 72%, rgba(59, 130, 246, 0.10), transparent 30%),
+    linear-gradient(
+      135deg,
+      #f3f5ff 0%,
+      #fbfdff 34%,
+      #eef8ff 66%,
+      #f8f3ff 100%
+    );
+  background-attachment: fixed;
+}
+
+body[data-page="home"]::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+
+  background:
+    linear-gradient(90deg, rgba(79, 70, 229, 0.026) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(14, 165, 233, 0.022) 1px, transparent 1px);
+  background-size: 72px 72px;
+  opacity: 0.5;
+}
+
+body[data-page="home"]::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.46) 0%,
+      rgba(255, 255, 255, 0.08) 42%,
+      rgba(255, 255, 255, 0.28) 100%
+    ),
+    radial-gradient(circle at 50% 14%, rgba(255, 255, 255, 0.68), transparent 32%);
+  opacity: 0.9;
+}
+
+body[data-page="home"] main {
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+}
+
+body[data-page="home"] section {
+  position: relative;
+  background-color: transparent;
+}
+
+body[data-page="home"] .container,
+body[data-page="home"] .v3-container,
+body[data-page="home"] .home-container,
+body[data-page="home"] .home-section-container {
+  width: min(1180px, calc(100% - 48px));
+  margin-inline: auto;
+}
+
+/* =========================================================
+   02. SHARED SECTION SYSTEM
+========================================================= */
+
+body[data-page="home"] .home-section-heading,
+body[data-page="home"] .home-section-heading.center-heading {
+  position: relative;
+  z-index: 2;
+
+  max-width: 980px;
+  margin: 0 auto clamp(44px, 5vw, 64px);
+  text-align: center;
+}
+
+body[data-page="home"] .heading-kicker-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+body[data-page="home"] .heading-kicker-wrap span {
+  width: clamp(44px, 6vw, 72px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(15, 23, 42, 0.46), transparent);
+}
+
+body[data-page="home"] .heading-kicker-wrap p,
+body[data-page="home"] .home-section-kicker,
+body[data-page="home"] .home-panel-label {
+  margin: 0;
+  color: var(--home-indigo);
+  font-size: 0.76rem;
+  font-weight: 950;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  line-height: 1.45;
+}
+
+body[data-page="home"] .home-section-heading h2 {
+  margin: 0 auto;
+  max-width: 930px;
+
+  color: var(--home-text);
+  font-size: clamp(2.6rem, 5vw, 5rem);
+  line-height: 1.02;
+  font-weight: 950;
+  letter-spacing: -0.074em;
+  text-wrap: balance;
+}
+
+body[data-page="home"] .home-section-text {
+  max-width: 780px;
+  margin: 22px auto 0;
+
+  color: #5d6b82;
+  font-size: clamp(1rem, 1.15vw, 1.08rem);
+  line-height: 1.78;
+  font-weight: 600;
+  text-wrap: balance;
+}
+
+body[data-page="home"] .home-glass-card {
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.82), rgba(248, 251, 255, 0.62));
+  border: 1px solid rgba(148, 163, 184, 0.34);
+  box-shadow:
+    var(--home-shadow-soft),
+    inset 0 1px 0 rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+body[data-page="home"] .reveal {
+  will-change: transform, opacity;
+}
+
+/* =========================================================
+   03. HERO SECTION — PRESERVED + CLEANED
+========================================================= */
+
+body[data-page="home"] .home-hero,
+body[data-page="home"] .v3-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  min-height: calc(100vh - 86px);
+  padding: clamp(78px, 7vw, 112px) 0 clamp(74px, 7vw, 108px);
+
+  display: flex;
+  align-items: center;
+
+  background:
+    radial-gradient(circle at 14% 18%, rgba(79, 70, 229, 0.12), transparent 30%),
+    radial-gradient(circle at 88% 20%, rgba(14, 165, 233, 0.11), transparent 32%),
+    radial-gradient(circle at 50% 100%, rgba(124, 58, 237, 0.065), transparent 34%),
+    linear-gradient(135deg, rgba(249, 251, 255, 0.8) 0%, rgba(238, 245, 255, 0.78) 50%, rgba(248, 242, 255, 0.78) 100%);
+
+  border-bottom: 1px solid rgba(226, 232, 240, 0.72);
+}
+
+body[data-page="home"] .home-hero-bg {
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+  pointer-events: none;
+}
+
+body[data-page="home"] .home-hero-orb {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(10px);
+  opacity: 0.9;
+}
+
+body[data-page="home"] .home-hero-orb-one {
+  width: 620px;
+  height: 620px;
+  right: -260px;
+  top: 7%;
+  background: radial-gradient(circle, rgba(79, 70, 229, 0.12), transparent 68%);
+}
+
+body[data-page="home"] .home-hero-orb-two {
+  width: 540px;
+  height: 540px;
+  left: -260px;
+  bottom: -230px;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.10), transparent 68%);
+}
+
+body[data-page="home"] .home-hero-grid {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(79, 70, 229, 0.025) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(14, 165, 233, 0.018) 1px, transparent 1px);
+  background-size: 72px 72px;
+  opacity: 0.35;
+}
+
+body[data-page="home"] .home-hero-container {
+  position: relative;
+  z-index: 2;
+  width: min(1420px, calc(100% - 56px));
+  margin-inline: auto;
+}
+
+body[data-page="home"] .home-hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr);
+  align-items: center;
+  gap: clamp(42px, 6vw, 76px);
+}
+
+body[data-page="home"] .home-hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+body[data-page="home"] .home-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+  padding: 10px 18px;
+  border-radius: 999px;
+
+  color: var(--home-indigo);
+  font-size: 0.74rem;
+  font-weight: 950;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+
+  background: rgba(255, 255, 255, 0.58);
+  border: 1px solid rgba(99, 102, 241, 0.20);
+  box-shadow:
+    0 14px 34px rgba(79, 70, 229, 0.055),
+    inset 0 1px 0 rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+body[data-page="home"] .home-hero-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.18rem;
+  margin: 0;
+  max-width: 900px;
+
+  color: var(--home-text);
+  font-size: clamp(3.8rem, 7.4vw, 7rem);
+  line-height: 0.96;
+  font-weight: 950;
+  letter-spacing: -0.082em;
+
+  overflow: visible;
+  contain: none;
+}
+
+body[data-page="home"] .home-hero-title-line {
+  display: block;
+  overflow: visible;
+  contain: none;
+}
+
+body[data-page="home"] .home-hero-title-middle {
+  font-size: 0.84em;
+}
+
+body[data-page="home"] .home-hero-title-dynamic {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  width: 100%;
+  min-height: 1.14em;
+  line-height: 1.14;
+  padding-bottom: 0.08em;
+
+  overflow: visible;
+  contain: none;
+  white-space: nowrap;
+}
+
+body[data-page="home"] #homeTypingText,
+body[data-page="home"] .home-typing-text {
+  display: inline-block;
+  min-width: 14.8ch;
+  max-width: 100%;
+
+  background: linear-gradient(135deg, #4f46e5 0%, #2563eb 36%, #0ea5e9 72%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  white-space: nowrap;
+  overflow: visible;
+}
+
+body[data-page="home"] .home-hero-description {
+  max-width: 720px;
+  margin: 28px 0 0;
+
+  color: #5d6b82;
+  font-size: clamp(1rem, 1.2vw, 1.11rem);
+  line-height: 1.82;
+  font-weight: 610;
+}
+
+body[data-page="home"] .home-hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 34px;
+}
+
+body[data-page="home"] .home-hero-btn {
+  min-height: 58px;
+  padding: 0 26px;
+  border-radius: 999px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+
+  font-size: 0.98rem;
+  font-weight: 950;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+body[data-page="home"] .home-hero-btn-primary {
+  color: #ffffff;
+  background:
+    radial-gradient(circle at 20% 18%, rgba(255, 255, 255, 0.22), transparent 34%),
+    linear-gradient(135deg, #0f172a, #172554 52%, #1e1b4b);
+  box-shadow: 0 20px 46px rgba(15, 23, 42, 0.20);
+}
+
+body[data-page="home"] .home-hero-btn-secondary {
+  color: #0f172a;
+  background: rgba(255, 255, 255, 0.76);
+  border: 1px solid rgba(203, 213, 225, 0.86);
+  box-shadow:
+    0 14px 30px rgba(15, 23, 42, 0.055),
+    inset 0 1px 0 rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+body[data-page="home"] .home-hero-btn:hover {
+  transform: translateY(-3px);
+}
+
+body[data-page="home"] .home-hero-btn-primary:hover {
+  box-shadow: 0 28px 58px rgba(15, 23, 42, 0.25);
+}
+
+body[data-page="home"] .home-hero-btn-secondary:hover {
+  border-color: rgba(79, 70, 229, 0.32);
+  box-shadow: 0 20px 42px rgba(15, 23, 42, 0.085);
+}
+
+body[data-page="home"] .home-hero-proof {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  width: min(100%, 720px);
+  margin-top: 34px;
+}
+
+body[data-page="home"] .home-proof-item {
+  padding: 14px 15px;
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.62);
+  border: 1px solid rgba(203, 213, 225, 0.58);
+  box-shadow:
+    0 10px 26px rgba(15, 23, 42, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+body[data-page="home"] .home-proof-item strong {
+  display: block;
+  color: #0f172a;
+  font-size: 0.9rem;
+  font-weight: 950;
+  line-height: 1.2;
+}
+
+body[data-page="home"] .home-proof-item span {
+  display: block;
+  margin-top: 4px;
+  color: #64748b;
+  font-size: 0.8rem;
+  font-weight: 720;
+  line-height: 1.35;
+}
+
+body[data-page="home"] .home-hero-visual {
+  position: relative;
+  z-index: 2;
+}
+
+body[data-page="home"] .home-intelligence-card {
+  position: relative;
+  overflow: hidden;
+
+  width: min(100%, 560px);
+  margin-left: auto;
+  border-radius: 38px;
+  padding: 1px;
+
+  background:
+    linear-gradient(135deg, rgba(79, 70, 229, 0.28), rgba(14, 165, 233, 0.18), rgba(255, 255, 255, 0.9));
+  box-shadow: 0 34px 98px rgba(15, 23, 42, 0.13);
+}
+
+body[data-page="home"] .home-intelligence-card::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: 37px;
+  background:
+    radial-gradient(circle at 10% 8%, rgba(79, 70, 229, 0.12), transparent 32%),
+    radial-gradient(circle at 92% 18%, rgba(14, 165, 233, 0.10), transparent 32%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.94), rgba(248, 251, 255, 0.78));
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+body[data-page="home"] .home-card-glow {
+  position: absolute;
+  inset: auto -60px -80px auto;
+  width: 220px;
+  height: 220px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(79, 70, 229, 0.20), transparent 68%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+body[data-page="home"] .home-card-header,
+body[data-page="home"] .home-card-body,
+body[data-page="home"] .home-card-focus-list,
+body[data-page="home"] .home-card-metrics {
+  position: relative;
+  z-index: 2;
+  margin-left: 34px;
+  margin-right: 34px;
+}
+
+body[data-page="home"] .home-card-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 34px;
+  margin-bottom: 30px;
+}
+
+body[data-page="home"] .home-card-icon {
+  flex: 0 0 auto;
+  width: 62px;
+  height: 62px;
+  border-radius: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--home-indigo);
+  background:
+    linear-gradient(145deg, rgba(239, 246, 255, 0.95), rgba(238, 242, 255, 0.86));
+  border: 1px solid rgba(203, 213, 225, 0.64);
+  box-shadow:
+    0 14px 30px rgba(79, 70, 229, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  font-size: 1.25rem;
+}
+
+body[data-page="home"] .home-card-heading {
+  min-width: 0;
+}
+
+body[data-page="home"] .home-card-kicker {
+  display: block;
+  color: var(--home-indigo);
+  font-size: 0.76rem;
+  font-weight: 950;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+  line-height: 1.35;
+}
+
+body[data-page="home"] .home-card-subtitle {
+  margin: 5px 0 0;
+  color: #5d6b82;
+  font-size: 0.92rem;
+  font-weight: 820;
+  line-height: 1.45;
+}
+
+body[data-page="home"] .home-card-title {
+  margin: 0;
+  color: var(--home-text);
+  font-size: clamp(2rem, 3vw, 2.9rem);
+  line-height: 1.08;
+  font-weight: 950;
+  letter-spacing: -0.062em;
+  text-wrap: balance;
+}
+
+body[data-page="home"] .home-card-text {
+  margin: 18px 0 0;
+  color: #5d6b82;
+  font-size: 0.99rem;
+  line-height: 1.75;
+  font-weight: 610;
+}
+
+body[data-page="home"] .home-card-focus-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 28px;
+  margin-bottom: 28px;
+}
+
+body[data-page="home"] .home-card-focus-item {
+  display: grid;
+  grid-template-columns: 13px 1fr;
+  align-items: start;
+  gap: 13px;
+  padding: 14px;
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid rgba(203, 213, 225, 0.64);
+}
+
+body[data-page="home"] .home-focus-dot {
+  width: 9px;
+  height: 9px;
+  margin-top: 8px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--home-indigo), var(--home-blue));
+  box-shadow: 0 0 0 5px rgba(79, 70, 229, 0.10);
+}
+
+body[data-page="home"] .home-card-focus-item p {
+  margin: 0;
+  color: #334155;
+  font-size: 0.93rem;
+  line-height: 1.48;
+  font-weight: 820;
+}
+
+body[data-page="home"] .home-card-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 34px;
+}
+
+body[data-page="home"] .home-card-metric {
+  min-height: 78px;
+  padding: 12px 10px;
+  border-radius: 18px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.78), rgba(248, 251, 255, 0.58));
+  border: 1px solid rgba(203, 213, 225, 0.62);
+}
+
+body[data-page="home"] .home-card-metric strong {
+  color: var(--home-indigo);
+  font-size: 1.08rem;
+  font-weight: 950;
+  line-height: 1;
+}
+
+body[data-page="home"] .home-card-metric span {
+  margin-top: 7px;
+  color: #64748b;
+  font-size: 0.74rem;
+  font-weight: 820;
+  line-height: 1.2;
+}
+
+/* =========================================================
+   04. VALUE SNAPSHOT SECTION
+========================================================= */
+
+body[data-page="home"] .home-value-section {
+  position: relative;
+  isolation: isolate;
+  padding: clamp(92px, 8vw, 124px) 0;
+
+  background:
+    radial-gradient(circle at 12% 20%, rgba(79, 70, 229, 0.085), transparent 30%),
+    radial-gradient(circle at 92% 82%, rgba(14, 165, 233, 0.075), transparent 32%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(248, 251, 255, 0.36));
+}
+
+body[data-page="home"] .home-value-section::before {
+  content: "";
+  position: absolute;
+  inset: 20px max(24px, 4vw);
+  z-index: -1;
+  border-radius: 44px;
+
+  background:
+    radial-gradient(circle at 12% 8%, rgba(79, 70, 229, 0.055), transparent 30%),
+    radial-gradient(circle at 92% 100%, rgba(14, 165, 233, 0.065), transparent 32%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.34), rgba(248, 251, 255, 0.12));
+
+  border: 1px solid rgba(255, 255, 255, 0.46);
+  pointer-events: none;
+}
+
+body[data-page="home"] .home-value-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 22px);
+}
+
+body[data-page="home"] .home-value-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 286px;
+
+  padding: clamp(24px, 2.1vw, 30px);
+  border-radius: 30px;
+
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.82), rgba(248, 251, 255, 0.62));
+  border: 1px solid rgba(148, 163, 184, 0.34);
+  box-shadow:
+    0 20px 54px rgba(15, 23, 42, 0.055),
+    inset 0 1px 0 rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+body[data-page="home"] .home-value-card::before {
+  content: "";
+  position: absolute;
+  top: -90px;
+  right: -82px;
+  width: 172px;
+  height: 172px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(79, 70, 229, 0.16), transparent 70%);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+body[data-page="home"] .home-value-card::after {
+  content: "";
+  position: absolute;
+  inset: auto 24px 0 24px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, rgba(79, 70, 229, 0.36), rgba(14, 165, 233, 0.36), transparent);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+body[data-page="home"] .home-value-card .home-card-icon {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 26px;
+}
+
+body[data-page="home"] .home-value-card h3 {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+
+  color: var(--home-text);
+  font-size: clamp(1.18rem, 1.25vw, 1.34rem);
+  line-height: 1.2;
+  font-weight: 950;
+  letter-spacing: -0.038em;
+}
+
+body[data-page="home"] .home-value-card p {
+  position: relative;
+  z-index: 1;
+  margin: 14px 0 0;
+
+  color: #5d6b82;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  font-weight: 610;
+}
+
+body[data-page="home"] .home-value-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(99, 102, 241, 0.30);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(244, 248, 255, 0.74));
+  box-shadow:
+    0 30px 78px rgba(15, 23, 42, 0.09),
+    0 10px 28px rgba(79, 70, 229, 0.06);
+}
+
+body[data-page="home"] .home-value-card:hover::before {
+  transform: scale(1.18);
+  opacity: 1;
+}
+
+body[data-page="home"] .home-value-card:hover::after {
+  transform: scaleX(1);
+}
+
+/* =========================================================
+   05. DECISION SYSTEM SECTION
+========================================================= */
+
+body[data-page="home"] .home-decision-section {
+  position: relative;
+  isolation: isolate;
+  padding: clamp(96px, 8vw, 128px) 0;
+
+  background:
+    radial-gradient(circle at 12% 18%, rgba(79, 70, 229, 0.10), transparent 32%),
+    radial-gradient(circle at 88% 76%, rgba(14, 165, 233, 0.085), transparent 32%),
+    linear-gradient(180deg, rgba(238, 248, 255, 0.36), rgba(248, 243, 255, 0.32));
+}
+
+body[data-page="home"] .home-decision-section::before {
+  content: "";
+  position: absolute;
+  inset: 24px max(24px, 4vw);
+  z-index: -1;
+  border-radius: 46px;
+
+  background:
+    radial-gradient(circle at 20% 24%, rgba(99, 102, 241, 0.075), transparent 30%),
+    radial-gradient(circle at 88% 22%, rgba(14, 165, 233, 0.065), transparent 32%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.28), rgba(239, 248, 255, 0.16));
+  border: 1px solid rgba(255, 255, 255, 0.46);
+  pointer-events: none;
+}
+
+body[data-page="home"] .home-decision-layout {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.82fr) minmax(0, 1.18fr);
+  gap: clamp(22px, 2.4vw, 32px);
+  align-items: stretch;
+}
+
+body[data-page="home"] .home-decision-panel {
+  position: relative;
+  overflow: hidden;
+  min-height: 100%;
+  padding: clamp(30px, 3vw, 42px);
+  border-radius: 36px;
+
+  background:
+    radial-gradient(circle at 8% 8%, rgba(79, 70, 229, 0.12), transparent 34%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.86), rgba(248, 251, 255, 0.66));
+  border: 1px solid rgba(148, 163, 184, 0.34);
+  box-shadow:
+    var(--home-shadow),
+    inset 0 1px 0 rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+body[data-page="home"] .home-decision-panel::before {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  right: -120px;
+  bottom: -120px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.13), transparent 68%);
+  pointer-events: none;
+}
+
+body[data-page="home"] .home-decision-panel > * {
+  position: relative;
+  z-index: 1;
+}
+
+body[data-page="home"] .home-decision-panel h3 {
+  margin: 0;
+  max-width: 560px;
+
+  color: var(--home-text);
+  font-size: clamp(2.05rem, 3.35vw, 3.25rem);
+  line-height: 1.07;
+  font-weight: 950;
+  letter-spacing: -0.064em;
+  text-wrap: balance;
+}
+
+body[data-page="home"] .home-decision-panel p {
+  margin: 20px 0 0;
+  color: #5d6b82;
+  font-size: 1rem;
+  line-height: 1.78;
+  font-weight: 610;
+}
+
+body[data-page="home"] .home-decision-points {
+  display: grid;
+  gap: 13px;
+  margin-top: 30px;
+}
+
+body[data-page="home"] .home-decision-point {
+  display: grid;
+  grid-template-columns: 38px 1fr;
+  align-items: center;
+  gap: 13px;
+
+  padding: 13px;
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid rgba(203, 213, 225, 0.62);
+  box-shadow:
+    0 10px 24px rgba(15, 23, 42, 0.035),
+    inset 0 1px 0 rgba(255, 255, 255, 0.84);
+}
+
+body[data-page="home"] .home-decision-point i {
+  width: 38px;
+  height: 38px;
+  border-radius: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--home-indigo);
+  background: rgba(79, 70, 229, 0.09);
+  font-size: 0.82rem;
+}
+
+body[data-page="home"] .home-decision-point span {
+  color: #334155;
+  font-size: 0.94rem;
+  line-height: 1.45;
+  font-weight: 820;
+}
+
+body[data-page="home"] .home-decision-steps {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 22px);
+}
+
+body[data-page="home"] .home-step-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 224px;
+
+  padding: clamp(24px, 2.2vw, 30px);
+  border-radius: 30px;
+
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.86), rgba(248, 251, 255, 0.64));
+  border: 1px solid rgba(148, 163, 184, 0.34);
+  box-shadow:
+    0 18px 46px rgba(15, 23, 42, 0.055),
+    inset 0 1px 0 rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+body[data-page="home"] .home-step-card::before {
+  content: "";
+  position: absolute;
+  top: -58px;
+  right: -58px;
+  width: 138px;
+  height: 138px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(167, 139, 250, 0.18), transparent 70%);
+  pointer-events: none;
+}
+
+body[data-page="home"] .home-step-card::after {
+  content: "";
+  position: absolute;
+  inset: auto 24px 0 24px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(79, 70, 229, 0.34), rgba(14, 165, 233, 0.32));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+body[data-page="home"] .home-step-card span {
+  position: relative;
+  z-index: 1;
+
+  display: inline-flex;
+  margin-bottom: 20px;
+
+  color: rgba(79, 70, 229, 0.38);
+  font-size: clamp(2.35rem, 3vw, 3rem);
+  line-height: 1;
+  font-weight: 950;
+  letter-spacing: -0.07em;
+}
+
+body[data-page="home"] .home-step-card h3 {
+  position: relative;
+  z-index: 1;
+
+  margin: 0;
+  color: var(--home-text);
+  font-size: clamp(1.15rem, 1.3vw, 1.34rem);
+  font-weight: 950;
+  line-height: 1.2;
+  letter-spacing: -0.038em;
+}
+
+body[data-page="home"] .home-step-card p {
+  position: relative;
+  z-index: 1;
+
+  margin: 12px 0 0;
+  color: #5d6b82;
+  font-size: 0.95rem;
+  line-height: 1.68;
+  font-weight: 610;
+}
+
+body[data-page="home"] .home-step-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(99, 102, 241, 0.32);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(244, 248, 255, 0.74));
+  box-shadow:
+    0 30px 76px rgba(15, 23, 42, 0.09),
+    0 12px 28px rgba(79, 70, 229, 0.06);
+}
+
+body[data-page="home"] .home-step-card:hover::after {
+  transform: scaleX(1);
+}
+
+/* =========================================================
+   06. FOCUS AREAS SECTION
+========================================================= */
+
+body[data-page="home"] .home-focus-section {
+  position: relative;
+  isolation: isolate;
+  padding: clamp(96px, 8vw, 128px) 0;
+
+  background:
+    radial-gradient(circle at 88% 18%, rgba(14, 165, 233, 0.085), transparent 32%),
+    radial-gradient(circle at 12% 82%, rgba(79, 70, 229, 0.075), transparent 32%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.20), rgba(248, 251, 255, 0.34));
+}
+
+body[data-page="home"] .home-focus-shell {
+  display: grid;
+  grid-template-columns: minmax(250px, 0.36fr) minmax(0, 1fr);
+  gap: clamp(20px, 2.4vw, 30px);
+  align-items: stretch;
+}
+
+body[data-page="home"] .home-focus-tabs {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+}
+
+body[data-page="home"] .home-focus-tab {
+  width: 100%;
+  min-height: 66px;
+  padding: 0 16px;
+  border-radius: 20px;
+
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  cursor: pointer;
+  text-align: left;
+
+  color: #334155;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.78), rgba(248, 251, 255, 0.56));
+  border: 1px solid rgba(148, 163, 184, 0.34);
+  box-shadow:
+    0 12px 28px rgba(15, 23, 42, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.88);
+
+  font-size: 0.95rem;
+  font-weight: 900;
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  transition:
+    transform 0.24s ease,
+    background 0.24s ease,
+    border-color 0.24s ease,
+    color 0.24s ease,
+    box-shadow 0.24s ease;
+}
+
+body[data-page="home"] .home-focus-tab i {
+  flex: 0 0 auto;
+
+  width: 38px;
+  height: 38px;
+  border-radius: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--home-indigo);
+  background: rgba(79, 70, 229, 0.09);
+}
+
+body[data-page="home"] .home-focus-tab:hover {
+  transform: translateX(4px);
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(99, 102, 241, 0.24);
+}
+
+body[data-page="home"] .home-focus-tab.active {
+  color: #ffffff;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.22), transparent 32%),
+    linear-gradient(135deg, #4f46e5, #2563eb 55%, #0ea5e9);
+  border-color: transparent;
+  box-shadow:
+    0 22px 48px rgba(79, 70, 229, 0.24),
+    0 8px 18px rgba(14, 165, 233, 0.12);
+}
+
+body[data-page="home"] .home-focus-tab.active i {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+body[data-page="home"] .home-focus-display {
+  min-height: 100%;
+}
+
+body[data-page="home"] .home-focus-display-inner {
+  min-height: 100%;
+  padding: clamp(32px, 3.2vw, 44px);
+  border-radius: 38px;
+
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: clamp(22px, 2.4vw, 30px);
+  align-items: start;
+
+  background:
+    radial-gradient(circle at 92% 8%, rgba(79, 70, 229, 0.12), transparent 34%),
+    radial-gradient(circle at 20% 90%, rgba(14, 165, 233, 0.10), transparent 34%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.86), rgba(248, 251, 255, 0.64));
+  border: 1px solid rgba(148, 163, 184, 0.34);
+  box-shadow:
+    var(--home-shadow),
+    inset 0 1px 0 rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+body[data-page="home"] .home-focus-icon {
+  width: 92px;
+  height: 92px;
+  border-radius: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--home-indigo);
+  background:
+    linear-gradient(145deg, rgba(239, 246, 255, 0.96), rgba(238, 242, 255, 0.88));
+  border: 1px solid rgba(203, 213, 225, 0.62);
+  box-shadow:
+    0 18px 38px rgba(79, 70, 229, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.96);
+  font-size: 1.75rem;
+}
+
+body[data-page="home"] .home-focus-display h3 {
+  margin: 0;
+  max-width: 820px;
+
+  color: var(--home-text);
+  font-size: clamp(2rem, 3.4vw, 3.25rem);
+  line-height: 1.08;
+  font-weight: 950;
+  letter-spacing: -0.064em;
+  text-wrap: balance;
+}
+
+body[data-page="home"] .home-focus-display p {
+  max-width: 760px;
+  margin: 18px 0 0;
+
+  color: #5d6b82;
+  font-size: 1rem;
+  line-height: 1.78;
+  font-weight: 610;
+}
+
+body[data-page="home"] .home-focus-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px;
+}
+
+body[data-page="home"] .home-focus-points span {
+  min-height: 40px;
+  padding: 0 15px;
+  border-radius: 999px;
+
+  display: inline-flex;
+  align-items: center;
+
+  color: #334155;
+  background: rgba(255, 255, 255, 0.76);
+  border: 1px solid rgba(203, 213, 225, 0.62);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.88);
+
+  font-size: 0.86rem;
+  font-weight: 840;
+}
+
+/* =========================================================
+   07. FEATURED WORK SECTION
+========================================================= */
+
+body[data-page="home"] .home-work-section {
+  position: relative;
+  isolation: isolate;
+  padding: clamp(96px, 8vw, 128px) 0;
+
+  background:
+    radial-gradient(circle at 12% 18%, rgba(79, 70, 229, 0.09), transparent 32%),
+    radial-gradient(circle at 92% 78%, rgba(14, 165, 233, 0.08), transparent 32%),
+    linear-gradient(180deg, rgba(238, 248, 255, 0.34), rgba(248, 243, 255, 0.28));
+}
+
+body[data-page="home"] .home-work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(18px, 2.2vw, 26px);
+}
+
+body[data-page="home"] .home-work-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 420px;
+
+  padding: clamp(28px, 2.6vw, 34px);
+  border-radius: 34px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background:
+    radial-gradient(circle at 88% 0%, rgba(79, 70, 229, 0.105), transparent 34%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.86), rgba(248, 251, 255, 0.64));
+  border: 1px solid rgba(148, 163, 184, 0.34);
+  box-shadow:
+    0 22px 58px rgba(15, 23, 42, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+body[data-page="home"] .home-work-card::before {
+  content: "";
+  position: absolute;
+  inset: auto 24px 0 24px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--home-indigo), var(--home-blue));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+body[data-page="home"] .home-work-badge {
+  display: inline-flex;
+  width: fit-content;
+  min-height: 34px;
+  padding: 0 13px;
+  border-radius: 999px;
+  align-items: center;
+
+  color: var(--home-indigo);
+  background: rgba(79, 70, 229, 0.085);
+  border: 1px solid rgba(99, 102, 241, 0.20);
+
+  font-size: 0.72rem;
+  font-weight: 950;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+body[data-page="home"] .home-work-card h3 {
+  margin: 22px 0 0;
+
+  color: var(--home-text);
+  font-size: clamp(1.45rem, 2vw, 2.05rem);
+  line-height: 1.12;
+  font-weight: 950;
+  letter-spacing: -0.052em;
+  text-wrap: balance;
+}
+
+body[data-page="home"] .home-work-card p {
+  margin: 16px 0 0;
+  color: #5d6b82;
+  font-size: 0.96rem;
+  line-height: 1.72;
+  font-weight: 610;
+}
+
+body[data-page="home"] .home-work-outcome {
+  margin-top: 24px;
+  padding: 16px;
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.64);
+  border: 1px solid rgba(203, 213, 225, 0.58);
+}
+
+body[data-page="home"] .home-work-outcome strong {
+  display: block;
+  color: #0f172a;
+  font-size: 0.82rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+body[data-page="home"] .home-work-outcome span {
+  display: block;
+  margin-top: 7px;
+  color: #5d6b82;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  font-weight: 620;
+}
+
+body[data-page="home"] .home-work-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 22px;
+}
+
+body[data-page="home"] .home-work-tools span {
+  min-height: 34px;
+  padding: 0 12px;
+  border-radius: 999px;
+
+  display: inline-flex;
+  align-items: center;
+
+  color: #334155;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(203, 213, 225, 0.58);
+
+  font-size: 0.78rem;
+  font-weight: 820;
+}
+
+body[data-page="home"] .home-work-link {
+  width: fit-content;
+  margin-top: 26px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  color: var(--home-indigo);
+  text-decoration: none;
+  font-size: 0.94rem;
+  font-weight: 950;
+
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+body[data-page="home"] .home-work-link i {
+  transition: transform 0.25s ease;
+}
+
+body[data-page="home"] .home-work-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(99, 102, 241, 0.32);
+  box-shadow:
+    0 34px 84px rgba(15, 23, 42, 0.10),
+    0 12px 28px rgba(79, 70, 229, 0.06);
+}
+
+body[data-page="home"] .home-work-card:hover::before {
+  transform: scaleX(1);
+}
+
+body[data-page="home"] .home-work-link:hover {
+  color: #0f172a;
+  transform: translateX(3px);
+}
+
+body[data-page="home"] .home-work-link:hover i {
+  transform: translateX(4px);
+}
+
+/* =========================================================
+   08. PROOF OF DIRECTION SECTION
+========================================================= */
+
+body[data-page="home"] .home-proof-section {
+  position: relative;
+  isolation: isolate;
+  padding: clamp(96px, 8vw, 128px) 0;
+
+  background:
+    radial-gradient(circle at 88% 18%, rgba(14, 165, 233, 0.08), transparent 32%),
+    radial-gradient(circle at 10% 82%, rgba(79, 70, 229, 0.075), transparent 32%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(238, 248, 255, 0.34));
+}
+
+body[data-page="home"] .home-proof-layout {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.78fr) minmax(0, 1.22fr);
+  gap: clamp(24px, 2.6vw, 34px);
+  align-items: stretch;
+}
+
+body[data-page="home"] .home-proof-main {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(30px, 3vw, 42px);
+  border-radius: 36px;
+
+  background:
+    radial-gradient(circle at 10% 12%, rgba(79, 70, 229, 0.12), transparent 34%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.86), rgba(248, 251, 255, 0.64));
+  border: 1px solid rgba(148, 163, 184, 0.34);
+  box-shadow:
+    var(--home-shadow),
+    inset 0 1px 0 rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+body[data-page="home"] .home-proof-main h3 {
+  margin: 0;
+  max-width: 640px;
+
+  color: var(--home-text);
+  font-size: clamp(2rem, 3.1vw, 3.05rem);
+  line-height: 1.08;
+  font-weight: 950;
+  letter-spacing: -0.064em;
+  text-wrap: balance;
+}
+
+body[data-page="home"] .home-proof-main p {
+  margin: 18px 0 0;
+  color: #5d6b82;
+  font-size: 1rem;
+  line-height: 1.78;
+  font-weight: 610;
+}
+
+body[data-page="home"] .home-proof-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 22px);
+}
+
+body[data-page="home"] .home-proof-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 210px;
+
+  padding: clamp(24px, 2.2vw, 30px);
+  border-radius: 30px;
+
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.86), rgba(248, 251, 255, 0.64));
+  border: 1px solid rgba(148, 163, 184, 0.34);
+  box-shadow:
+    0 18px 46px rgba(15, 23, 42, 0.055),
+    inset 0 1px 0 rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+body[data-page="home"] .home-proof-card::before {
+  content: "";
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  right: -58px;
+  top: -58px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(79, 70, 229, 0.16), transparent 68%);
+  pointer-events: none;
+}
+
+body[data-page="home"] .home-proof-card strong {
+  position: relative;
+  z-index: 1;
+
+  display: block;
+  color: var(--home-indigo);
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  line-height: 1;
+  font-weight: 950;
+  letter-spacing: -0.07em;
+}
+
+body[data-page="home"] .home-proof-card h3 {
+  position: relative;
+  z-index: 1;
+
+  margin: 18px 0 0;
+  color: var(--home-text);
+  font-size: 1.16rem;
+  line-height: 1.2;
+  font-weight: 950;
+  letter-spacing: -0.035em;
+}
+
+body[data-page="home"] .home-proof-card p {
+  position: relative;
+  z-index: 1;
+
+  margin: 12px 0 0;
+  color: #5d6b82;
+  font-size: 0.94rem;
+  line-height: 1.68;
+  font-weight: 610;
+}
+
+body[data-page="home"] .home-proof-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(99, 102, 241, 0.32);
+  box-shadow:
+    0 30px 76px rgba(15, 23, 42, 0.09),
+    0 12px 28px rgba(79, 70, 229, 0.06);
+}
+
+/* =========================================================
+   09. HOME CTA SECTION
+========================================================= */
+
+body[data-page="home"] .home-cta-section {
+  position: relative;
+  isolation: isolate;
+  padding: clamp(96px, 8vw, 128px) 0 clamp(86px, 7vw, 112px);
+
+  background:
+    radial-gradient(circle at 12% 18%, rgba(79, 70, 229, 0.11), transparent 32%),
+    radial-gradient(circle at 88% 82%, rgba(14, 165, 233, 0.10), transparent 32%),
+    linear-gradient(180deg, rgba(248, 243, 255, 0.30), rgba(238, 248, 255, 0.36));
+}
+
+body[data-page="home"] .home-cta-box {
+  position: relative;
+  overflow: hidden;
+
+  max-width: 1180px;
+  margin-inline: auto;
+  padding: clamp(36px, 5vw, 64px);
+  border-radius: 42px;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(26px, 4vw, 56px);
+
+  background:
+    radial-gradient(circle at 10% 12%, rgba(79, 70, 229, 0.13), transparent 34%),
+    radial-gradient(circle at 92% 82%, rgba(14, 165, 233, 0.13), transparent 34%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.86), rgba(248, 251, 255, 0.64));
+  border: 1px solid rgba(148, 163, 184, 0.34);
+  box-shadow:
+    0 34px 96px rgba(15, 23, 42, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+body[data-page="home"] .home-cta-box::before {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border-radius: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  pointer-events: none;
+}
+
+body[data-page="home"] .home-cta-copy {
+  position: relative;
+  z-index: 1;
+}
+
+body[data-page="home"] .home-cta-label {
+  display: inline-flex;
+  margin-bottom: 16px;
+
+  color: var(--home-indigo);
+  font-size: 0.74rem;
+  font-weight: 950;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+body[data-page="home"] .home-cta-copy h2 {
+  margin: 0;
+  max-width: 720px;
+
+  color: var(--home-text);
+  font-size: clamp(2.2rem, 4vw, 4.3rem);
+  line-height: 1.05;
+  font-weight: 950;
+  letter-spacing: -0.074em;
+  text-wrap: balance;
+}
+
+body[data-page="home"] .home-cta-copy p {
+  max-width: 690px;
+  margin: 18px 0 0;
+
+  color: #5d6b82;
+  font-size: 1rem;
+  line-height: 1.78;
+  font-weight: 610;
+}
+
+body[data-page="home"] .home-cta-actions {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+body[data-page="home"] .home-cta-btn {
+  min-height: 58px;
+  padding: 0 26px;
+  border-radius: 999px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+
+  text-decoration: none;
+  font-size: 0.98rem;
+  font-weight: 950;
+  letter-spacing: -0.01em;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+body[data-page="home"] .home-cta-btn-primary {
+  color: #ffffff;
+  background:
+    radial-gradient(circle at 20% 18%, rgba(255, 255, 255, 0.22), transparent 34%),
+    linear-gradient(135deg, #0f172a, #172554 52%, #1e1b4b);
+  box-shadow: 0 20px 46px rgba(15, 23, 42, 0.20);
+}
+
+body[data-page="home"] .home-cta-btn-secondary {
+  color: #0f172a;
+  background: rgba(255, 255, 255, 0.76);
+  border: 1px solid rgba(203, 213, 225, 0.86);
+  box-shadow:
+    0 14px 30px rgba(15, 23, 42, 0.055),
+    inset 0 1px 0 rgba(255, 255, 255, 0.92);
+}
+
+body[data-page="home"] .home-cta-btn:hover {
+  transform: translateY(-3px);
+}
+
+body[data-page="home"] .home-cta-btn-primary:hover {
+  box-shadow: 0 28px 58px rgba(15, 23, 42, 0.25);
+}
+
+body[data-page="home"] .home-cta-btn-secondary:hover {
+  border-color: rgba(79, 70, 229, 0.32);
+  box-shadow: 0 20px 42px rgba(15, 23, 42, 0.085);
+}
+
+/* =========================================================
+   10. HOMEPAGE FOOTER — LOCKED STRUCTURE
+========================================================= */
+
+body[data-page="home"] .site-footer {
+  position: relative;
+  width: 100%;
+  margin-top: 0;
+  padding: clamp(4.2rem, 6vw, 5.8rem) 0 2rem;
+
+  background:
+    radial-gradient(circle at 8% 18%, rgba(99, 102, 241, 0.18), transparent 28%),
+    radial-gradient(circle at 92% 16%, rgba(14, 165, 233, 0.16), transparent 30%),
+    radial-gradient(circle at 82% 88%, rgba(168, 85, 247, 0.11), transparent 28%),
+    linear-gradient(
+      135deg,
+      #f2f4ff 0%,
+      #f8fbff 36%,
+      #eef8ff 68%,
+      #f7f3ff 100%
+    );
+
+  border-top: 1px solid rgba(99, 102, 241, 0.18);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 -24px 70px rgba(15, 23, 42, 0.045);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+body[data-page="home"] .site-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.58),
+      transparent 20%,
+      rgba(255, 255, 255, 0.22) 50%,
+      transparent 80%,
+      rgba(255, 255, 255, 0.58)
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(79, 70, 229, 0.035) 0px,
+      rgba(79, 70, 229, 0.035) 1px,
+      transparent 1px,
+      transparent 72px
+    );
+  opacity: 0.65;
+}
+
+body[data-page="home"] .site-footer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 1;
+
+  width: min(92%, 1320px);
+  height: 2px;
+  transform: translateX(-50%);
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(79, 70, 229, 0.35) 18%,
+      rgba(14, 165, 233, 0.52) 50%,
+      rgba(168, 85, 247, 0.35) 82%,
+      transparent 100%
+    );
+}
+
+body[data-page="home"] .site-footer .footer-container {
+  position: relative;
+  z-index: 2;
+
+  width: min(1320px, calc(100% - 72px));
+  margin: 0 auto;
+}
+
+body[data-page="home"] .site-footer .footer-content.footer-premium {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) 0.55fr 0.55fr;
+  align-items: center;
+  gap: clamp(3rem, 6vw, 7rem);
+}
+
+body[data-page="home"] .site-footer .footer-brand-block {
+  max-width: 560px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.05rem;
+}
+
+body[data-page="home"] .site-footer .footer-brand-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 96px;
+  height: 96px;
+
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  text-decoration: none;
+  overflow: visible;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+body[data-page="home"] .site-footer .footer-brand-logo:hover {
+  transform: translateY(-3px);
+  opacity: 0.96;
+}
+
+body[data-page="home"] .site-footer .footer-brand-logo img {
+  display: block;
+
+  width: 96px !important;
+  height: 96px !important;
+  max-width: 96px !important;
+  max-height: 96px !important;
+
+  object-fit: contain;
+  object-position: center;
+
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+
+  filter:
+    drop-shadow(0 18px 28px rgba(15, 23, 42, 0.08))
+    drop-shadow(0 4px 10px rgba(79, 70, 229, 0.08));
+}
+
+body[data-page="home"] .site-footer .footer-brand-text {
+  margin: 0;
+
+  color: #0f172a;
+  font-size: clamp(1.02rem, 1.2vw, 1.15rem);
+  font-weight: 950;
+  line-height: 1.45;
+  letter-spacing: -0.018em;
+}
+
+body[data-page="home"] .site-footer .footer-brand-note {
+  margin: 0;
+  max-width: 540px;
+
+  color: #475569;
+  font-size: clamp(0.96rem, 1vw, 1.04rem);
+  font-weight: 680;
+  line-height: 1.75;
+}
+
+body[data-page="home"] .site-footer .footer-nav,
+body[data-page="home"] .site-footer .footer-connect {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.92rem;
+}
+
+body[data-page="home"] .site-footer .footer-nav h4,
+body[data-page="home"] .site-footer .footer-connect h4 {
+  margin: 0 0 0.25rem;
+
+  color: #111827;
+  font-size: 0.78rem;
+  font-weight: 1000;
+  letter-spacing: 0.28em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+body[data-page="home"] .site-footer .footer-nav a {
+  position: relative;
+
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+
+  color: #334155;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 850;
+  line-height: 1.25;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+body[data-page="home"] .site-footer .footer-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -5px;
+
+  height: 2px;
+  border-radius: 999px;
+
+  background: linear-gradient(90deg, #5b4df5, #0ea5e9);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.25s ease;
+}
+
+body[data-page="home"] .site-footer .footer-nav a:hover {
+  color: #4f46e5;
+  transform: translateX(4px);
+}
+
+body[data-page="home"] .site-footer .footer-nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+body[data-page="home"] .site-footer .footer-social-links {
+  display: flex;
+  align-items: center;
+  gap: 0.78rem;
+  margin-top: 0.1rem;
+}
+
+body[data-page="home"] .site-footer .footer-social-links a {
+  width: 46px;
+  height: 46px;
+  min-width: 46px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #312e81;
+  text-decoration: none;
+  font-size: 1rem;
+
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.88), rgba(241, 245, 255, 0.78));
+  border: 1px solid rgba(148, 163, 184, 0.55);
+  border-radius: 16px;
+
+  box-shadow:
+    0 16px 36px rgba(15, 23, 42, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+body[data-page="home"] .site-footer .footer-social-links a:hover {
+  color: #ffffff;
+  background: linear-gradient(135deg, #4f46e5 0%, #0ea5e9 100%);
+  border-color: rgba(79, 70, 229, 0.28);
+
+  transform: translateY(-4px) scale(1.03);
+
+  box-shadow:
+    0 24px 48px rgba(79, 70, 229, 0.24),
+    0 10px 22px rgba(14, 165, 233, 0.16);
+}
+
+body[data-page="home"] .site-footer .footer-cta-link {
+  position: relative;
+
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+
+  margin-top: 0.45rem;
+
+  color: #0f172a;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 950;
+  line-height: 1.3;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+body[data-page="home"] .site-footer .footer-cta-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+
+  height: 2px;
+  border-radius: 999px;
+
+  background: linear-gradient(90deg, #5b4df5, #0ea5e9);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.25s ease;
+}
+
+body[data-page="home"] .site-footer .footer-cta-link i {
+  transition: transform 0.25s ease;
+}
+
+body[data-page="home"] .site-footer .footer-cta-link:hover {
+  color: #4f46e5;
+  transform: translateY(-2px);
+}
+
+body[data-page="home"] .site-footer .footer-cta-link:hover i {
+  transform: translateX(4px);
+}
+
+body[data-page="home"] .site-footer .footer-cta-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+body[data-page="home"] .site-footer .footer-bottom {
+  margin-top: clamp(3rem, 4vw, 4rem);
+  padding-top: 1.35rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+
+  border-top: 1px solid rgba(99, 102, 241, 0.16);
+}
+
+body[data-page="home"] .site-footer .footer-bottom p,
+body[data-page="home"] .site-footer .footer-bottom span {
+  margin: 0;
+
+  color: #475569;
+  font-size: 0.96rem;
+  font-weight: 760;
+  line-height: 1.6;
+}
+
+body[data-page="home"] .site-footer .footer-bottom p {
+  color: #1e293b;
+  font-weight: 900;
+}
+
+/* =========================================================
+   11. RESPONSIVE — LARGE TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+  body[data-page="home"] .home-hero-layout,
+  body[data-page="home"] .home-decision-layout,
+  body[data-page="home"] .home-proof-layout {
+    grid-template-columns: 1fr;
+  }
+
+  body[data-page="home"] .home-hero-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  body[data-page="home"] .home-hero-title {
+    align-items: center;
+    max-width: 900px;
+  }
+
+  body[data-page="home"] .home-hero-title-dynamic {
+    justify-content: center;
+  }
+
+  body[data-page="home"] .home-hero-description,
+  body[data-page="home"] .home-card-title,
+  body[data-page="home"] .home-card-text {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  body[data-page="home"] .home-hero-actions {
+    justify-content: center;
+  }
+
+  body[data-page="home"] .home-hero-proof {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  body[data-page="home"] .home-intelligence-card {
+    margin: 0 auto;
+  }
+
+  body[data-page="home"] .home-work-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body[data-page="home"] .home-work-card {
+    min-height: auto;
+  }
+}
+
+/* =========================================================
+   12. RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+  body[data-page="home"] {
+    background-attachment: scroll;
+  }
+
+  body[data-page="home"] .container,
+  body[data-page="home"] .v3-container,
+  body[data-page="home"] .home-container,
+  body[data-page="home"] .home-section-container {
+    width: min(100% - 42px, 1180px);
+  }
+
+  body[data-page="home"] .home-hero {
+    min-height: auto;
+    padding: 86px 0 88px;
+  }
+
+  body[data-page="home"] .home-hero-layout {
+    gap: 48px;
+  }
+
+  body[data-page="home"] .home-hero-title {
+    font-size: clamp(3.2rem, 10vw, 5.8rem);
+  }
+
+  body[data-page="home"] .home-value-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body[data-page="home"] .home-focus-shell {
+    grid-template-columns: 1fr;
+  }
+
+  body[data-page="home"] .home-focus-tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body[data-page="home"] .home-cta-box {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  body[data-page="home"] .home-cta-copy h2,
+  body[data-page="home"] .home-cta-copy p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  body[data-page="home"] .home-cta-actions {
+    justify-content: center;
+  }
+
+  body[data-page="home"] .site-footer .footer-container {
+    width: min(100% - 42px, 1240px);
+  }
+
+  body[data-page="home"] .site-footer .footer-content.footer-premium {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.4rem;
+  }
+
+  body[data-page="home"] .site-footer .footer-brand-block {
+    grid-column: 1 / -1;
+    max-width: 720px;
+  }
+}
+
+/* =========================================================
+   13. RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+  body[data-page="home"] {
+    background:
+      radial-gradient(circle at 50% 0%, rgba(79, 70, 229, 0.13), transparent 34%),
+      radial-gradient(circle at 50% 62%, rgba(14, 165, 233, 0.09), transparent 34%),
+      linear-gradient(
+        180deg,
+        #f4f6ff 0%,
+        #fbfdff 42%,
+        #eef8ff 78%,
+        #f8f4ff 100%
+      );
+  }
+
+  body[data-page="home"]::before {
+    background-size: 54px 54px;
+    opacity: 0.34;
+  }
+
+  body[data-page="home"]::after {
+    opacity: 0.78;
+  }
+
+  body[data-page="home"] .container,
+  body[data-page="home"] .v3-container,
+  body[data-page="home"] .home-container,
+  body[data-page="home"] .home-section-container {
+    width: min(100% - 30px, 1180px);
+  }
+
+  body[data-page="home"] .home-hero {
+    padding: 72px 0 76px;
+  }
+
+  body[data-page="home"] .home-hero-container {
+    width: min(100% - 30px, 1180px);
+  }
+
+  body[data-page="home"] .home-hero-layout {
+    gap: 42px;
+  }
+
+  body[data-page="home"] .home-hero-eyebrow {
+    max-width: 100%;
+    padding: 8px 12px;
+    font-size: 0.66rem;
+    line-height: 1.55;
+    letter-spacing: 0.13em;
+    text-align: center;
+  }
+
+  body[data-page="home"] .home-hero-title {
+    width: 100%;
+    font-size: clamp(2.55rem, 10.6vw, 3.75rem);
+    line-height: 1.08;
+    letter-spacing: -0.048em;
+    gap: 0.2rem;
+  }
+
+  body[data-page="home"] .home-hero-title-line {
+    width: 100%;
+  }
+
+  body[data-page="home"] .home-hero-title-dynamic {
+    width: 100%;
+    justify-content: center;
+    font-size: clamp(2.05rem, 8.4vw, 3rem);
+    line-height: 1.14;
+    letter-spacing: -0.038em;
+  }
+
+  body[data-page="home"] #homeTypingText,
+  body[data-page="home"] .home-typing-text {
+    min-width: 14.8ch;
+    max-width: 100%;
+  }
+
+  body[data-page="home"] .home-hero-description {
+    max-width: 38ch;
+    margin-top: 24px;
+    font-size: 0.96rem;
+    line-height: 1.72;
+  }
+
+  body[data-page="home"] .home-hero-actions {
+    width: 100%;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 28px;
+  }
+
+  body[data-page="home"] .home-hero-btn {
+    width: 100%;
+    min-height: 56px;
+  }
+
+  body[data-page="home"] .home-hero-proof {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 28px;
+  }
+
+  body[data-page="home"] .home-proof-item {
+    text-align: center;
+  }
+
+  body[data-page="home"] .home-intelligence-card {
+    width: 100%;
+    border-radius: 32px;
+  }
+
+  body[data-page="home"] .home-intelligence-card::before {
+    border-radius: 31px;
+  }
+
+  body[data-page="home"] .home-card-header,
+  body[data-page="home"] .home-card-body,
+  body[data-page="home"] .home-card-focus-list,
+  body[data-page="home"] .home-card-metrics {
+    margin-left: 22px;
+    margin-right: 22px;
+  }
+
+  body[data-page="home"] .home-card-header {
+    align-items: flex-start;
+    margin-top: 26px;
+    margin-bottom: 24px;
+  }
+
+  body[data-page="home"] .home-card-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 19px;
+  }
+
+  body[data-page="home"] .home-card-title {
+    font-size: clamp(1.52rem, 6.2vw, 2rem);
+    line-height: 1.13;
+    letter-spacing: -0.05em;
+  }
+
+  body[data-page="home"] .home-card-text {
+    margin-top: 15px;
+    font-size: 0.94rem;
+    line-height: 1.68;
+  }
+
+  body[data-page="home"] .home-card-focus-list {
+    gap: 11px;
+    margin-bottom: 22px;
+  }
+
+  body[data-page="home"] .home-card-focus-item {
+    padding: 12px;
+    border-radius: 16px;
+  }
+
+  body[data-page="home"] .home-card-focus-item p {
+    font-size: 0.9rem;
+  }
+
+  body[data-page="home"] .home-card-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-bottom: 26px;
+  }
+
+  body[data-page="home"] .home-card-metric {
+    min-height: 70px;
+  }
+
+  body[data-page="home"] .home-value-section,
+  body[data-page="home"] .home-decision-section,
+  body[data-page="home"] .home-focus-section,
+  body[data-page="home"] .home-work-section,
+  body[data-page="home"] .home-proof-section,
+  body[data-page="home"] .home-cta-section {
+    padding: 76px 0;
+  }
+
+  body[data-page="home"] .home-section-heading {
+    margin-bottom: 38px;
+  }
+
+  body[data-page="home"] .heading-kicker-wrap {
+    gap: 11px;
+    margin-bottom: 14px;
+  }
+
+  body[data-page="home"] .heading-kicker-wrap span {
+    width: 42px;
+  }
+
+  body[data-page="home"] .heading-kicker-wrap p,
+  body[data-page="home"] .home-panel-label {
+    font-size: 0.66rem;
+    letter-spacing: 0.14em;
+  }
+
+  body[data-page="home"] .home-section-heading h2 {
+    font-size: clamp(2.15rem, 9.2vw, 3.1rem);
+    letter-spacing: -0.055em;
+  }
+
+  body[data-page="home"] .home-section-text {
+    margin-top: 16px;
+    font-size: 0.95rem;
+    line-height: 1.68;
+  }
+
+  body[data-page="home"] .home-value-grid,
+  body[data-page="home"] .home-decision-steps,
+  body[data-page="home"] .home-proof-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body[data-page="home"] .home-value-card,
+  body[data-page="home"] .home-step-card,
+  body[data-page="home"] .home-proof-card,
+  body[data-page="home"] .home-work-card {
+    min-height: auto;
+    padding: 24px;
+    border-radius: 26px;
+  }
+
+  body[data-page="home"] .home-decision-panel,
+  body[data-page="home"] .home-proof-main {
+    padding: 26px;
+    border-radius: 28px;
+  }
+
+  body[data-page="home"] .home-decision-panel h3,
+  body[data-page="home"] .home-proof-main h3 {
+    font-size: clamp(1.75rem, 8vw, 2.45rem);
+  }
+
+  body[data-page="home"] .home-decision-point {
+    grid-template-columns: 34px 1fr;
+    padding: 12px;
+  }
+
+  body[data-page="home"] .home-decision-point i {
+    width: 34px;
+    height: 34px;
+  }
+
+  body[data-page="home"] .home-focus-tabs {
+    grid-template-columns: 1fr;
+  }
+
+  body[data-page="home"] .home-focus-tab {
+    min-height: 58px;
+  }
+
+  body[data-page="home"] .home-focus-display-inner {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 26px;
+    border-radius: 28px;
+    text-align: center;
+  }
+
+  body[data-page="home"] .home-focus-icon {
+    width: 74px;
+    height: 74px;
+    border-radius: 24px;
+    margin-inline: auto;
+  }
+
+  body[data-page="home"] .home-focus-display h3 {
+    font-size: clamp(1.8rem, 8vw, 2.55rem);
+  }
+
+  body[data-page="home"] .home-focus-points {
+    justify-content: center;
+  }
+
+  body[data-page="home"] .home-cta-section {
+    padding-bottom: 72px;
+  }
+
+  body[data-page="home"] .home-cta-box {
+    padding: 30px 24px;
+    border-radius: 30px;
+  }
+
+  body[data-page="home"] .home-cta-box::before {
+    inset: 12px;
+    border-radius: 22px;
+  }
+
+  body[data-page="home"] .home-cta-copy h2 {
+    font-size: clamp(2rem, 9vw, 3rem);
+  }
+
+  body[data-page="home"] .home-cta-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  body[data-page="home"] .home-cta-btn {
+    width: 100%;
+    min-height: 56px;
+  }
+
+  body[data-page="home"] .site-footer {
+    padding: 3.2rem 0 1.4rem;
+    background:
+      radial-gradient(circle at 50% 0%, rgba(79, 70, 229, 0.16), transparent 34%),
+      radial-gradient(circle at 50% 100%, rgba(14, 165, 233, 0.13), transparent 34%),
+      linear-gradient(180deg, #f4f6ff 0%, #ffffff 48%, #eef8ff 100%);
+  }
+
+  body[data-page="home"] .site-footer .footer-container {
+    width: min(100% - 28px, 1240px);
+  }
+
+  body[data-page="home"] .site-footer .footer-content.footer-premium {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  body[data-page="home"] .site-footer .footer-brand-block,
+  body[data-page="home"] .site-footer .footer-nav,
+  body[data-page="home"] .site-footer .footer-connect {
+    align-items: center;
+    text-align: center;
+  }
+
+  body[data-page="home"] .site-footer .footer-brand-logo,
+  body[data-page="home"] .site-footer .footer-brand-logo img {
+    width: 82px !important;
+    height: 82px !important;
+    max-width: 82px !important;
+    max-height: 82px !important;
+  }
+
+  body[data-page="home"] .site-footer .footer-brand-text {
+    max-width: 340px;
+    font-size: 0.98rem;
+    line-height: 1.55;
+  }
+
+  body[data-page="home"] .site-footer .footer-brand-note {
+    max-width: 350px;
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  body[data-page="home"] .site-footer .footer-nav {
+    gap: 0.72rem;
+  }
+
+  body[data-page="home"] .site-footer .footer-nav a:hover {
+    transform: translateY(-2px);
+  }
+
+  body[data-page="home"] .site-footer .footer-social-links a {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+  }
+
+  body[data-page="home"] .site-footer .footer-bottom {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 0.72rem;
+    margin-top: 2.4rem;
+  }
+
+  body[data-page="home"] .site-footer .footer-bottom p,
+  body[data-page="home"] .site-footer .footer-bottom span {
+    font-size: 0.88rem;
+  }
+}
+
+/* =========================================================
+   14. RESPONSIVE — SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+  body[data-page="home"] .container,
+  body[data-page="home"] .v3-container,
+  body[data-page="home"] .home-container,
+  body[data-page="home"] .home-section-container,
+  body[data-page="home"] .home-hero-container {
+    width: min(100% - 26px, 1180px);
+  }
+
+  body[data-page="home"] .home-hero-title {
+    font-size: clamp(2.28rem, 10.2vw, 3.25rem);
+  }
+
+  body[data-page="home"] .home-hero-title-dynamic {
+    font-size: clamp(1.85rem, 7.8vw, 2.55rem);
+  }
+
+  body[data-page="home"] #homeTypingText,
+  body[data-page="home"] .home-typing-text {
+    min-width: 14.3ch;
+  }
+
+  body[data-page="home"] .home-card-header,
+  body[data-page="home"] .home-card-body,
+  body[data-page="home"] .home-card-focus-list,
+  body[data-page="home"] .home-card-metrics {
+    margin-left: 18px;
+    margin-right: 18px;
+  }
+
+  body[data-page="home"] .home-value-card,
+  body[data-page="home"] .home-step-card,
+  body[data-page="home"] .home-proof-card,
+  body[data-page="home"] .home-work-card {
+    padding: 22px;
+  }
+
+  body[data-page="home"] .home-section-heading h2 {
+    font-size: clamp(2rem, 9.4vw, 2.8rem);
+  }
+
+  body[data-page="home"] .site-footer .footer-brand-logo,
+  body[data-page="home"] .site-footer .footer-brand-logo img {
+    width: 76px !important;
+    height: 76px !important;
+    max-width: 76px !important;
+    max-height: 76px !important;
+  }
+
+  body[data-page="home"] .site-footer .footer-social-links a {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    border-radius: 14px;
+  }
+
+  body[data-page="home"] .site-footer .footer-nav h4,
+  body[data-page="home"] .site-footer .footer-connect h4 {
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+  }
+
+  body[data-page="home"] .site-footer .footer-nav a,
+  body[data-page="home"] .site-footer .footer-cta-link {
+    font-size: 0.92rem;
+  }
+}
+
+/* =========================================================
+   15. PERFORMANCE / ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-page="home"] *,
+  body[data-page="home"] *::before,
+  body[data-page="home"] *::after {
+    transition-duration: 0.001ms !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* =========================================================
+   HOMEPAGE FINAL POLISH PATCH — DO NOT REPLACE FILE
+   Scope: Homepage sections only
+   Header/Footer untouched
+========================================================= */
+
+/* ---------- Global homepage spacing control ---------- */
+
+body[data-page="home"] main {
+  overflow-x: hidden;
+}
+
+body[data-page="home"] .home-value-section,
+body[data-page="home"] .home-decision-section,
+body[data-page="home"] .home-focus-section,
+body[data-page="home"] .home-work-section,
+body[data-page="home"] .home-proof-section,
+body[data-page="home"] .home-cta-section {
+  padding-top: clamp(82px, 6.4vw, 112px) !important;
+  padding-bottom: clamp(82px, 6.4vw, 112px) !important;
+}
+
+/* Reduce oversized background shells */
+body[data-page="home"] .home-value-section::before,
+body[data-page="home"] .home-decision-section::before {
+  inset: 18px max(28px, 4vw) !important;
+  border-radius: 38px !important;
+}
+
+/* ---------- Hero overflow + balance fix ---------- */
+
+body[data-page="home"] .home-hero {
+  min-height: auto !important;
+  padding-top: clamp(72px, 6.2vw, 96px) !important;
+  padding-bottom: clamp(78px, 6.8vw, 108px) !important;
+}
+
+body[data-page="home"] .home-hero-container {
+  width: min(1360px, calc(100% - 72px)) !important;
+}
+
+body[data-page="home"] .home-hero-layout {
+  grid-template-columns: minmax(0, 0.98fr) minmax(420px, 0.82fr) !important;
+  gap: clamp(38px, 4.8vw, 68px) !important;
+}
+
+body[data-page="home"] .home-hero-title {
+  max-width: 780px !important;
+  font-size: clamp(3.7rem, 6.35vw, 6.25rem) !important;
+  line-height: 0.98 !important;
+  letter-spacing: -0.078em !important;
+}
+
+body[data-page="home"] .home-hero-title-dynamic {
+  max-width: 100% !important;
+  overflow: hidden !important;
+}
+
+body[data-page="home"] #homeTypingText,
+body[data-page="home"] .home-typing-text {
+  max-width: 100% !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+  text-overflow: clip !important;
+  white-space: nowrap !important;
+}
+
+body[data-page="home"] .home-hero-description {
+  max-width: 700px !important;
+  margin-top: 26px !important;
+  font-size: 1.03rem !important;
+  line-height: 1.78 !important;
+}
+
+body[data-page="home"] .home-hero-proof {
+  width: min(100%, 640px) !important;
+}
+
+body[data-page="home"] .home-intelligence-card {
+  width: min(100%, 520px) !important;
+  border-radius: 34px !important;
+}
+
+body[data-page="home"] .home-card-header,
+body[data-page="home"] .home-card-body,
+body[data-page="home"] .home-card-focus-list,
+body[data-page="home"] .home-card-metrics {
+  margin-left: 30px !important;
+  margin-right: 30px !important;
+}
+
+body[data-page="home"] .home-card-title {
+  font-size: clamp(1.85rem, 2.45vw, 2.55rem) !important;
+  line-height: 1.1 !important;
+}
+
+body[data-page="home"] .home-card-focus-item {
+  padding: 13px 14px !important;
+}
+
+body[data-page="home"] .home-card-metric {
+  min-height: 72px !important;
+}
+
+/* ---------- Section heading refinement ---------- */
+
+body[data-page="home"] .home-section-heading {
+  margin-bottom: clamp(38px, 4vw, 54px) !important;
+}
+
+body[data-page="home"] .home-section-heading h2 {
+  max-width: 860px !important;
+  font-size: clamp(2.65rem, 4.45vw, 4.35rem) !important;
+  line-height: 1.04 !important;
+  letter-spacing: -0.068em !important;
+}
+
+body[data-page="home"] .home-section-text {
+  max-width: 760px !important;
+  margin-top: 20px !important;
+  font-size: 1.02rem !important;
+  line-height: 1.72 !important;
+}
+
+/* ---------- Value cards polish ---------- */
+
+body[data-page="home"] .home-value-grid {
+  gap: 22px !important;
+}
+
+body[data-page="home"] .home-value-card {
+  min-height: 260px !important;
+  padding: 28px !important;
+  border-radius: 28px !important;
+}
+
+body[data-page="home"] .home-value-card .home-card-icon {
+  width: 58px !important;
+  height: 58px !important;
+  margin-bottom: 24px !important;
+}
+
+body[data-page="home"] .home-value-card h3 {
+  font-size: 1.22rem !important;
+}
+
+body[data-page="home"] .home-value-card p {
+  font-size: 0.96rem !important;
+  line-height: 1.66 !important;
+}
+
+/* ---------- Decision system balance ---------- */
+
+body[data-page="home"] .home-decision-layout {
+  grid-template-columns: minmax(340px, 0.82fr) minmax(0, 1.18fr) !important;
+  gap: 28px !important;
+}
+
+body[data-page="home"] .home-decision-panel {
+  padding: 38px !important;
+  border-radius: 34px !important;
+}
+
+body[data-page="home"] .home-decision-panel h3 {
+  font-size: clamp(2rem, 3vw, 3rem) !important;
+}
+
+body[data-page="home"] .home-decision-steps {
+  gap: 22px !important;
+}
+
+body[data-page="home"] .home-step-card {
+  min-height: 210px !important;
+  padding: 28px !important;
+  border-radius: 28px !important;
+}
+
+body[data-page="home"] .home-step-card span {
+  margin-bottom: 18px !important;
+  font-size: clamp(2.2rem, 2.8vw, 2.75rem) !important;
+}
+
+body[data-page="home"] .home-step-card p {
+  font-size: 0.95rem !important;
+  line-height: 1.64 !important;
+}
+
+/* ---------- Focus section polish ---------- */
+
+body[data-page="home"] .home-focus-shell {
+  gap: 28px !important;
+}
+
+body[data-page="home"] .home-focus-tab {
+  min-height: 64px !important;
+  border-radius: 18px !important;
+}
+
+body[data-page="home"] .home-focus-display-inner {
+  padding: 40px !important;
+  border-radius: 34px !important;
+}
+
+body[data-page="home"] .home-focus-display h3 {
+  max-width: 780px !important;
+  font-size: clamp(2rem, 3vw, 3rem) !important;
+}
+
+body[data-page="home"] .home-focus-display p {
+  max-width: 760px !important;
+}
+
+/* ---------- Featured preview cards polish ---------- */
+
+body[data-page="home"] .home-work-grid {
+  gap: 24px !important;
+}
+
+body[data-page="home"] .home-work-card {
+  min-height: 390px !important;
+  padding: 30px !important;
+  border-radius: 30px !important;
+}
+
+body[data-page="home"] .home-work-card h3 {
+  font-size: clamp(1.4rem, 1.75vw, 1.85rem) !important;
+  line-height: 1.13 !important;
+}
+
+body[data-page="home"] .home-work-card p {
+  font-size: 0.95rem !important;
+  line-height: 1.66 !important;
+}
+
+body[data-page="home"] .home-work-outcome {
+  padding: 15px 16px !important;
+  border-radius: 18px !important;
+}
+
+body[data-page="home"] .home-work-link {
+  margin-top: 22px !important;
+}
+
+/* ---------- Proof section polish ---------- */
+
+body[data-page="home"] .home-proof-layout {
+  gap: 28px !important;
+}
+
+body[data-page="home"] .home-proof-main,
+body[data-page="home"] .home-proof-card {
+  border-radius: 30px !important;
+}
+
+body[data-page="home"] .home-proof-card {
+  min-height: 190px !important;
+  padding: 28px !important;
+}
+
+/* ---------- CTA section polish ---------- */
+
+body[data-page="home"] .home-cta-section {
+  padding-top: clamp(84px, 6vw, 112px) !important;
+}
+
+body[data-page="home"] .home-cta-box {
+  width: min(1180px, calc(100% - 72px)) !important;
+  padding: clamp(42px, 4.5vw, 58px) !important;
+  border-radius: 38px !important;
+}
+
+body[data-page="home"] .home-cta-copy h2 {
+  font-size: clamp(2.25rem, 3.8vw, 4rem) !important;
+  line-height: 1.05 !important;
+}
+
+/* =========================================================
+   TABLET FIXES
+========================================================= */
+
+@media (max-width: 1100px) {
+  body[data-page="home"] .home-hero-layout,
+  body[data-page="home"] .home-decision-layout,
+  body[data-page="home"] .home-proof-layout {
+    grid-template-columns: 1fr !important;
+  }
+
+  body[data-page="home"] .home-hero-title {
+    max-width: 860px !important;
+    text-align: center !important;
+  }
+
+  body[data-page="home"] .home-hero-title-dynamic {
+    justify-content: center !important;
+  }
+
+  body[data-page="home"] .home-intelligence-card {
+    margin-inline: auto !important;
+  }
+
+  body[data-page="home"] .home-work-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 991px) {
+  body[data-page="home"] .home-value-grid,
+  body[data-page="home"] .home-decision-steps,
+  body[data-page="home"] .home-proof-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  body[data-page="home"] .home-focus-shell {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* =========================================================
+   MOBILE FIXES
+========================================================= */
+
+@media (max-width: 767px) {
+  body[data-page="home"] .home-value-section,
+  body[data-page="home"] .home-decision-section,
+  body[data-page="home"] .home-focus-section,
+  body[data-page="home"] .home-work-section,
+  body[data-page="home"] .home-proof-section,
+  body[data-page="home"] .home-cta-section {
+    padding-top: 70px !important;
+    padding-bottom: 70px !important;
+  }
+
+  body[data-page="home"] .home-hero-container,
+  body[data-page="home"] .home-cta-box {
+    width: min(100% - 30px, 1180px) !important;
+  }
+
+  body[data-page="home"] .home-hero {
+    padding-top: 64px !important;
+    padding-bottom: 72px !important;
+  }
+
+  body[data-page="home"] .home-hero-title {
+    max-width: 100% !important;
+    font-size: clamp(2.55rem, 12vw, 3.75rem) !important;
+    line-height: 1.08 !important;
+    letter-spacing: -0.052em !important;
+  }
+
+  body[data-page="home"] .home-hero-title-dynamic {
+    font-size: clamp(2.05rem, 10vw, 3rem) !important;
+    line-height: 1.16 !important;
+    white-space: normal !important;
+  }
+
+  body[data-page="home"] #homeTypingText,
+  body[data-page="home"] .home-typing-text {
+    white-space: normal !important;
+    text-align: center !important;
+  }
+
+  body[data-page="home"] .home-hero-description {
+    max-width: 36ch !important;
+    font-size: 0.96rem !important;
+  }
+
+  body[data-page="home"] .home-hero-actions,
+  body[data-page="home"] .home-cta-actions {
+    width: 100% !important;
+    flex-direction: column !important;
+  }
+
+  body[data-page="home"] .home-hero-btn,
+  body[data-page="home"] .home-cta-btn {
+    width: 100% !important;
+  }
+
+  body[data-page="home"] .home-value-grid,
+  body[data-page="home"] .home-decision-steps,
+  body[data-page="home"] .home-proof-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  body[data-page="home"] .home-section-heading h2 {
+    font-size: clamp(2.05rem, 9.5vw, 3rem) !important;
+    line-height: 1.08 !important;
+    letter-spacing: -0.052em !important;
+  }
+
+  body[data-page="home"] .home-value-card,
+  body[data-page="home"] .home-step-card,
+  body[data-page="home"] .home-work-card,
+  body[data-page="home"] .home-proof-card {
+    padding: 24px !important;
+    border-radius: 24px !important;
+  }
+
+  body[data-page="home"] .home-decision-panel,
+  body[data-page="home"] .home-focus-display-inner,
+  body[data-page="home"] .home-proof-main {
+    padding: 26px !important;
+    border-radius: 26px !important;
+  }
+
+  body[data-page="home"] .home-focus-tabs {
+    grid-template-columns: 1fr !important;
+  }
+
+  body[data-page="home"] .home-focus-display-inner {
+    grid-template-columns: 1fr !important;
+    text-align: center !important;
+  }
+
+  body[data-page="home"] .home-focus-icon {
+    margin-inline: auto !important;
+  }
+
+  body[data-page="home"] .home-focus-points {
+    justify-content: center !important;
+  }
+}
+
+@media (max-width: 420px) {
+  body[data-page="home"] .home-hero-title {
+    font-size: clamp(2.25rem, 11vw, 3.1rem) !important;
+  }
+
+  body[data-page="home"] .home-hero-title-dynamic {
+    font-size: clamp(1.82rem, 9vw, 2.55rem) !important;
+  }
+
+  body[data-page="home"] .home-section-heading h2 {
+    font-size: clamp(1.95rem, 9vw, 2.65rem) !important;
+  }
+}
+
+/* =========================================================
+   HERO LAYOUT FIX PATCH — SAFE MODE
+   Fix: left/right gap, dynamic typing overflow, card balance
+   Paste at END of home.css
+========================================================= */
+
+body[data-page="home"] .home-hero {
+  overflow: hidden !important;
+  padding-top: clamp(82px, 6vw, 104px) !important;
+  padding-bottom: clamp(88px, 7vw, 118px) !important;
+}
+
+body[data-page="home"] .home-hero-container {
+  width: min(1240px, calc(100% - 96px)) !important;
+  margin-inline: auto !important;
+}
+
+body[data-page="home"] .home-hero-layout {
+  display: grid !important;
+  grid-template-columns: minmax(0, 0.95fr) minmax(390px, 0.78fr) !important;
+  gap: clamp(54px, 6vw, 92px) !important;
+  align-items: center !important;
+}
+
+/* Left content must never enter right card area */
+body[data-page="home"] .home-hero-content {
+  max-width: 100% !important;
+  min-width: 0 !important;
+  overflow: visible !important;
+}
+
+/* Main title size controlled */
+body[data-page="home"] .home-hero-title {
+  width: 100% !important;
+  max-width: 720px !important;
+  font-size: clamp(3.45rem, 5.55vw, 5.45rem) !important;
+  line-height: 1.02 !important;
+  letter-spacing: -0.07em !important;
+  overflow: visible !important;
+}
+
+/* Dynamic line should wrap safely, not go behind card */
+body[data-page="home"] .home-hero-title-dynamic {
+  display: block !important;
+  width: 100% !important;
+  max-width: 720px !important;
+  min-height: auto !important;
+  overflow: visible !important;
+  white-space: normal !important;
+  line-height: 1.04 !important;
+  padding-bottom: 0.05em !important;
+}
+
+body[data-page="home"] #homeTypingText,
+body[data-page="home"] .home-typing-text {
+  display: inline !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  white-space: normal !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+  line-height: inherit !important;
+}
+
+/* Description should align with controlled title width */
+body[data-page="home"] .home-hero-description {
+  max-width: 690px !important;
+  margin-top: 26px !important;
+}
+
+/* Buttons and proof cards stay inside left column */
+body[data-page="home"] .home-hero-actions,
+body[data-page="home"] .home-hero-proof {
+  max-width: 690px !important;
+}
+
+/* Right visual/card compact and clean */
+body[data-page="home"] .home-hero-visual {
+  min-width: 0 !important;
+  display: flex !important;
+  justify-content: flex-end !important;
+}
+
+body[data-page="home"] .home-intelligence-card {
+  width: min(100%, 500px) !important;
+  max-width: 500px !important;
+  margin-left: 0 !important;
+  border-radius: 34px !important;
+}
+
+body[data-page="home"] .home-card-header,
+body[data-page="home"] .home-card-body,
+body[data-page="home"] .home-card-focus-list,
+body[data-page="home"] .home-card-metrics {
+  margin-left: 30px !important;
+  margin-right: 30px !important;
+}
+
+body[data-page="home"] .home-card-title {
+  font-size: clamp(1.85rem, 2.25vw, 2.45rem) !important;
+  line-height: 1.12 !important;
+  letter-spacing: -0.055em !important;
+}
+
+body[data-page="home"] .home-card-text {
+  font-size: 0.98rem !important;
+  line-height: 1.68 !important;
+}
+
+body[data-page="home"] .home-card-focus-item p {
+  font-size: 0.91rem !important;
+  line-height: 1.42 !important;
+}
+
+body[data-page="home"] .home-card-metrics {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 10px !important;
+}
+
+body[data-page="home"] .home-card-metric {
+  min-height: 70px !important;
+  padding: 11px 8px !important;
+}
+
+/* =========================================================
+   HERO TABLET FIX
+========================================================= */
+
+@media (max-width: 1180px) {
+  body[data-page="home"] .home-hero-container {
+    width: min(100% - 72px, 1120px) !important;
+  }
+
+  body[data-page="home"] .home-hero-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(350px, 0.76fr) !important;
+    gap: 46px !important;
+  }
+
+  body[data-page="home"] .home-hero-title {
+    max-width: 660px !important;
+    font-size: clamp(3.15rem, 5.35vw, 4.95rem) !important;
+  }
+
+  body[data-page="home"] .home-hero-title-dynamic {
+    max-width: 660px !important;
+  }
+
+  body[data-page="home"] .home-intelligence-card {
+    max-width: 470px !important;
+  }
+}
+
+/* =========================================================
+   HERO STACK FIX — TABLET / SMALL LAPTOP
+========================================================= */
+
+@media (max-width: 1024px) {
+  body[data-page="home"] .home-hero-container {
+    width: min(100% - 46px, 900px) !important;
+  }
+
+  body[data-page="home"] .home-hero-layout {
+    grid-template-columns: 1fr !important;
+    gap: 46px !important;
+  }
+
+  body[data-page="home"] .home-hero-content {
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  body[data-page="home"] .home-hero-title,
+  body[data-page="home"] .home-hero-title-dynamic,
+  body[data-page="home"] .home-hero-description,
+  body[data-page="home"] .home-hero-actions,
+  body[data-page="home"] .home-hero-proof {
+    max-width: 760px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  body[data-page="home"] .home-hero-title {
+    font-size: clamp(3.3rem, 7.4vw, 5.4rem) !important;
+  }
+
+  body[data-page="home"] .home-hero-title-dynamic {
+    text-align: center !important;
+  }
+
+  body[data-page="home"] .home-hero-visual {
+    justify-content: center !important;
+  }
+
+  body[data-page="home"] .home-intelligence-card {
+    max-width: 560px !important;
+  }
+}
+
+/* =========================================================
+   HERO MOBILE FIX
+========================================================= */
+
+@media (max-width: 767px) {
+  body[data-page="home"] .home-hero {
+    padding-top: 66px !important;
+    padding-bottom: 74px !important;
+  }
+
+  body[data-page="home"] .home-hero-container {
+    width: min(100% - 30px, 640px) !important;
+  }
+
+  body[data-page="home"] .home-hero-title {
+    max-width: 100% !important;
+    font-size: clamp(2.45rem, 11.4vw, 3.55rem) !important;
+    line-height: 1.09 !important;
+    letter-spacing: -0.052em !important;
+  }
+
+  body[data-page="home"] .home-hero-title-dynamic {
+    max-width: 100% !important;
+    font-size: clamp(2.05rem, 9.4vw, 3rem) !important;
+    line-height: 1.15 !important;
+  }
+
+  body[data-page="home"] .home-hero-description {
+    max-width: 36ch !important;
+    font-size: 0.96rem !important;
+    line-height: 1.7 !important;
+  }
+
+  body[data-page="home"] .home-hero-proof {
+    grid-template-columns: 1fr !important;
+  }
+
+  body[data-page="home"] .home-intelligence-card {
+    max-width: 100% !important;
+    border-radius: 28px !important;
+  }
+
+  body[data-page="home"] .home-card-header,
+  body[data-page="home"] .home-card-body,
+  body[data-page="home"] .home-card-focus-list,
+  body[data-page="home"] .home-card-metrics {
+    margin-left: 22px !important;
+    margin-right: 22px !important;
+  }
+
+  body[data-page="home"] .home-card-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+/* =========================================================
+   HERO FINAL SINGLE-LINE TYPING FIX — SAFE PATCH
+   Paste at END of home.css
+========================================================= */
+
+/* Hero main width + left-right breathing space */
+body[data-page="home"] .home-hero-container {
+  width: min(1320px, calc(100% - 120px)) !important;
+  margin-inline: auto !important;
+}
+
+/* Give left side more room, right card controlled */
+body[data-page="home"] .home-hero-layout {
+  grid-template-columns: minmax(0, 1.08fr) minmax(390px, 0.72fr) !important;
+  gap: clamp(58px, 5.8vw, 88px) !important;
+  align-items: center !important;
+}
+
+/* Left content should not clip */
+body[data-page="home"] .home-hero-content {
+  min-width: 0 !important;
+  max-width: 100% !important;
+  overflow: visible !important;
+}
+
+/* Turning Data size halka sa decrease */
+body[data-page="home"] .home-hero-title {
+  max-width: 820px !important;
+  font-size: clamp(3.25rem, 5.05vw, 5.05rem) !important;
+  line-height: 1.03 !important;
+  letter-spacing: -0.066em !important;
+  overflow: visible !important;
+}
+
+/* "into" also controlled through same title sizing */
+body[data-page="home"] .home-hero-title span,
+body[data-page="home"] .home-hero-title strong {
+  line-height: inherit !important;
+}
+
+/* Dynamic typing line must stay one line */
+body[data-page="home"] .home-hero-title-dynamic {
+  display: block !important;
+  width: 100% !important;
+  max-width: 860px !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+  line-height: 1.02 !important;
+  font-size: clamp(3.05rem, 4.85vw, 4.85rem) !important;
+  letter-spacing: -0.066em !important;
+}
+
+/* Actual typing text: one line, no clipping */
+body[data-page="home"] #homeTypingText,
+body[data-page="home"] .home-typing-text {
+  display: inline-block !important;
+  max-width: 100% !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+  text-overflow: unset !important;
+  word-break: keep-all !important;
+  overflow-wrap: normal !important;
+  line-height: inherit !important;
+}
+
+/* Cursor should not force wrapping */
+body[data-page="home"] .home-typing-cursor,
+body[data-page="home"] #homeTypingCursor {
+  display: inline-block !important;
+  vertical-align: baseline !important;
+}
+
+/* Description + buttons aligned with new title width */
+body[data-page="home"] .home-hero-description,
+body[data-page="home"] .home-hero-actions,
+body[data-page="home"] .home-hero-proof {
+  max-width: 760px !important;
+}
+
+/* Right card slightly compact so typing line gets space */
+body[data-page="home"] .home-hero-visual {
+  min-width: 0 !important;
+  display: flex !important;
+  justify-content: flex-end !important;
+}
+
+body[data-page="home"] .home-intelligence-card {
+  width: min(100%, 470px) !important;
+  max-width: 470px !important;
+  border-radius: 34px !important;
+}
+
+body[data-page="home"] .home-card-title {
+  font-size: clamp(1.75rem, 2.05vw, 2.25rem) !important;
+  line-height: 1.12 !important;
+}
+
+body[data-page="home"] .home-card-body {
+  padding-top: 26px !important;
+}
+
+/* Stats cards below right card compact */
+body[data-page="home"] .home-card-metrics {
+  gap: 10px !important;
+}
+
+body[data-page="home"] .home-card-metric {
+  min-height: 68px !important;
+}
+
+/* =========================================================
+   MEDIUM DESKTOP FIX
+========================================================= */
+
+@media (max-width: 1280px) {
+  body[data-page="home"] .home-hero-container {
+    width: min(1240px, calc(100% - 84px)) !important;
+  }
+
+  body[data-page="home"] .home-hero-layout {
+    grid-template-columns: minmax(0, 1.04fr) minmax(370px, 0.72fr) !important;
+    gap: 54px !important;
+  }
+
+  body[data-page="home"] .home-hero-title {
+    max-width: 760px !important;
+    font-size: clamp(3.05rem, 4.85vw, 4.7rem) !important;
+  }
+
+  body[data-page="home"] .home-hero-title-dynamic {
+    max-width: 790px !important;
+    font-size: clamp(2.8rem, 4.55vw, 4.45rem) !important;
+  }
+
+  body[data-page="home"] .home-intelligence-card {
+    max-width: 450px !important;
+  }
+}
+
+/* =========================================================
+   SMALL LAPTOP / TABLET: stack layout, keep clean
+========================================================= */
+
+@media (max-width: 1100px) {
+  body[data-page="home"] .home-hero-container {
+    width: min(100% - 54px, 920px) !important;
+  }
+
+  body[data-page="home"] .home-hero-layout {
+    grid-template-columns: 1fr !important;
+    gap: 48px !important;
+  }
+
+  body[data-page="home"] .home-hero-content {
+    text-align: center !important;
+    align-items: center !important;
+  }
+
+  body[data-page="home"] .home-hero-title,
+  body[data-page="home"] .home-hero-title-dynamic,
+  body[data-page="home"] .home-hero-description,
+  body[data-page="home"] .home-hero-actions,
+  body[data-page="home"] .home-hero-proof {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  body[data-page="home"] .home-hero-title {
+    max-width: 820px !important;
+    font-size: clamp(3.2rem, 7vw, 5.15rem) !important;
+  }
+
+  body[data-page="home"] .home-hero-title-dynamic {
+    max-width: 820px !important;
+    font-size: clamp(3rem, 6.7vw, 4.9rem) !important;
+  }
+
+  body[data-page="home"] .home-hero-visual {
+    justify-content: center !important;
+  }
+
+  body[data-page="home"] .home-intelligence-card {
+    max-width: 560px !important;
+  }
+}
+
+/* =========================================================
+   MOBILE: single line not forced because screen is small
+========================================================= */
+
+@media (max-width: 767px) {
+  body[data-page="home"] .home-hero-container {
+    width: min(100% - 30px, 640px) !important;
+  }
+
+  body[data-page="home"] .home-hero-title {
+    max-width: 100% !important;
+    font-size: clamp(2.4rem, 10.8vw, 3.45rem) !important;
+    line-height: 1.08 !important;
+    letter-spacing: -0.052em !important;
+  }
+
+  body[data-page="home"] .home-hero-title-dynamic {
+    max-width: 100% !important;
+    white-space: normal !important;
+    font-size: clamp(2rem, 9.2vw, 2.9rem) !important;
+    line-height: 1.14 !important;
+    letter-spacing: -0.048em !important;
+  }
+
+  body[data-page="home"] #homeTypingText,
+  body[data-page="home"] .home-typing-text {
+    white-space: normal !important;
+    text-align: center !important;
+  }
+}
+
+/* =========================================================
+   HERO TYPING LAST LETTER CLIP FIX — MICRO PATCH
+   Paste at END of home.css
+========================================================= */
+
+/* Left title ko thoda safe width + breathing space */
+body[data-page="home"] .home-hero-title {
+  max-width: 780px !important;
+  font-size: clamp(3.05rem, 4.72vw, 4.75rem) !important;
+  letter-spacing: -0.058em !important;
+}
+
+/* Dynamic typing line: single line + no clipping */
+body[data-page="home"] .home-hero-title-dynamic {
+  width: max-content !important;
+  max-width: 100% !important;
+  padding-right: 18px !important;
+  overflow: visible !important;
+  white-space: nowrap !important;
+  font-size: clamp(2.82rem, 4.45vw, 4.42rem) !important;
+  line-height: 1.08 !important;
+  letter-spacing: -0.056em !important;
+}
+
+/* Actual typing text ko full render space do */
+body[data-page="home"] #homeTypingText,
+body[data-page="home"] .home-typing-text {
+  display: inline-block !important;
+  max-width: none !important;
+  padding-right: 10px !important;
+  overflow: visible !important;
+  white-space: nowrap !important;
+  text-overflow: unset !important;
+}
+
+/* Cursor ke liye extra room, taaki last letter cut na ho */
+body[data-page="home"] #homeTypingCursor,
+body[data-page="home"] .home-typing-cursor {
+  display: inline-block !important;
+  margin-left: 4px !important;
+  margin-right: 8px !important;
+  transform: translateX(0) !important;
+}
+
+/* Left column ko clipping se protect karo */
+body[data-page="home"] .home-hero-content,
+body[data-page="home"] .home-hero-layout,
+body[data-page="home"] .home-hero-container {
+  overflow: visible !important;
+}
+
+/* Right card ko thoda aur compact so left typing gets space */
+body[data-page="home"] .home-intelligence-card {
+  max-width: 455px !important;
+}
+
+/* Medium desktop safety */
+@media (max-width: 1280px) {
+  body[data-page="home"] .home-hero-title {
+    max-width: 740px !important;
+    font-size: clamp(2.95rem, 4.55vw, 4.45rem) !important;
+  }
+
+  body[data-page="home"] .home-hero-title-dynamic {
+    font-size: clamp(2.68rem, 4.25vw, 4.15rem) !important;
+    padding-right: 22px !important;
+  }
+}
+
+/* Mobile par wrapping allowed rahegi */
+@media (max-width: 767px) {
+  body[data-page="home"] .home-hero-title-dynamic {
+    width: 100% !important;
+    white-space: normal !important;
+    padding-right: 0 !important;
+  }
+
+  body[data-page="home"] #homeTypingText,
+  body[data-page="home"] .home-typing-text {
+    max-width: 100% !important;
+    white-space: normal !important;
+    padding-right: 0 !important;
+  }
+}
+
+/* =========================================================
+   HERO TYPING DESCENDER CLIP FIX — MICRO PATCH
+   Fix: g / y / p letters bottom cut issue
+   Paste at END of home.css
+========================================================= */
+
+/* Title container ko vertical breathing space do */
+body[data-page="home"] .home-hero-title {
+  line-height: 1.08 !important;
+  padding-bottom: 0.12em !important;
+  overflow: visible !important;
+}
+
+/* Dynamic typing line ke bottom letters cut na ho */
+body[data-page="home"] .home-hero-title-dynamic {
+  display: block !important;
+  line-height: 1.18 !important;
+  padding-top: 0.02em !important;
+  padding-bottom: 0.16em !important;
+  margin-bottom: -0.03em !important;
+  overflow: visible !important;
+}
+
+/* Actual typed text ko full height render space */
+body[data-page="home"] #homeTypingText,
+body[data-page="home"] .home-typing-text {
+  display: inline-block !important;
+  line-height: 1.18 !important;
+  padding-bottom: 0.12em !important;
+  overflow: visible !important;
+  transform: translateY(0) !important;
+}
+
+/* Cursor bhi text ke bottom ko clip na kare */
+body[data-page="home"] #homeTypingCursor,
+body[data-page="home"] .home-typing-cursor {
+  line-height: 1.18 !important;
+  height: 1em !important;
+  vertical-align: -0.04em !important;
+}
+
+/* Hero left column clipping completely off */
+body[data-page="home"] .home-hero-content,
+body[data-page="home"] .home-hero-copy,
+body[data-page="home"] .home-hero-layout,
+body[data-page="home"] .home-hero-container {
+  overflow: visible !important;
+}
+
+/* Desktop single-line typing ko maintain rakhna */
+@media (min-width: 768px) {
+  body[data-page="home"] .home-hero-title-dynamic,
+  body[data-page="home"] #homeTypingText,
+  body[data-page="home"] .home-typing-text {
+    white-space: nowrap !important;
+  }
+}
+
+/* Mobile par natural wrap allowed */
+@media (max-width: 767px) {
+  body[data-page="home"] .home-hero-title-dynamic,
+  body[data-page="home"] #homeTypingText,
+  body[data-page="home"] .home-typing-text {
+    white-space: normal !important;
+    line-height: 1.22 !important;
+    padding-bottom: 0.16em !important;
+  }
+}
+
+/* =========================================================
+   FEATURED PROJECT PREVIEW SECTION — PREMIUM UPGRADE PATCH
+   Scope: Homepage project preview / work cards only
+   Paste at END of home.css
+========================================================= */
+
+/* Main section spacing and visibility */
+body[data-page="home"] .home-work-section,
+body[data-page="home"] .home-projects-section,
+body[data-page="home"] .home-featured-section {
+  position: relative !important;
+  overflow: visible !important;
+  padding-top: clamp(96px, 7vw, 132px) !important;
+  padding-bottom: clamp(104px, 7.5vw, 140px) !important;
+}
+
+/* Premium soft background layer for this section */
+body[data-page="home"] .home-work-section::before,
+body[data-page="home"] .home-projects-section::before,
+body[data-page="home"] .home-featured-section::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 26px max(22px, 4vw) !important;
+  z-index: -1 !important;
+  border-radius: 44px !important;
+  background:
+    radial-gradient(circle at 14% 16%, rgba(99, 102, 241, 0.12), transparent 30%),
+    radial-gradient(circle at 88% 22%, rgba(14, 165, 233, 0.13), transparent 34%),
+    radial-gradient(circle at 50% 92%, rgba(168, 85, 247, 0.08), transparent 34%),
+    linear-gradient(135deg, rgba(255,255,255,0.82), rgba(240,249,255,0.76)) !important;
+  border: 1px solid rgba(148, 163, 184, 0.22) !important;
+  box-shadow: 0 28px 90px rgba(15, 23, 42, 0.06) !important;
+}
+
+/* Section heading polish */
+body[data-page="home"] .home-work-section .home-section-heading,
+body[data-page="home"] .home-projects-section .home-section-heading,
+body[data-page="home"] .home-featured-section .home-section-heading {
+  margin-bottom: clamp(44px, 4.5vw, 66px) !important;
+}
+
+body[data-page="home"] .home-work-section .home-section-heading h2,
+body[data-page="home"] .home-projects-section .home-section-heading h2,
+body[data-page="home"] .home-featured-section .home-section-heading h2 {
+  max-width: 900px !important;
+  margin-inline: auto !important;
+  line-height: 1.04 !important;
+  letter-spacing: -0.065em !important;
+}
+
+body[data-page="home"] .home-work-section .home-section-text,
+body[data-page="home"] .home-projects-section .home-section-text,
+body[data-page="home"] .home-featured-section .home-section-text {
+  max-width: 790px !important;
+  margin-inline: auto !important;
+  line-height: 1.75 !important;
+}
+
+/* Cards grid */
+body[data-page="home"] .home-work-grid,
+body[data-page="home"] .home-project-grid,
+body[data-page="home"] .home-featured-grid {
+  width: min(1180px, calc(100% - 44px)) !important;
+  margin-inline: auto !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: clamp(22px, 2.4vw, 32px) !important;
+  align-items: stretch !important;
+  overflow: visible !important;
+}
+
+/* Premium project cards */
+body[data-page="home"] .home-work-card,
+body[data-page="home"] .home-project-card,
+body[data-page="home"] .home-featured-card {
+  position: relative !important;
+  isolation: isolate !important;
+  overflow: hidden !important;
+  min-height: 520px !important;
+  padding: clamp(28px, 2.8vw, 38px) !important;
+  border-radius: 34px !important;
+  background:
+    radial-gradient(circle at 88% 0%, rgba(99, 102, 241, 0.13), transparent 28%),
+    linear-gradient(145deg, rgba(255,255,255,0.92), rgba(248,251,255,0.78)) !important;
+  border: 1px solid rgba(148, 163, 184, 0.24) !important;
+  box-shadow:
+    0 24px 70px rgba(15, 23, 42, 0.07),
+    inset 0 1px 0 rgba(255,255,255,0.86) !important;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease,
+    background 0.35s ease !important;
+}
+
+/* Soft shine line */
+body[data-page="home"] .home-work-card::before,
+body[data-page="home"] .home-project-card::before,
+body[data-page="home"] .home-featured-card::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: -1 !important;
+  background:
+    linear-gradient(
+      115deg,
+      transparent 0%,
+      transparent 36%,
+      rgba(255,255,255,0.78) 48%,
+      transparent 60%,
+      transparent 100%
+    ) !important;
+  transform: translateX(-120%) !important;
+  transition: transform 0.8s ease !important;
+  pointer-events: none !important;
+}
+
+body[data-page="home"] .home-work-card:hover,
+body[data-page="home"] .home-project-card:hover,
+body[data-page="home"] .home-featured-card:hover {
+  transform: translateY(-10px) !important;
+  border-color: rgba(99, 102, 241, 0.34) !important;
+  box-shadow:
+    0 34px 90px rgba(15, 23, 42, 0.11),
+    0 14px 34px rgba(37, 99, 235, 0.08),
+    inset 0 1px 0 rgba(255,255,255,0.92) !important;
+}
+
+body[data-page="home"] .home-work-card:hover::before,
+body[data-page="home"] .home-project-card:hover::before,
+body[data-page="home"] .home-featured-card:hover::before {
+  transform: translateX(120%) !important;
+}
+
+/* Category pills */
+body[data-page="home"] .home-work-card .home-card-label,
+body[data-page="home"] .home-work-card .project-category,
+body[data-page="home"] .home-work-card .home-work-tag,
+body[data-page="home"] .home-project-card .home-card-label,
+body[data-page="home"] .home-featured-card .home-card-label {
+  display: inline-flex !important;
+  align-items: center !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+  padding: 9px 16px !important;
+  margin-bottom: 26px !important;
+  border-radius: 999px !important;
+  background: rgba(238, 242, 255, 0.9) !important;
+  border: 1px solid rgba(99, 102, 241, 0.18) !important;
+  color: #4f46e5 !important;
+  font-size: 0.72rem !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+  line-height: 1 !important;
+}
+
+/* Card title */
+body[data-page="home"] .home-work-card h3,
+body[data-page="home"] .home-project-card h3,
+body[data-page="home"] .home-featured-card h3 {
+  margin: 0 0 20px !important;
+  color: #0f172a !important;
+  font-size: clamp(1.55rem, 1.65vw, 2rem) !important;
+  line-height: 1.12 !important;
+  letter-spacing: -0.045em !important;
+  font-weight: 950 !important;
+}
+
+/* Card paragraph */
+body[data-page="home"] .home-work-card p,
+body[data-page="home"] .home-project-card p,
+body[data-page="home"] .home-featured-card p {
+  color: #64748b !important;
+  font-size: 0.98rem !important;
+  line-height: 1.72 !important;
+  letter-spacing: 0.01em !important;
+}
+
+/* Business value box */
+body[data-page="home"] .home-work-outcome,
+body[data-page="home"] .home-project-outcome,
+body[data-page="home"] .project-business-value {
+  margin-top: 26px !important;
+  padding: 20px 20px !important;
+  border-radius: 22px !important;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,0.9), rgba(248,250,252,0.82)) !important;
+  border: 1px solid rgba(148, 163, 184, 0.2) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.9) !important;
+}
+
+body[data-page="home"] .home-work-outcome strong,
+body[data-page="home"] .home-project-outcome strong,
+body[data-page="home"] .project-business-value strong {
+  display: block !important;
+  margin-bottom: 10px !important;
+  color: #0f172a !important;
+  font-size: 0.78rem !important;
+  font-weight: 950 !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+}
+
+/* Tech pills */
+body[data-page="home"] .home-work-tools,
+body[data-page="home"] .project-tools,
+body[data-page="home"] .home-project-tools {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+  margin-top: 22px !important;
+}
+
+body[data-page="home"] .home-work-tools span,
+body[data-page="home"] .project-tools span,
+body[data-page="home"] .home-project-tools span {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 34px !important;
+  padding: 8px 14px !important;
+  border-radius: 999px !important;
+  background: rgba(255,255,255,0.74) !important;
+  border: 1px solid rgba(148, 163, 184, 0.24) !important;
+  color: #334155 !important;
+  font-size: 0.8rem !important;
+  font-weight: 850 !important;
+  line-height: 1 !important;
+  transition: transform 0.25s ease, border-color 0.25s ease, color 0.25s ease !important;
+}
+
+body[data-page="home"] .home-work-card:hover .home-work-tools span,
+body[data-page="home"] .home-project-card:hover .project-tools span,
+body[data-page="home"] .home-featured-card:hover .home-project-tools span {
+  border-color: rgba(99, 102, 241, 0.3) !important;
+  color: #3730a3 !important;
+}
+
+/* Card CTA */
+body[data-page="home"] .home-work-link,
+body[data-page="home"] .home-project-link,
+body[data-page="home"] .project-card-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  width: fit-content !important;
+  margin-top: 30px !important;
+  color: #4f46e5 !important;
+  font-size: 0.95rem !important;
+  font-weight: 950 !important;
+  letter-spacing: 0.01em !important;
+  text-decoration: none !important;
+  transition: gap 0.25s ease, color 0.25s ease, transform 0.25s ease !important;
+}
+
+body[data-page="home"] .home-work-link:hover,
+body[data-page="home"] .home-project-link:hover,
+body[data-page="home"] .project-card-link:hover {
+  gap: 15px !important;
+  color: #0ea5e9 !important;
+  transform: translateX(4px) !important;
+}
+
+/* Bottom explore full projects CTA */
+body[data-page="home"] .home-work-footer,
+body[data-page="home"] .home-projects-footer,
+body[data-page="home"] .home-featured-footer {
+  width: min(1180px, calc(100% - 44px)) !important;
+  margin: clamp(34px, 4vw, 52px) auto 0 !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+body[data-page="home"] .home-work-footer a,
+body[data-page="home"] .home-projects-footer a,
+body[data-page="home"] .home-featured-footer a,
+body[data-page="home"] a[href*="projects.html"].home-work-link-all {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  min-height: 54px !important;
+  padding: 0 26px !important;
+  border-radius: 999px !important;
+  background: linear-gradient(135deg, #10172f, #20145f) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255,255,255,0.28) !important;
+  box-shadow:
+    0 18px 38px rgba(15, 23, 42, 0.16),
+    inset 0 1px 0 rgba(255,255,255,0.2) !important;
+  font-size: 0.95rem !important;
+  font-weight: 900 !important;
+  text-decoration: none !important;
+  transition: transform 0.28s ease, box-shadow 0.28s ease, gap 0.28s ease !important;
+}
+
+body[data-page="home"] .home-work-footer a:hover,
+body[data-page="home"] .home-projects-footer a:hover,
+body[data-page="home"] .home-featured-footer a:hover,
+body[data-page="home"] a[href*="projects.html"].home-work-link-all:hover {
+  transform: translateY(-4px) !important;
+  gap: 16px !important;
+  box-shadow:
+    0 24px 54px rgba(15, 23, 42, 0.22),
+    0 12px 28px rgba(14, 165, 233, 0.12) !important;
+}
+
+/* =========================================================
+   RESPONSIVE FIXES
+========================================================= */
+
+@media (max-width: 1100px) {
+  body[data-page="home"] .home-work-grid,
+  body[data-page="home"] .home-project-grid,
+  body[data-page="home"] .home-featured-grid {
+    grid-template-columns: 1fr !important;
+    width: min(760px, calc(100% - 44px)) !important;
+  }
+
+  body[data-page="home"] .home-work-card,
+  body[data-page="home"] .home-project-card,
+  body[data-page="home"] .home-featured-card {
+    min-height: auto !important;
+  }
+}
+
+@media (max-width: 767px) {
+  body[data-page="home"] .home-work-section,
+  body[data-page="home"] .home-projects-section,
+  body[data-page="home"] .home-featured-section {
+    padding-top: 74px !important;
+    padding-bottom: 78px !important;
+  }
+
+  body[data-page="home"] .home-work-section::before,
+  body[data-page="home"] .home-projects-section::before,
+  body[data-page="home"] .home-featured-section::before {
+    inset: 14px 10px !important;
+    border-radius: 30px !important;
+  }
+
+  body[data-page="home"] .home-work-grid,
+  body[data-page="home"] .home-project-grid,
+  body[data-page="home"] .home-featured-grid {
+    width: min(100% - 28px, 560px) !important;
+    gap: 18px !important;
+  }
+
+  body[data-page="home"] .home-work-card,
+  body[data-page="home"] .home-project-card,
+  body[data-page="home"] .home-featured-card {
+    padding: 24px !important;
+    border-radius: 26px !important;
+  }
+
+  body[data-page="home"] .home-work-card h3,
+  body[data-page="home"] .home-project-card h3,
+  body[data-page="home"] .home-featured-card h3 {
+    font-size: 1.5rem !important;
+  }
+
+  body[data-page="home"] .home-work-card p,
+  body[data-page="home"] .home-project-card p,
+  body[data-page="home"] .home-featured-card p {
+    font-size: 0.94rem !important;
+  }
+
+  body[data-page="home"] .home-work-outcome,
+  body[data-page="home"] .home-project-outcome,
+  body[data-page="home"] .project-business-value {
+    padding: 18px !important;
+  }
+
+  body[data-page="home"] .home-work-footer,
+  body[data-page="home"] .home-projects-footer,
+  body[data-page="home"] .home-featured-footer {
+    width: min(100% - 28px, 560px) !important;
+    margin-top: 30px !important;
+  }
+
+  body[data-page="home"] .home-work-footer a,
+  body[data-page="home"] .home-projects-footer a,
+  body[data-page="home"] .home-featured-footer a,
+  body[data-page="home"] a[href*="projects.html"].home-work-link-all {
+    width: 100% !important;
+  }
+}
+
+/* =========================================================
+   HOME — FEATURED PROJECT PREVIEW FINAL UPGRADE PATCH
+   Strong selector version
+   Paste at END of home.css
+========================================================= */
+
+/* ---------- Section wrapper strong targeting ---------- */
+body[data-page="home"] section:has(.project-card-link),
+body[data-page="home"] section:has(.home-work-card),
+body[data-page="home"] section:has(.home-project-card),
+body[data-page="home"] section:has(.home-featured-card),
+body[data-page="home"] .home-projects-preview,
+body[data-page="home"] .featured-preview,
+body[data-page="home"] .projects-preview,
+body[data-page="home"] .home-featured-section {
+  position: relative !important;
+  isolation: isolate !important;
+  overflow: visible !important;
+  padding-top: clamp(96px, 7vw, 132px) !important;
+  padding-bottom: clamp(96px, 7vw, 132px) !important;
+  background:
+    radial-gradient(circle at 8% 18%, rgba(99, 102, 241, 0.13), transparent 32%),
+    radial-gradient(circle at 92% 28%, rgba(14, 165, 233, 0.13), transparent 34%),
+    radial-gradient(circle at 50% 88%, rgba(168, 85, 247, 0.08), transparent 36%),
+    linear-gradient(135deg, rgba(248, 251, 255, 0.94), rgba(240, 249, 255, 0.82)) !important;
+}
+
+/* Premium background container feel */
+body[data-page="home"] section:has(.project-card-link)::before,
+body[data-page="home"] section:has(.home-work-card)::before,
+body[data-page="home"] section:has(.home-project-card)::before,
+body[data-page="home"] section:has(.home-featured-card)::before,
+body[data-page="home"] .home-projects-preview::before,
+body[data-page="home"] .featured-preview::before,
+body[data-page="home"] .projects-preview::before,
+body[data-page="home"] .home-featured-section::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 26px max(28px, 4.2vw) !important;
+  z-index: -1 !important;
+  border-radius: 46px !important;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.68), rgba(239,246,255,0.64)),
+    radial-gradient(circle at 22% 16%, rgba(79, 70, 229, 0.09), transparent 32%),
+    radial-gradient(circle at 84% 72%, rgba(14, 165, 233, 0.11), transparent 34%) !important;
+  border: 1px solid rgba(148, 163, 184, 0.22) !important;
+  box-shadow:
+    0 34px 90px rgba(15, 23, 42, 0.065),
+    inset 0 1px 0 rgba(255,255,255,0.82) !important;
+}
+
+/* ---------- Section heading ---------- */
+body[data-page="home"] section:has(.project-card-link) .section-eyebrow,
+body[data-page="home"] section:has(.project-card-link) .home-section-kicker,
+body[data-page="home"] section:has(.project-card-link) .section-label,
+body[data-page="home"] section:has(.project-card-link) .home-section-label {
+  color: #4f46e5 !important;
+  font-size: 0.78rem !important;
+  font-weight: 950 !important;
+  letter-spacing: 0.32em !important;
+  text-transform: uppercase !important;
+}
+
+body[data-page="home"] section:has(.project-card-link) h2,
+body[data-page="home"] .home-projects-preview h2,
+body[data-page="home"] .featured-preview h2,
+body[data-page="home"] .projects-preview h2,
+body[data-page="home"] .home-featured-section h2 {
+  max-width: 920px !important;
+  margin-inline: auto !important;
+  color: #0f172a !important;
+  font-size: clamp(3.25rem, 5.7vw, 5.8rem) !important;
+  line-height: 1.02 !important;
+  letter-spacing: -0.072em !important;
+  font-weight: 950 !important;
+  text-align: center !important;
+}
+
+body[data-page="home"] section:has(.project-card-link) .section-description,
+body[data-page="home"] section:has(.project-card-link) .home-section-description,
+body[data-page="home"] section:has(.project-card-link) .home-section-text {
+  max-width: 800px !important;
+  margin: 24px auto 0 !important;
+  color: #64748b !important;
+  font-size: 1.04rem !important;
+  line-height: 1.8 !important;
+  text-align: center !important;
+}
+
+/* ---------- Grid targeting ---------- */
+body[data-page="home"] section:has(.project-card-link) .projects-grid,
+body[data-page="home"] section:has(.project-card-link) .home-project-grid,
+body[data-page="home"] section:has(.project-card-link) .home-work-grid,
+body[data-page="home"] section:has(.project-card-link) .featured-grid,
+body[data-page="home"] .projects-grid,
+body[data-page="home"] .home-project-grid,
+body[data-page="home"] .home-work-grid,
+body[data-page="home"] .featured-grid {
+  width: min(1180px, calc(100% - 48px)) !important;
+  margin: clamp(54px, 5vw, 76px) auto 0 !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: clamp(26px, 2.6vw, 36px) !important;
+  align-items: stretch !important;
+  overflow: visible !important;
+}
+
+/* ---------- Card targeting ---------- */
+body[data-page="home"] section:has(.project-card-link) article,
+body[data-page="home"] section:has(.project-card-link) .project-card,
+body[data-page="home"] section:has(.project-card-link) .home-project-card,
+body[data-page="home"] section:has(.project-card-link) .home-work-card,
+body[data-page="home"] section:has(.project-card-link) .home-featured-card {
+  position: relative !important;
+  isolation: isolate !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 570px !important;
+  padding: clamp(30px, 2.8vw, 42px) !important;
+  border-radius: 34px !important;
+  overflow: hidden !important;
+  background:
+    radial-gradient(circle at 86% 0%, rgba(99,102,241,0.14), transparent 28%),
+    linear-gradient(145deg, rgba(255,255,255,0.93), rgba(248,251,255,0.78)) !important;
+  border: 1px solid rgba(148, 163, 184, 0.24) !important;
+  box-shadow:
+    0 28px 80px rgba(15, 23, 42, 0.075),
+    inset 0 1px 0 rgba(255,255,255,0.9) !important;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease,
+    background 0.35s ease !important;
+}
+
+/* Card decorative glow */
+body[data-page="home"] section:has(.project-card-link) article::after,
+body[data-page="home"] section:has(.project-card-link) .project-card::after,
+body[data-page="home"] section:has(.project-card-link) .home-project-card::after,
+body[data-page="home"] section:has(.project-card-link) .home-work-card::after,
+body[data-page="home"] section:has(.project-card-link) .home-featured-card::after {
+  content: "" !important;
+  position: absolute !important;
+  width: 180px !important;
+  height: 180px !important;
+  right: -76px !important;
+  top: -76px !important;
+  border-radius: 999px !important;
+  background: radial-gradient(circle, rgba(79,70,229,0.14), transparent 66%) !important;
+  pointer-events: none !important;
+  transition: transform 0.4s ease, opacity 0.4s ease !important;
+}
+
+body[data-page="home"] section:has(.project-card-link) article:hover,
+body[data-page="home"] section:has(.project-card-link) .project-card:hover,
+body[data-page="home"] section:has(.project-card-link) .home-project-card:hover,
+body[data-page="home"] section:has(.project-card-link) .home-work-card:hover,
+body[data-page="home"] section:has(.project-card-link) .home-featured-card:hover {
+  transform: translateY(-12px) !important;
+  border-color: rgba(79,70,229,0.36) !important;
+  box-shadow:
+    0 42px 110px rgba(15, 23, 42, 0.13),
+    0 18px 44px rgba(37, 99, 235, 0.09),
+    inset 0 1px 0 rgba(255,255,255,0.95) !important;
+}
+
+body[data-page="home"] section:has(.project-card-link) article:hover::after,
+body[data-page="home"] section:has(.project-card-link) .project-card:hover::after,
+body[data-page="home"] section:has(.project-card-link) .home-project-card:hover::after,
+body[data-page="home"] section:has(.project-card-link) .home-work-card:hover::after,
+body[data-page="home"] section:has(.project-card-link) .home-featured-card:hover::after {
+  transform: scale(1.18) !important;
+  opacity: 0.95 !important;
+}
+
+/* ---------- Category pills ---------- */
+body[data-page="home"] section:has(.project-card-link) .project-category,
+body[data-page="home"] section:has(.project-card-link) .home-card-label,
+body[data-page="home"] section:has(.project-card-link) .home-work-tag,
+body[data-page="home"] section:has(.project-card-link) .card-tag {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+  min-height: 36px !important;
+  padding: 0 16px !important;
+  margin-bottom: 28px !important;
+  border-radius: 999px !important;
+  background: rgba(238,242,255,0.92) !important;
+  border: 1px solid rgba(99,102,241,0.2) !important;
+  color: #4f46e5 !important;
+  font-size: 0.72rem !important;
+  font-weight: 950 !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+  line-height: 1 !important;
+}
+
+/* ---------- Card typography ---------- */
+body[data-page="home"] section:has(.project-card-link) article h3,
+body[data-page="home"] section:has(.project-card-link) .project-card h3,
+body[data-page="home"] section:has(.project-card-link) .home-project-card h3,
+body[data-page="home"] section:has(.project-card-link) .home-work-card h3 {
+  color: #0f172a !important;
+  font-size: clamp(1.55rem, 1.85vw, 2.05rem) !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.05em !important;
+  font-weight: 950 !important;
+  margin: 0 0 22px !important;
+}
+
+body[data-page="home"] section:has(.project-card-link) article p,
+body[data-page="home"] section:has(.project-card-link) .project-card p,
+body[data-page="home"] section:has(.project-card-link) .home-project-card p,
+body[data-page="home"] section:has(.project-card-link) .home-work-card p {
+  color: #64748b !important;
+  font-size: 1rem !important;
+  line-height: 1.78 !important;
+  letter-spacing: 0.005em !important;
+}
+
+/* ---------- Business value box ---------- */
+body[data-page="home"] section:has(.project-card-link) .project-business-value,
+body[data-page="home"] section:has(.project-card-link) .home-work-outcome,
+body[data-page="home"] section:has(.project-card-link) .home-project-outcome {
+  margin-top: 30px !important;
+  padding: 22px 22px !important;
+  border-radius: 23px !important;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,0.92), rgba(248,250,252,0.82)) !important;
+  border: 1px solid rgba(148,163,184,0.22) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.95),
+    0 12px 26px rgba(15,23,42,0.035) !important;
+}
+
+body[data-page="home"] section:has(.project-card-link) .project-business-value strong,
+body[data-page="home"] section:has(.project-card-link) .home-work-outcome strong,
+body[data-page="home"] section:has(.project-card-link) .home-project-outcome strong {
+  display: block !important;
+  margin-bottom: 10px !important;
+  color: #0f172a !important;
+  font-size: 0.76rem !important;
+  font-weight: 950 !important;
+  letter-spacing: 0.17em !important;
+  text-transform: uppercase !important;
+}
+
+/* ---------- Tool pills ---------- */
+body[data-page="home"] section:has(.project-card-link) .project-tools,
+body[data-page="home"] section:has(.project-card-link) .home-project-tools,
+body[data-page="home"] section:has(.project-card-link) .home-work-tools {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+  margin-top: 24px !important;
+}
+
+body[data-page="home"] section:has(.project-card-link) .project-tools span,
+body[data-page="home"] section:has(.project-card-link) .home-project-tools span,
+body[data-page="home"] section:has(.project-card-link) .home-work-tools span {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 35px !important;
+  padding: 0 15px !important;
+  border-radius: 999px !important;
+  background: rgba(255,255,255,0.8) !important;
+  border: 1px solid rgba(148,163,184,0.24) !important;
+  color: #334155 !important;
+  font-size: 0.8rem !important;
+  font-weight: 850 !important;
+  line-height: 1 !important;
+  transition: transform 0.25s ease, border-color 0.25s ease, color 0.25s ease !important;
+}
+
+body[data-page="home"] section:has(.project-card-link) article:hover .project-tools span,
+body[data-page="home"] section:has(.project-card-link) .project-card:hover .project-tools span,
+body[data-page="home"] section:has(.project-card-link) .home-project-card:hover .home-project-tools span,
+body[data-page="home"] section:has(.project-card-link) .home-work-card:hover .home-work-tools span {
+  border-color: rgba(79,70,229,0.32) !important;
+  color: #3730a3 !important;
+}
+
+/* ---------- Card CTA bottom aligned ---------- */
+body[data-page="home"] section:has(.project-card-link) .project-card-link,
+body[data-page="home"] section:has(.project-card-link) .home-project-link,
+body[data-page="home"] section:has(.project-card-link) .home-work-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  width: fit-content !important;
+  margin-top: auto !important;
+  padding-top: 30px !important;
+  color: #4f46e5 !important;
+  font-size: 0.96rem !important;
+  font-weight: 950 !important;
+  text-decoration: none !important;
+  transition: gap 0.25s ease, color 0.25s ease, transform 0.25s ease !important;
+}
+
+body[data-page="home"] section:has(.project-card-link) .project-card-link:hover,
+body[data-page="home"] section:has(.project-card-link) .home-project-link:hover,
+body[data-page="home"] section:has(.project-card-link) .home-work-link:hover {
+  gap: 16px !important;
+  color: #0ea5e9 !important;
+  transform: translateX(4px) !important;
+}
+
+/* ---------- Explore full projects button/link ---------- */
+body[data-page="home"] section:has(.project-card-link) > a[href*="projects"],
+body[data-page="home"] section:has(.project-card-link) .home-work-link-all,
+body[data-page="home"] section:has(.project-card-link) .explore-projects-link,
+body[data-page="home"] section:has(.project-card-link) .view-all-projects {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  min-height: 56px !important;
+  padding: 0 28px !important;
+  margin: clamp(36px, 4vw, 56px) auto 0 !important;
+  border-radius: 999px !important;
+  background: linear-gradient(135deg, #10172f, #20145f) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255,255,255,0.24) !important;
+  box-shadow:
+    0 20px 44px rgba(15,23,42,0.18),
+    inset 0 1px 0 rgba(255,255,255,0.22) !important;
+  font-size: 0.96rem !important;
+  font-weight: 900 !important;
+  text-decoration: none !important;
+  transition: transform 0.28s ease, box-shadow 0.28s ease, gap 0.28s ease !important;
+}
+
+body[data-page="home"] section:has(.project-card-link) > a[href*="projects"]:hover,
+body[data-page="home"] section:has(.project-card-link) .home-work-link-all:hover,
+body[data-page="home"] section:has(.project-card-link) .explore-projects-link:hover,
+body[data-page="home"] section:has(.project-card-link) .view-all-projects:hover {
+  transform: translateY(-4px) !important;
+  gap: 17px !important;
+  box-shadow:
+    0 26px 58px rgba(15,23,42,0.24),
+    0 12px 28px rgba(14,165,233,0.14) !important;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1180px) {
+  body[data-page="home"] section:has(.project-card-link) .projects-grid,
+  body[data-page="home"] section:has(.project-card-link) .home-project-grid,
+  body[data-page="home"] section:has(.project-card-link) .home-work-grid,
+  body[data-page="home"] section:has(.project-card-link) .featured-grid {
+    grid-template-columns: 1fr !important;
+    width: min(760px, calc(100% - 44px)) !important;
+  }
+
+  body[data-page="home"] section:has(.project-card-link) article,
+  body[data-page="home"] section:has(.project-card-link) .project-card,
+  body[data-page="home"] section:has(.project-card-link) .home-project-card,
+  body[data-page="home"] section:has(.project-card-link) .home-work-card {
+    min-height: auto !important;
+  }
+}
+
+@media (max-width: 767px) {
+  body[data-page="home"] section:has(.project-card-link),
+  body[data-page="home"] .home-projects-preview,
+  body[data-page="home"] .featured-preview,
+  body[data-page="home"] .projects-preview,
+  body[data-page="home"] .home-featured-section {
+    padding-top: 76px !important;
+    padding-bottom: 82px !important;
+  }
+
+  body[data-page="home"] section:has(.project-card-link)::before,
+  body[data-page="home"] .home-projects-preview::before,
+  body[data-page="home"] .featured-preview::before,
+  body[data-page="home"] .projects-preview::before,
+  body[data-page="home"] .home-featured-section::before {
+    inset: 14px 10px !important;
+    border-radius: 30px !important;
+  }
+
+  body[data-page="home"] section:has(.project-card-link) h2,
+  body[data-page="home"] .home-projects-preview h2,
+  body[data-page="home"] .featured-preview h2,
+  body[data-page="home"] .projects-preview h2,
+  body[data-page="home"] .home-featured-section h2 {
+    font-size: clamp(2.35rem, 10vw, 3.4rem) !important;
+    letter-spacing: -0.055em !important;
+  }
+
+  body[data-page="home"] section:has(.project-card-link) .projects-grid,
+  body[data-page="home"] section:has(.project-card-link) .home-project-grid,
+  body[data-page="home"] section:has(.project-card-link) .home-work-grid,
+  body[data-page="home"] section:has(.project-card-link) .featured-grid {
+    width: min(100% - 28px, 560px) !important;
+    gap: 20px !important;
+  }
+
+  body[data-page="home"] section:has(.project-card-link) article,
+  body[data-page="home"] section:has(.project-card-link) .project-card,
+  body[data-page="home"] section:has(.project-card-link) .home-project-card,
+  body[data-page="home"] section:has(.project-card-link) .home-work-card {
+    padding: 25px !important;
+    border-radius: 28px !important;
+  }
+
+  body[data-page="home"] section:has(.project-card-link) article h3,
+  body[data-page="home"] section:has(.project-card-link) .project-card h3,
+  body[data-page="home"] section:has(.project-card-link) .home-project-card h3,
+  body[data-page="home"] section:has(.project-card-link) .home-work-card h3 {
+    font-size: 1.52rem !important;
+  }
+}
+
+/* =========================================================
+   HOME — FEATURED WORK SECTION FINAL PREMIUM PATCH
+   Exact-class version based on index.html + home.js
+   Scope: Featured Preview / Featured Work cards only
+   Paste at END of home.css
+========================================================= */
+
+/* =========================
+   SECTION WRAPPER
+========================= */
+
+body[data-page="home"] .home-work-section {
+  position: relative !important;
+  isolation: isolate !important;
+  overflow: visible !important;
+  padding-top: clamp(110px, 8vw, 150px) !important;
+  padding-bottom: clamp(112px, 8vw, 150px) !important;
+  background:
+    radial-gradient(circle at 8% 14%, rgba(99, 102, 241, 0.14), transparent 30%),
+    radial-gradient(circle at 92% 26%, rgba(14, 165, 233, 0.15), transparent 34%),
+    radial-gradient(circle at 48% 94%, rgba(168, 85, 247, 0.08), transparent 36%),
+    linear-gradient(135deg, rgba(248, 251, 255, 0.96), rgba(239, 248, 255, 0.86)) !important;
+}
+
+body[data-page="home"] .home-work-section::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 28px max(28px, 4.2vw) !important;
+  z-index: -1 !important;
+  border-radius: 48px !important;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(240, 249, 255, 0.62)),
+    radial-gradient(circle at 18% 18%, rgba(79, 70, 229, 0.09), transparent 32%),
+    radial-gradient(circle at 86% 76%, rgba(14, 165, 233, 0.1), transparent 34%) !important;
+  border: 1px solid rgba(148, 163, 184, 0.22) !important;
+  box-shadow:
+    0 36px 95px rgba(15, 23, 42, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+body[data-page="home"] .home-work-section::after {
+  content: "" !important;
+  position: absolute !important;
+  width: 360px !important;
+  height: 360px !important;
+  right: 8% !important;
+  top: 16% !important;
+  z-index: -1 !important;
+  border-radius: 999px !important;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.12), transparent 68%) !important;
+  filter: blur(10px) !important;
+  pointer-events: none !important;
+}
+
+/* =========================
+   SECTION HEADING
+========================= */
+
+body[data-page="home"] .home-work-section .home-section-heading {
+  max-width: 980px !important;
+  margin: 0 auto clamp(54px, 5vw, 76px) !important;
+  text-align: center !important;
+}
+
+body[data-page="home"] .home-work-section .home-section-label {
+  color: #4f46e5 !important;
+  font-size: 0.78rem !important;
+  font-weight: 950 !important;
+  letter-spacing: 0.34em !important;
+  text-transform: uppercase !important;
+}
+
+body[data-page="home"] .home-work-section .home-section-title {
+  max-width: 930px !important;
+  margin: 22px auto 0 !important;
+  color: #0f172a !important;
+  font-size: clamp(3.3rem, 5.9vw, 5.95rem) !important;
+  line-height: 1.015 !important;
+  letter-spacing: -0.074em !important;
+  font-weight: 950 !important;
+}
+
+body[data-page="home"] .home-work-section .home-section-text {
+  max-width: 820px !important;
+  margin: 26px auto 0 !important;
+  color: #64748b !important;
+  font-size: clamp(1rem, 1.15vw, 1.12rem) !important;
+  line-height: 1.82 !important;
+  font-weight: 650 !important;
+}
+
+/* =========================
+   GRID
+========================= */
+
+body[data-page="home"] .home-work-grid {
+  width: min(1180px, calc(100% - 48px)) !important;
+  margin: 0 auto !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: clamp(26px, 2.6vw, 36px) !important;
+  align-items: stretch !important;
+  overflow: visible !important;
+}
+
+/* =========================
+   CARD
+========================= */
+
+body[data-page="home"] .home-work-card {
+  position: relative !important;
+  isolation: isolate !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 590px !important;
+  padding: clamp(30px, 2.8vw, 42px) !important;
+  border-radius: 36px !important;
+  overflow: hidden !important;
+  background:
+    radial-gradient(circle at 88% 0%, rgba(99, 102, 241, 0.15), transparent 30%),
+    radial-gradient(circle at 0% 100%, rgba(14, 165, 233, 0.08), transparent 34%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.94), rgba(248, 251, 255, 0.8)) !important;
+  border: 1px solid rgba(148, 163, 184, 0.24) !important;
+  box-shadow:
+    0 28px 80px rgba(15, 23, 42, 0.075),
+    inset 0 1px 0 rgba(255, 255, 255, 0.94) !important;
+  transition:
+    transform 0.36s ease,
+    box-shadow 0.36s ease,
+    border-color 0.36s ease,
+    background 0.36s ease !important;
+}
+
+body[data-page="home"] .home-work-card::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: -1 !important;
+  background:
+    linear-gradient(
+      115deg,
+      transparent 0%,
+      transparent 34%,
+      rgba(255, 255, 255, 0.74) 48%,
+      transparent 62%,
+      transparent 100%
+    ) !important;
+  transform: translateX(-130%) !important;
+  transition: transform 0.85s ease !important;
+  pointer-events: none !important;
+}
+
+body[data-page="home"] .home-work-card::after {
+  content: "" !important;
+  position: absolute !important;
+  width: 190px !important;
+  height: 190px !important;
+  top: -82px !important;
+  right: -76px !important;
+  border-radius: 999px !important;
+  background: radial-gradient(circle, rgba(79, 70, 229, 0.15), transparent 68%) !important;
+  pointer-events: none !important;
+  transition: transform 0.36s ease, opacity 0.36s ease !important;
+}
+
+body[data-page="home"] .home-work-card:hover {
+  transform: translateY(-12px) !important;
+  border-color: rgba(79, 70, 229, 0.36) !important;
+  box-shadow:
+    0 44px 110px rgba(15, 23, 42, 0.13),
+    0 18px 44px rgba(37, 99, 235, 0.09),
+    inset 0 1px 0 rgba(255, 255, 255, 0.96) !important;
+}
+
+body[data-page="home"] .home-work-card:hover::before {
+  transform: translateX(130%) !important;
+}
+
+body[data-page="home"] .home-work-card:hover::after {
+  transform: scale(1.18) !important;
+  opacity: 0.95 !important;
+}
+
+/* =========================
+   CARD CONTENT
+========================= */
+
+body[data-page="home"] .home-work-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+  min-height: 36px !important;
+  padding: 0 16px !important;
+  margin-bottom: 28px !important;
+  border-radius: 999px !important;
+  background: rgba(238, 242, 255, 0.94) !important;
+  border: 1px solid rgba(99, 102, 241, 0.22) !important;
+  color: #4f46e5 !important;
+  font-size: 0.72rem !important;
+  font-weight: 950 !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+  line-height: 1 !important;
+}
+
+body[data-page="home"] .home-work-card h3 {
+  margin: 0 0 22px !important;
+  color: #0f172a !important;
+  font-size: clamp(1.58rem, 1.85vw, 2.05rem) !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.052em !important;
+  font-weight: 950 !important;
+}
+
+body[data-page="home"] .home-work-card p {
+  color: #64748b !important;
+  font-size: 1rem !important;
+  line-height: 1.78 !important;
+  font-weight: 650 !important;
+  letter-spacing: 0.005em !important;
+}
+
+/* =========================
+   BUSINESS VALUE BOX
+========================= */
+
+body[data-page="home"] .home-work-outcome {
+  margin-top: 30px !important;
+  padding: 22px 22px !important;
+  border-radius: 24px !important;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.94), rgba(248, 250, 252, 0.84)) !important;
+  border: 1px solid rgba(148, 163, 184, 0.22) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    0 12px 28px rgba(15, 23, 42, 0.035) !important;
+}
+
+body[data-page="home"] .home-work-outcome strong {
+  display: block !important;
+  margin-bottom: 11px !important;
+  color: #0f172a !important;
+  font-size: 0.76rem !important;
+  font-weight: 950 !important;
+  letter-spacing: 0.17em !important;
+  text-transform: uppercase !important;
+}
+
+body[data-page="home"] .home-work-outcome p {
+  margin: 0 !important;
+  color: #64748b !important;
+  font-size: 0.95rem !important;
+  line-height: 1.72 !important;
+}
+
+/* =========================
+   TOOLS PILLS
+========================= */
+
+body[data-page="home"] .home-work-tools {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+  margin-top: 24px !important;
+}
+
+body[data-page="home"] .home-work-tools span {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 35px !important;
+  padding: 0 15px !important;
+  border-radius: 999px !important;
+  background: rgba(255, 255, 255, 0.82) !important;
+  border: 1px solid rgba(148, 163, 184, 0.25) !important;
+  color: #334155 !important;
+  font-size: 0.8rem !important;
+  font-weight: 850 !important;
+  line-height: 1 !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.84) !important;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    background 0.25s ease !important;
+}
+
+body[data-page="home"] .home-work-card:hover .home-work-tools span {
+  border-color: rgba(79, 70, 229, 0.32) !important;
+  color: #3730a3 !important;
+  background: rgba(238, 242, 255, 0.78) !important;
+}
+
+/* =========================
+   CARD CTA
+========================= */
+
+body[data-page="home"] .home-work-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  width: fit-content !important;
+  margin-top: auto !important;
+  padding-top: 32px !important;
+  color: #4f46e5 !important;
+  font-size: 0.96rem !important;
+  font-weight: 950 !important;
+  text-decoration: none !important;
+  letter-spacing: 0.005em !important;
+  transition:
+    gap 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease !important;
+}
+
+body[data-page="home"] .home-work-link:hover {
+  gap: 16px !important;
+  color: #0ea5e9 !important;
+  transform: translateX(4px) !important;
+}
+
+/* =========================
+   BOTTOM CTA
+========================= */
+
+body[data-page="home"] .home-work-section .home-section-action {
+  width: min(1180px, calc(100% - 48px)) !important;
+  margin: clamp(38px, 4.2vw, 58px) auto 0 !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+body[data-page="home"] .home-work-section .home-link-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  min-height: 56px !important;
+  padding: 0 30px !important;
+  border-radius: 999px !important;
+  background: linear-gradient(135deg, #10172f, #20145f) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.24) !important;
+  box-shadow:
+    0 20px 44px rgba(15, 23, 42, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22) !important;
+  font-size: 0.96rem !important;
+  font-weight: 900 !important;
+  text-decoration: none !important;
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    gap 0.28s ease !important;
+}
+
+body[data-page="home"] .home-work-section .home-link-btn:hover {
+  transform: translateY(-4px) !important;
+  gap: 17px !important;
+  box-shadow:
+    0 26px 58px rgba(15, 23, 42, 0.24),
+    0 12px 28px rgba(14, 165, 233, 0.14) !important;
+}
+
+/* =========================
+   RESPONSIVE — TABLET
+========================= */
+
+@media (max-width: 1180px) {
+  body[data-page="home"] .home-work-grid {
+    grid-template-columns: 1fr !important;
+    width: min(760px, calc(100% - 44px)) !important;
+  }
+
+  body[data-page="home"] .home-work-card {
+    min-height: auto !important;
+  }
+
+  body[data-page="home"] .home-work-section .home-section-title {
+    font-size: clamp(3rem, 7vw, 4.8rem) !important;
+  }
+}
+
+/* =========================
+   RESPONSIVE — MOBILE
+========================= */
+
+@media (max-width: 767px) {
+  body[data-page="home"] .home-work-section {
+    padding-top: 78px !important;
+    padding-bottom: 84px !important;
+  }
+
+  body[data-page="home"] .home-work-section::before {
+    inset: 14px 10px !important;
+    border-radius: 30px !important;
+  }
+
+  body[data-page="home"] .home-work-section .home-section-heading {
+    width: min(100% - 28px, 560px) !important;
+    margin-bottom: 38px !important;
+  }
+
+  body[data-page="home"] .home-work-section .home-section-title {
+    font-size: clamp(2.35rem, 10vw, 3.45rem) !important;
+    letter-spacing: -0.056em !important;
+  }
+
+  body[data-page="home"] .home-work-section .home-section-text {
+    font-size: 0.96rem !important;
+    line-height: 1.72 !important;
+  }
+
+  body[data-page="home"] .home-work-grid {
+    width: min(100% - 28px, 560px) !important;
+    gap: 20px !important;
+  }
+
+  body[data-page="home"] .home-work-card {
+    padding: 25px !important;
+    border-radius: 28px !important;
+  }
+
+  body[data-page="home"] .home-work-card h3 {
+    font-size: 1.52rem !important;
+    letter-spacing: -0.042em !important;
+  }
+
+  body[data-page="home"] .home-work-card p {
+    font-size: 0.94rem !important;
+  }
+
+  body[data-page="home"] .home-work-outcome {
+    padding: 18px !important;
+  }
+
+  body[data-page="home"] .home-work-section .home-section-action {
+    width: min(100% - 28px, 560px) !important;
+    margin-top: 30px !important;
+  }
+
+  body[data-page="home"] .home-work-section .home-link-btn {
+    width: 100% !important;
+  }
+}
+
+/* =========================================================
+   HOME — FEATURED WORK 2-CARD COMPACT FINAL PATCH
+   Paste at END of home.css
+========================================================= */
+
+body[data-page="home"] .home-work-grid {
+  width: min(1080px, calc(100% - 56px)) !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: clamp(28px, 3vw, 42px) !important;
+  align-items: stretch !important;
+}
+
+body[data-page="home"] .home-work-card {
+  min-height: 430px !important;
+  padding: clamp(30px, 2.4vw, 38px) !important;
+  border-radius: 34px !important;
+}
+
+body[data-page="home"] .home-work-badge {
+  margin-bottom: 22px !important;
+}
+
+body[data-page="home"] .home-work-card h3 {
+  font-size: clamp(1.7rem, 2.1vw, 2.35rem) !important;
+  line-height: 1.08 !important;
+  margin-bottom: 18px !important;
+  max-width: 92% !important;
+}
+
+body[data-page="home"] .home-work-card > p {
+  font-size: 0.98rem !important;
+  line-height: 1.68 !important;
+  max-width: 92% !important;
+}
+
+body[data-page="home"] .home-work-outcome {
+  margin-top: 24px !important;
+  padding: 19px 20px !important;
+  border-radius: 22px !important;
+}
+
+body[data-page="home"] .home-work-outcome p {
+  font-size: 0.92rem !important;
+  line-height: 1.62 !important;
+}
+
+body[data-page="home"] .home-work-tools {
+  margin-top: 20px !important;
+  gap: 9px !important;
+}
+
+body[data-page="home"] .home-work-tools span {
+  min-height: 32px !important;
+  padding: 0 13px !important;
+  font-size: 0.76rem !important;
+}
+
+body[data-page="home"] .home-work-link {
+  padding-top: 24px !important;
+  font-size: 0.94rem !important;
+}
+
+/* Center CTA properly under 2-card grid */
+body[data-page="home"] .home-work-section .home-section-action {
+  width: min(1080px, calc(100% - 56px)) !important;
+  justify-content: center !important;
+  margin-top: clamp(34px, 3.5vw, 48px) !important;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  body[data-page="home"] .home-work-grid {
+    width: min(760px, calc(100% - 44px)) !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  body[data-page="home"] .home-work-card {
+    min-height: auto !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  body[data-page="home"] .home-work-grid {
+    width: min(100% - 28px, 560px) !important;
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  body[data-page="home"] .home-work-card {
+    min-height: auto !important;
+    padding: 24px !important;
+    border-radius: 28px !important;
+  }
+
+  body[data-page="home"] .home-work-card h3 {
+    font-size: 1.55rem !important;
+    max-width: 100% !important;
+  }
+
+  body[data-page="home"] .home-work-card > p {
+    max-width: 100% !important;
+  }
+
+  body[data-page="home"] .home-work-section .home-section-action {
+    width: min(100% - 28px, 560px) !important;
+  }
+}
+
+/* =========================================================
+   HOME — FEATURED WORK FINAL CARD UPGRADE PATCH
+   Paste at END of home.css
+   Scope: only Featured Preview / home-work section
+========================================================= */
+
+/* Section tightening */
+body[data-page="home"] .home-work-section {
+  padding-top: clamp(90px, 6vw, 120px) !important;
+  padding-bottom: clamp(96px, 6.5vw, 130px) !important;
+}
+
+body[data-page="home"] .home-work-section::before {
+  inset: 24px max(28px, 4vw) !important;
+  background:
+    radial-gradient(circle at 10% 12%, rgba(99, 102, 241, 0.13), transparent 28%),
+    radial-gradient(circle at 90% 18%, rgba(14, 165, 233, 0.14), transparent 32%),
+    radial-gradient(circle at 50% 100%, rgba(168, 85, 247, 0.08), transparent 34%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.78), rgba(239, 248, 255, 0.68)) !important;
+  box-shadow:
+    0 38px 110px rgba(15, 23, 42, 0.075),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Heading compact + premium */
+body[data-page="home"] .home-work-section .home-section-heading {
+  margin-bottom: clamp(44px, 4vw, 58px) !important;
+}
+
+body[data-page="home"] .home-work-section .home-section-title {
+  font-size: clamp(3.25rem, 5.1vw, 5.25rem) !important;
+  line-height: 1.02 !important;
+  letter-spacing: -0.07em !important;
+}
+
+body[data-page="home"] .home-work-section .home-section-text {
+  margin-top: 22px !important;
+  max-width: 790px !important;
+  line-height: 1.72 !important;
+}
+
+/* 2-card premium layout */
+body[data-page="home"] .home-work-grid {
+  width: min(1120px, calc(100% - 56px)) !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: clamp(30px, 3vw, 46px) !important;
+}
+
+/* Card compact premium */
+body[data-page="home"] .home-work-card {
+  min-height: 460px !important;
+  padding: clamp(30px, 2.4vw, 38px) !important;
+  border-radius: 34px !important;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.94), rgba(246, 250, 255, 0.82)),
+    radial-gradient(circle at 90% 0%, rgba(99, 102, 241, 0.14), transparent 32%),
+    radial-gradient(circle at 0% 100%, rgba(14, 165, 233, 0.09), transparent 38%) !important;
+  border: 1px solid rgba(148, 163, 184, 0.26) !important;
+  box-shadow:
+    0 28px 80px rgba(15, 23, 42, 0.085),
+    0 10px 28px rgba(14, 165, 233, 0.045),
+    inset 0 1px 0 rgba(255, 255, 255, 0.98) !important;
+}
+
+/* Add premium corner accent */
+body[data-page="home"] .home-work-card::after {
+  width: 220px !important;
+  height: 220px !important;
+  top: -120px !important;
+  right: -105px !important;
+  background:
+    radial-gradient(circle, rgba(99, 102, 241, 0.20), rgba(14, 165, 233, 0.06) 45%, transparent 70%) !important;
+  opacity: 0.85 !important;
+}
+
+/* Better hover */
+body[data-page="home"] .home-work-card:hover {
+  transform: translateY(-10px) scale(1.012) !important;
+  border-color: rgba(79, 70, 229, 0.42) !important;
+  box-shadow:
+    0 44px 115px rgba(15, 23, 42, 0.15),
+    0 18px 44px rgba(37, 99, 235, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 1) !important;
+}
+
+/* Top content layout */
+body[data-page="home"] .home-work-top {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* Badge premium */
+body[data-page="home"] .home-work-badge {
+  min-height: 38px !important;
+  padding: 0 17px !important;
+  margin-bottom: 24px !important;
+  border-radius: 999px !important;
+  background:
+    linear-gradient(135deg, rgba(238, 242, 255, 0.96), rgba(240, 249, 255, 0.9)) !important;
+  border: 1px solid rgba(99, 102, 241, 0.24) !important;
+  color: #4f46e5 !important;
+  box-shadow:
+    0 12px 26px rgba(79, 70, 229, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Card title */
+body[data-page="home"] .home-work-card h3 {
+  max-width: 94% !important;
+  margin-bottom: 18px !important;
+  font-size: clamp(1.9rem, 2.3vw, 2.55rem) !important;
+  line-height: 1.04 !important;
+  letter-spacing: -0.062em !important;
+  color: #0f172a !important;
+}
+
+/* Description */
+body[data-page="home"] .home-work-card > p,
+body[data-page="home"] .home-work-top > p {
+  max-width: 94% !important;
+  font-size: 1rem !important;
+  line-height: 1.68 !important;
+  color: #64748b !important;
+  font-weight: 650 !important;
+}
+
+/* Business value box */
+body[data-page="home"] .home-work-outcome {
+  margin-top: 26px !important;
+  padding: 20px 22px !important;
+  border-radius: 22px !important;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(248, 250, 252, 0.88)) !important;
+  border: 1px solid rgba(148, 163, 184, 0.24) !important;
+  box-shadow:
+    0 16px 38px rgba(15, 23, 42, 0.045),
+    inset 0 1px 0 rgba(255, 255, 255, 0.96) !important;
+  transition:
+    transform 0.28s ease,
+    border-color 0.28s ease,
+    box-shadow 0.28s ease !important;
+}
+
+body[data-page="home"] .home-work-card:hover .home-work-outcome {
+  transform: translateY(-3px) !important;
+  border-color: rgba(79, 70, 229, 0.26) !important;
+  box-shadow:
+    0 20px 44px rgba(15, 23, 42, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 1) !important;
+}
+
+body[data-page="home"] .home-work-outcome strong {
+  margin-bottom: 10px !important;
+  color: #0f172a !important;
+  font-size: 0.74rem !important;
+  letter-spacing: 0.18em !important;
+}
+
+body[data-page="home"] .home-work-outcome span,
+body[data-page="home"] .home-work-outcome p {
+  display: block !important;
+  margin: 0 !important;
+  color: #64748b !important;
+  font-size: 0.94rem !important;
+  line-height: 1.62 !important;
+  font-weight: 620 !important;
+}
+
+/* Tool pills */
+body[data-page="home"] .home-work-tools {
+  margin-top: 22px !important;
+  gap: 10px !important;
+}
+
+body[data-page="home"] .home-work-tools span {
+  min-height: 34px !important;
+  padding: 0 14px !important;
+  border-radius: 999px !important;
+  background: rgba(255, 255, 255, 0.82) !important;
+  border: 1px solid rgba(148, 163, 184, 0.26) !important;
+  color: #334155 !important;
+  font-size: 0.78rem !important;
+  font-weight: 900 !important;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease !important;
+}
+
+body[data-page="home"] .home-work-tools span:hover {
+  transform: translateY(-3px) !important;
+  background: rgba(238, 242, 255, 0.9) !important;
+  border-color: rgba(79, 70, 229, 0.34) !important;
+  color: #4f46e5 !important;
+}
+
+/* CTA link inside card */
+body[data-page="home"] .home-work-link {
+  position: relative !important;
+  margin-top: auto !important;
+  padding-top: 28px !important;
+  color: #4f46e5 !important;
+  font-size: 0.98rem !important;
+  font-weight: 950 !important;
+  text-decoration: none !important;
+}
+
+body[data-page="home"] .home-work-link::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 0 !important;
+  bottom: -5px !important;
+  width: 0 !important;
+  height: 2px !important;
+  border-radius: 999px !important;
+  background: linear-gradient(90deg, #4f46e5, #0ea5e9) !important;
+  transition: width 0.28s ease !important;
+}
+
+body[data-page="home"] .home-work-link:hover {
+  color: #0ea5e9 !important;
+  gap: 16px !important;
+  transform: translateX(4px) !important;
+}
+
+body[data-page="home"] .home-work-link:hover::after {
+  width: 100% !important;
+}
+
+/* Bottom CTA */
+body[data-page="home"] .home-work-section .home-section-action {
+  margin-top: clamp(38px, 4vw, 54px) !important;
+}
+
+body[data-page="home"] .home-work-section .home-link-btn {
+  min-width: 250px !important;
+  min-height: 58px !important;
+  padding: 0 32px !important;
+  background:
+    linear-gradient(135deg, #10172f 0%, #19194f 48%, #28136d 100%) !important;
+  color: #ffffff !important;
+  border-radius: 999px !important;
+  box-shadow:
+    0 22px 52px rgba(15, 23, 42, 0.22),
+    0 10px 24px rgba(79, 70, 229, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22) !important;
+}
+
+body[data-page="home"] .home-work-section .home-link-btn:hover {
+  transform: translateY(-5px) !important;
+  box-shadow:
+    0 30px 68px rgba(15, 23, 42, 0.28),
+    0 14px 34px rgba(14, 165, 233, 0.16) !important;
+}
+
+/* Responsive tablet */
+@media (max-width: 1100px) {
+  body[data-page="home"] .home-work-grid {
+    width: min(760px, calc(100% - 44px)) !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  body[data-page="home"] .home-work-card {
+    min-height: auto !important;
+  }
+
+  body[data-page="home"] .home-work-card h3,
+  body[data-page="home"] .home-work-card > p,
+  body[data-page="home"] .home-work-top > p {
+    max-width: 100% !important;
+  }
+}
+
+/* Responsive mobile */
+@media (max-width: 767px) {
+  body[data-page="home"] .home-work-section {
+    padding-top: 72px !important;
+    padding-bottom: 82px !important;
+  }
+
+  body[data-page="home"] .home-work-section::before {
+    inset: 12px 8px !important;
+    border-radius: 28px !important;
+  }
+
+  body[data-page="home"] .home-work-section .home-section-title {
+    font-size: clamp(2.28rem, 10vw, 3.3rem) !important;
+    letter-spacing: -0.055em !important;
+  }
+
+  body[data-page="home"] .home-work-grid {
+    width: min(100% - 28px, 560px) !important;
+    gap: 22px !important;
+  }
+
+  body[data-page="home"] .home-work-card {
+    padding: 24px !important;
+    border-radius: 28px !important;
+  }
+
+  body[data-page="home"] .home-work-card h3 {
+    font-size: 1.6rem !important;
+    line-height: 1.08 !important;
+  }
+
+  body[data-page="home"] .home-work-card > p,
+  body[data-page="home"] .home-work-top > p {
+    font-size: 0.94rem !important;
+    line-height: 1.64 !important;
+  }
+
+  body[data-page="home"] .home-work-outcome {
+    padding: 18px !important;
+  }
+
+  body[data-page="home"] .home-work-section .home-link-btn {
+    width: 100% !important;
+  }
+}
+
+/* =========================================================
+   HOME — FEATURED PROJECT CARDS 10/10 PREMIUM PATCH
+   Paste at END of home.css
+   Scope: Featured Preview section only
+========================================================= */
+
+/* Section background premium depth */
+body[data-page="home"] .home-work-section {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+body[data-page="home"] .home-work-section::before {
+  background:
+    radial-gradient(circle at 12% 16%, rgba(99, 102, 241, 0.16), transparent 30%),
+    radial-gradient(circle at 86% 22%, rgba(14, 165, 233, 0.16), transparent 34%),
+    radial-gradient(circle at 54% 92%, rgba(168, 85, 247, 0.10), transparent 38%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.82), rgba(239, 248, 255, 0.72)) !important;
+}
+
+/* Grid balance */
+body[data-page="home"] .home-work-grid {
+  width: min(1160px, calc(100% - 64px)) !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: clamp(34px, 3.2vw, 52px) !important;
+  align-items: stretch !important;
+}
+
+/* Premium card shell */
+body[data-page="home"] .home-work-card {
+  position: relative !important;
+  isolation: isolate !important;
+  min-height: 500px !important;
+  padding: clamp(34px, 2.7vw, 44px) !important;
+  border-radius: 38px !important;
+  overflow: hidden !important;
+
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(247, 251, 255, 0.88)),
+    radial-gradient(circle at 92% 0%, rgba(99, 102, 241, 0.16), transparent 34%),
+    radial-gradient(circle at 0% 100%, rgba(14, 165, 233, 0.12), transparent 40%) !important;
+
+  border: 1px solid rgba(148, 163, 184, 0.28) !important;
+
+  box-shadow:
+    0 34px 90px rgba(15, 23, 42, 0.095),
+    0 14px 34px rgba(59, 130, 246, 0.055),
+    inset 0 1px 0 rgba(255, 255, 255, 1) !important;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease,
+    background 0.35s ease !important;
+}
+
+/* Top shine layer */
+body[data-page="home"] .home-work-card::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: -2 !important;
+  pointer-events: none !important;
+
+  background:
+    linear-gradient(
+      120deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.42) 38%,
+      rgba(255, 255, 255, 0.70) 50%,
+      rgba(255, 255, 255, 0.18) 62%,
+      transparent 100%
+    ) !important;
+
+  transform: translateX(-120%) !important;
+  transition: transform 0.75s ease !important;
+}
+
+/* Soft corner blob */
+body[data-page="home"] .home-work-card::after {
+  content: "" !important;
+  position: absolute !important;
+  width: 260px !important;
+  height: 260px !important;
+  top: -130px !important;
+  right: -120px !important;
+  z-index: -3 !important;
+  pointer-events: none !important;
+
+  background:
+    radial-gradient(circle, rgba(79, 70, 229, 0.22), rgba(14, 165, 233, 0.10) 48%, transparent 72%) !important;
+
+  filter: blur(2px) !important;
+  opacity: 0.95 !important;
+  transition: transform 0.35s ease, opacity 0.35s ease !important;
+}
+
+body[data-page="home"] .home-work-card:hover {
+  transform: translateY(-12px) scale(1.012) !important;
+  border-color: rgba(79, 70, 229, 0.46) !important;
+  box-shadow:
+    0 48px 130px rgba(15, 23, 42, 0.16),
+    0 18px 48px rgba(59, 130, 246, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 1) !important;
+}
+
+body[data-page="home"] .home-work-card:hover::before {
+  transform: translateX(120%) !important;
+}
+
+body[data-page="home"] .home-work-card:hover::after {
+  transform: scale(1.16) translate(-10px, 10px) !important;
+  opacity: 1 !important;
+}
+
+/* Inner layout should feel structured */
+body[data-page="home"] .home-work-top {
+  position: relative !important;
+  padding-bottom: 26px !important;
+}
+
+body[data-page="home"] .home-work-top::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 0 !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  height: 1px !important;
+  background: linear-gradient(
+    90deg,
+    rgba(79, 70, 229, 0.20),
+    rgba(14, 165, 233, 0.12),
+    transparent
+  ) !important;
+}
+
+/* Badge */
+body[data-page="home"] .home-work-badge {
+  width: fit-content !important;
+  max-width: 100% !important;
+  min-height: 40px !important;
+  padding: 0 18px !important;
+  margin-bottom: 26px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  border-radius: 999px !important;
+  background:
+    linear-gradient(135deg, rgba(238, 242, 255, 0.98), rgba(240, 249, 255, 0.92)) !important;
+  border: 1px solid rgba(99, 102, 241, 0.28) !important;
+
+  color: #4f46e5 !important;
+  font-size: 0.75rem !important;
+  font-weight: 950 !important;
+  letter-spacing: 0.17em !important;
+  text-transform: uppercase !important;
+
+  box-shadow:
+    0 14px 30px rgba(79, 70, 229, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 1) !important;
+}
+
+/* Title stronger but controlled */
+body[data-page="home"] .home-work-card h3 {
+  max-width: 96% !important;
+  margin: 0 0 20px !important;
+
+  color: #0f172a !important;
+  font-size: clamp(2rem, 2.35vw, 2.65rem) !important;
+  line-height: 1.05 !important;
+  letter-spacing: -0.065em !important;
+  font-weight: 950 !important;
+}
+
+/* Description refined */
+body[data-page="home"] .home-work-top > p {
+  max-width: 96% !important;
+  margin: 0 !important;
+
+  color: #5f6f86 !important;
+  font-size: 1.01rem !important;
+  line-height: 1.72 !important;
+  font-weight: 680 !important;
+  letter-spacing: -0.018em !important;
+}
+
+/* Business value box — make it premium, not plain */
+body[data-page="home"] .home-work-outcome {
+  position: relative !important;
+  margin-top: 26px !important;
+  padding: 22px 24px 22px 26px !important;
+  border-radius: 24px !important;
+  overflow: hidden !important;
+
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.90)),
+    radial-gradient(circle at 100% 0%, rgba(79, 70, 229, 0.08), transparent 42%) !important;
+
+  border: 1px solid rgba(148, 163, 184, 0.27) !important;
+
+  box-shadow:
+    0 18px 42px rgba(15, 23, 42, 0.055),
+    inset 0 1px 0 rgba(255, 255, 255, 1) !important;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease !important;
+}
+
+body[data-page="home"] .home-work-outcome::before {
+  content: "" !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 20px !important;
+  bottom: 20px !important;
+  width: 4px !important;
+  border-radius: 999px !important;
+  background: linear-gradient(180deg, #4f46e5, #0ea5e9) !important;
+}
+
+body[data-page="home"] .home-work-card:hover .home-work-outcome {
+  transform: translateY(-4px) !important;
+  border-color: rgba(79, 70, 229, 0.34) !important;
+  box-shadow:
+    0 24px 54px rgba(15, 23, 42, 0.085),
+    0 10px 24px rgba(14, 165, 233, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 1) !important;
+}
+
+body[data-page="home"] .home-work-outcome strong {
+  display: block !important;
+  margin-bottom: 10px !important;
+
+  color: #0f172a !important;
+  font-size: 0.74rem !important;
+  line-height: 1 !important;
+  font-weight: 950 !important;
+  letter-spacing: 0.19em !important;
+  text-transform: uppercase !important;
+}
+
+body[data-page="home"] .home-work-outcome span {
+  display: block !important;
+  margin: 0 !important;
+
+  color: #5f6f86 !important;
+  font-size: 0.96rem !important;
+  line-height: 1.64 !important;
+  font-weight: 660 !important;
+}
+
+/* Tools line premium */
+body[data-page="home"] .home-work-tools {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+  margin-top: 22px !important;
+}
+
+body[data-page="home"] .home-work-tools span {
+  min-height: 34px !important;
+  padding: 0 15px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  border-radius: 999px !important;
+  background: rgba(255, 255, 255, 0.84) !important;
+  border: 1px solid rgba(148, 163, 184, 0.30) !important;
+
+  color: #334155 !important;
+  font-size: 0.78rem !important;
+  font-weight: 950 !important;
+
+  box-shadow:
+    0 10px 20px rgba(15, 23, 42, 0.035),
+    inset 0 1px 0 rgba(255, 255, 255, 1) !important;
+
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease !important;
+}
+
+body[data-page="home"] .home-work-tools span:hover {
+  transform: translateY(-3px) !important;
+  color: #4f46e5 !important;
+  background: rgba(238, 242, 255, 0.98) !important;
+  border-color: rgba(79, 70, 229, 0.38) !important;
+  box-shadow:
+    0 16px 30px rgba(79, 70, 229, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 1) !important;
+}
+
+/* Project direction link as premium inline CTA */
+body[data-page="home"] .home-work-link {
+  position: relative !important;
+  width: fit-content !important;
+  margin-top: auto !important;
+  padding-top: 30px !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+
+  color: #4f46e5 !important;
+  font-size: 0.98rem !important;
+  font-weight: 950 !important;
+  letter-spacing: -0.01em !important;
+  text-decoration: none !important;
+
+  transition:
+    color 0.25s ease,
+    gap 0.25s ease,
+    transform 0.25s ease !important;
+}
+
+body[data-page="home"] .home-work-link::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 0 !important;
+  bottom: -6px !important;
+  width: 42px !important;
+  height: 2px !important;
+  border-radius: 999px !important;
+  background: linear-gradient(90deg, #4f46e5, #0ea5e9) !important;
+  transition: width 0.25s ease !important;
+}
+
+body[data-page="home"] .home-work-link i {
+  transition: transform 0.25s ease !important;
+}
+
+body[data-page="home"] .home-work-link:hover {
+  color: #0ea5e9 !important;
+  gap: 16px !important;
+  transform: translateX(4px) !important;
+}
+
+body[data-page="home"] .home-work-link:hover::after {
+  width: 100% !important;
+}
+
+body[data-page="home"] .home-work-link:hover i {
+  transform: translateX(4px) !important;
+}
+
+/* Bottom CTA under cards */
+body[data-page="home"] .home-work-section .home-section-action {
+  margin-top: clamp(42px, 4vw, 58px) !important;
+}
+
+body[data-page="home"] .home-work-section .home-link-btn {
+  min-width: 260px !important;
+  min-height: 60px !important;
+  border-radius: 999px !important;
+
+  background:
+    linear-gradient(135deg, #0f172a 0%, #17164f 48%, #2b1378 100%) !important;
+  color: #fff !important;
+
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+
+  box-shadow:
+    0 24px 58px rgba(15, 23, 42, 0.25),
+    0 12px 28px rgba(79, 70, 229, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.20) !important;
+}
+
+body[data-page="home"] .home-work-section .home-link-btn:hover {
+  transform: translateY(-5px) !important;
+  box-shadow:
+    0 34px 76px rgba(15, 23, 42, 0.32),
+    0 16px 38px rgba(14, 165, 233, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.24) !important;
+}
+
+/* Tablet */
+@media (max-width: 1100px) {
+  body[data-page="home"] .home-work-grid {
+    width: min(760px, calc(100% - 44px)) !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  body[data-page="home"] .home-work-card {
+    min-height: auto !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  body[data-page="home"] .home-work-grid {
+    width: min(100% - 28px, 560px) !important;
+    gap: 24px !important;
+  }
+
+  body[data-page="home"] .home-work-card {
+    padding: 25px !important;
+    border-radius: 30px !important;
+  }
+
+  body[data-page="home"] .home-work-badge {
+    min-height: 36px !important;
+    padding: 0 14px !important;
+    margin-bottom: 22px !important;
+    font-size: 0.68rem !important;
+    letter-spacing: 0.13em !important;
+  }
+
+  body[data-page="home"] .home-work-card h3 {
+    font-size: 1.72rem !important;
+    line-height: 1.08 !important;
+    letter-spacing: -0.052em !important;
+  }
+
+  body[data-page="home"] .home-work-top > p {
+    font-size: 0.95rem !important;
+    line-height: 1.62 !important;
+  }
+
+  body[data-page="home"] .home-work-outcome {
+    padding: 19px 19px 19px 22px !important;
+  }
+
+  body[data-page="home"] .home-work-tools span {
+    min-height: 32px !important;
+    padding: 0 12px !important;
+  }
+
+  body[data-page="home"] .home-work-section .home-link-btn {
+    width: min(100%, 340px) !important;
+  }
+}
+
+/* =========================================================
+   HOME — FEATURED PROJECT CARDS FINAL POLISH LOCK PATCH
+   Paste at END of home.css
+========================================================= */
+
+body[data-page="home"] .home-work-card {
+  min-height: 470px !important;
+  padding: clamp(30px, 2.5vw, 40px) !important;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.97), rgba(247, 252, 255, 0.9)),
+    radial-gradient(circle at 92% 4%, rgba(99, 102, 241, 0.18), transparent 34%),
+    radial-gradient(circle at 8% 100%, rgba(14, 165, 233, 0.10), transparent 36%) !important;
+  border: 1px solid rgba(99, 102, 241, 0.22) !important;
+  box-shadow:
+    0 34px 90px rgba(15, 23, 42, 0.105),
+    0 14px 36px rgba(79, 70, 229, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 1) !important;
+}
+
+body[data-page="home"] .home-work-card:hover {
+  transform: translateY(-14px) scale(1.014) !important;
+  border-color: rgba(79, 70, 229, 0.48) !important;
+  box-shadow:
+    0 52px 130px rgba(15, 23, 42, 0.17),
+    0 20px 54px rgba(79, 70, 229, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 1) !important;
+}
+
+body[data-page="home"] .home-work-card::after {
+  width: 300px !important;
+  height: 300px !important;
+  top: -155px !important;
+  right: -145px !important;
+  background:
+    radial-gradient(circle, rgba(99, 102, 241, 0.24), rgba(14, 165, 233, 0.10) 46%, transparent 72%) !important;
+}
+
+body[data-page="home"] .home-work-badge {
+  margin-bottom: 22px !important;
+  background:
+    linear-gradient(135deg, rgba(238, 242, 255, 0.98), rgba(224, 242, 254, 0.88)) !important;
+  border-color: rgba(79, 70, 229, 0.28) !important;
+}
+
+body[data-page="home"] .home-work-card h3 {
+  margin-bottom: 18px !important;
+  text-wrap: balance !important;
+}
+
+body[data-page="home"] .home-work-top {
+  padding-bottom: 24px !important;
+}
+
+body[data-page="home"] .home-work-top > p {
+  max-width: 92% !important;
+}
+
+body[data-page="home"] .home-work-outcome {
+  margin-top: 24px !important;
+  padding: 21px 24px 21px 28px !important;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.92)),
+    radial-gradient(circle at 100% 0%, rgba(79, 70, 229, 0.10), transparent 44%) !important;
+}
+
+body[data-page="home"] .home-work-outcome::before {
+  width: 5px !important;
+  top: 22px !important;
+  bottom: 22px !important;
+  box-shadow: 0 0 18px rgba(14, 165, 233, 0.35) !important;
+}
+
+body[data-page="home"] .home-work-tools {
+  margin-top: 20px !important;
+}
+
+body[data-page="home"] .home-work-link {
+  margin-top: auto !important;
+  padding-top: 28px !important;
+  font-size: 1rem !important;
+}
+
+body[data-page="home"] .home-work-link::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 20px;
+  width: calc(100% + 28px);
+  height: 42px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(238, 242, 255, 0.72), rgba(240, 249, 255, 0.55));
+  border: 1px solid rgba(99, 102, 241, 0.16);
+  opacity: 0;
+  transform: scale(0.96);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: -1;
+}
+
+body[data-page="home"] .home-work-link:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+body[data-page="home"] .home-work-link:hover {
+  transform: translateX(6px) !important;
+}
+
+/* Better card balance on desktop */
+@media (min-width: 1110px) {
+  body[data-page="home"] .home-work-grid {
+    align-items: stretch !important;
+  }
+
+  body[data-page="home"] .home-work-card {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+}
+
+/* Mobile final safety */
+@media (max-width: 767px) {
+  body[data-page="home"] .home-work-card {
+    min-height: auto !important;
+    padding: 24px !important;
+  }
+
+  body[data-page="home"] .home-work-top > p {
+    max-width: 100% !important;
+  }
+
+  body[data-page="home"] .home-work-link::before {
+    display: none !important;
+  }
+}

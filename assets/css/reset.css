@@ -1,0 +1,156 @@
+/* =========================================
+   GLOBAL RESET + TYPOGRAPHY SYSTEM
+========================================= */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margins */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* HTML & Body */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-main);
+  background: var(--bg-main);
+  color: var(--text-body);
+  line-height: var(--lh-body);
+  font-size: var(--fs-base);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Images */
+img,
+picture,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Lists */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Buttons */
+button {
+  border: none;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Inputs */
+input,
+textarea,
+select {
+  font: inherit;
+  outline: none;
+  border: none;
+}
+
+/* =========================================
+   TYPOGRAPHY SYSTEM
+========================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-main);
+  line-height: var(--lh-heading);
+  font-weight: 800;
+  letter-spacing: var(--tracking-tight);
+}
+
+/* Heading scale */
+h1 {
+  font-size: var(--fs-hero);
+}
+
+h2 {
+  font-size: var(--fs-3xl);
+}
+
+h3 {
+  font-size: var(--fs-xl);
+}
+
+h4 {
+  font-size: var(--fs-lg);
+}
+
+/* Paragraphs */
+p {
+  color: var(--text-body);
+  font-size: var(--fs-base);
+}
+
+/* Small text */
+small {
+  font-size: var(--fs-sm);
+  color: var(--text-soft);
+}
+
+/* Strong text */
+strong {
+  color: var(--text-main);
+  font-weight: 700;
+}
+
+/* Labels */
+label {
+  font-size: var(--fs-sm);
+  color: var(--text-soft);
+}
+
+/* =========================================
+   SELECTION STYLE
+========================================= */
+
+::selection {
+  background: var(--primary-light);
+  color: var(--text-white);
+}
+
+/* =========================================
+   SCROLLBAR (SUBTLE PREMIUM)
+========================================= */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.25);
+  border-radius: var(--radius-pill);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.45);
+}

@@ -1,0 +1,52 @@
+html, body {
+  overflow-x: hidden;
+}
+
+/* ===============================
+   CARD HEADING BLUE DOT FIX
+   (SAFE MODE - NO STRUCTURE CHANGE)
+================================ */
+
+/* About + Projects + Skills + Experience sab cover ho jayega */
+.card h3,
+.card h4,
+.projects-section h3,
+.projects-section h4,
+.about-section h3,
+.about-section h4 {
+  position: relative;
+  padding-left: 18px;
+}
+
+/* Blue dot */
+.card h3::before,
+.card h4::before,
+.projects-section h3::before,
+.projects-section h4::before,
+.about-section h3::before,
+.about-section h4::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  
+  width: 8px;
+  height: 8px;
+  
+  background: #5b6cff;
+  border-radius: 50%;
+  
+  box-shadow: 0 0 0 4px rgba(91, 108, 255, 0.1);
+}
+
+/* Header utility polish */
+.v3-header,
+.v3-header-container,
+.v3-nav-link,
+.v3-mobile-link,
+.v3-mobile-menu,
+.v3-menu-toggle,
+.v3-cta {
+  will-change: auto;
+}

@@ -1,0 +1,95 @@
+/* =========================================================
+   MAIN CSS IMPORT SYSTEM
+   Mohit Gupta Portfolio Website
+   Global first • Page styles second • Safe architecture
+========================================================= */
+
+/* -------------------------------
+   01. Design System
+-------------------------------- */
+@import url("./variables.css");
+
+/* -------------------------------
+   02. Base Foundation
+-------------------------------- */
+@import url("./reset.css");
+@import url("./layout.css");
+
+/* -------------------------------
+   03. Global Components
+   Header • Navbar • Mobile Menu • Footer • Buttons
+-------------------------------- */
+@import url("./components.css");
+
+/* -------------------------------
+   04. Motion + Utilities
+-------------------------------- */
+@import url("./animations.css");
+@import url("./utilities.css");
+
+/* -------------------------------
+   05. Page Styles
+   Page CSS should ideally be scoped using body[data-page="..."]
+-------------------------------- */
+@import url("./home.css");
+@import url("./about.css");
+@import url("./projects.css");
+@import url("./skills.css");
+@import url("./experience.css");
+@import url("./contact.css");
+@import url("./not-found.css");
+
+/* =========================================================
+   GLOBAL SAFETY LAYER
+   Purpose:
+   - Keep cross-page behavior stable while page CSS cleanup continues
+   - Do not add heavy design rules here
+========================================================= */
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+}
+
+/* Make all images safer globally */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Common hidden utility */
+[hidden] {
+  display: none !important;
+}
+
+/* Improve keyboard focus visibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid rgba(79, 70, 229, 0.35);
+  outline-offset: 3px;
+}
+
+/* Prevent sticky header from covering anchor sections */
+section,
+[id] {
+  scroll-margin-top: 104px;
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

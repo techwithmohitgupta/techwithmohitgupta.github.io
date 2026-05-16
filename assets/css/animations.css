@@ -1,0 +1,342 @@
+.is-visible,
+.show {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* =========================================
+   PREMIUM LOGO-ONLY PRELOADER - FINAL
+========================================= */
+
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(circle at 18% 18%, rgba(99, 102, 241, 0.16), transparent 26%),
+    radial-gradient(circle at 82% 22%, rgba(59, 130, 246, 0.14), transparent 24%),
+    radial-gradient(circle at 50% 82%, rgba(168, 85, 247, 0.12), transparent 28%),
+    linear-gradient(180deg, #f8fafc 0%, #eef2ff 52%, #f8fafc 100%);
+
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+
+  transition: opacity 0.7s ease, visibility 0.7s ease;
+}
+
+#preloader.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.preloader-bg {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(42px);
+  opacity: 0.8;
+  animation: preloaderBgFloat 8s ease-in-out infinite;
+  will-change: transform;
+}
+
+.preloader-bg-1 {
+  width: 320px;
+  height: 320px;
+  top: 10%;
+  left: 8%;
+  background: rgba(99, 102, 241, 0.2);
+}
+
+.preloader-bg-2 {
+  width: 360px;
+  height: 360px;
+  right: 8%;
+  top: 18%;
+  background: rgba(59, 130, 246, 0.16);
+  animation-delay: 1s;
+}
+
+.preloader-bg-3 {
+  width: 340px;
+  height: 340px;
+  bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(168, 85, 247, 0.14);
+  animation-delay: 2s;
+}
+
+.preloader-center {
+  position: relative;
+  z-index: 2;
+  width: min(76vw, 460px);
+  height: min(76vw, 460px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preloader-logo-shell {
+  position: relative;
+  z-index: 3;
+  width: 300px;
+  height: 300px;
+  border-radius: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.99), rgba(243, 246, 255, 0.95));
+  border: 1px solid rgba(203, 213, 225, 0.6);
+
+  box-shadow:
+    0 26px 70px rgba(15, 23, 42, 0.10),
+    0 0 0 18px rgba(99, 102, 241, 0.06),
+    0 0 90px rgba(99, 102, 241, 0.14);
+
+  animation: preloaderShellPulse 2.8s ease-in-out infinite;
+  will-change: transform;
+}
+
+.preloader-logo {
+  width: 220px;
+  height: auto;
+  object-fit: contain;
+  image-rendering: auto;
+  animation: preloaderLogoPulse 2.6s ease-in-out infinite;
+  will-change: transform;
+}
+
+.preloader-orbit {
+  position: absolute;
+  inset: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.preloader-orbit::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.preloader-orbit-outer {
+  width: 420px;
+  height: 420px;
+  border: 2px solid rgba(99, 102, 241, 0.16);
+  animation: preloaderSpin 9s linear infinite;
+}
+
+.preloader-orbit-outer::before {
+  width: 18px;
+  height: 18px;
+  background: linear-gradient(135deg, #6366f1, #60a5fa);
+  box-shadow: 0 0 22px rgba(99, 102, 241, 0.38);
+}
+
+.preloader-orbit-middle {
+  width: 360px;
+  height: 360px;
+  border: 2px solid rgba(59, 130, 246, 0.14);
+  animation: preloaderSpinReverse 7s linear infinite;
+}
+
+.preloader-orbit-middle::before {
+  width: 14px;
+  height: 14px;
+  background: linear-gradient(135deg, #60a5fa, #a855f7);
+  box-shadow: 0 0 18px rgba(59, 130, 246, 0.30);
+}
+
+.preloader-orbit-inner {
+  width: 310px;
+  height: 310px;
+  border: 1px solid rgba(168, 85, 247, 0.14);
+  animation: preloaderSpin 5.8s linear infinite;
+}
+
+.preloader-orbit-inner::before {
+  width: 10px;
+  height: 10px;
+  background: linear-gradient(135deg, #a855f7, #6366f1);
+  box-shadow: 0 0 14px rgba(168, 85, 247, 0.26);
+}
+
+@keyframes preloaderSpin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes preloaderSpinReverse {
+  from {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
+
+@keyframes preloaderLogoPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.95;
+  }
+  50% {
+    transform: scale(1.045);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.95;
+  }
+}
+
+@keyframes preloaderShellPulse {
+  0% {
+    transform: scale(1);
+    box-shadow:
+      0 26px 70px rgba(15, 23, 42, 0.10),
+      0 0 0 18px rgba(99, 102, 241, 0.06),
+      0 0 90px rgba(99, 102, 241, 0.14);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow:
+      0 30px 78px rgba(15, 23, 42, 0.12),
+      0 0 0 22px rgba(99, 102, 241, 0.08),
+      0 0 100px rgba(99, 102, 241, 0.16);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow:
+      0 26px 70px rgba(15, 23, 42, 0.10),
+      0 0 0 18px rgba(99, 102, 241, 0.06),
+      0 0 90px rgba(99, 102, 241, 0.14);
+  }
+}
+
+@keyframes preloaderBgFloat {
+  0% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.04);
+  }
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+}
+
+/* Page Entry */
+body.page-enter {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+body.page-enter-active {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+@media (max-width: 768px) {
+  .preloader-center {
+    width: min(84vw, 360px);
+    height: min(84vw, 360px);
+  }
+
+  .preloader-logo-shell {
+    width: 220px;
+    height: 220px;
+    border-radius: 34px;
+  }
+
+  .preloader-logo {
+    width: 160px;
+  }
+
+  .preloader-orbit-outer {
+    width: 320px;
+    height: 320px;
+  }
+
+  .preloader-orbit-middle {
+    width: 276px;
+    height: 276px;
+  }
+
+  .preloader-orbit-inner {
+    width: 238px;
+    height: 238px;
+  }
+
+  .preloader-orbit-outer::before {
+    width: 15px;
+    height: 15px;
+  }
+
+  .preloader-orbit-middle::before {
+    width: 12px;
+    height: 12px;
+  }
+
+  .preloader-orbit-inner::before {
+    width: 9px;
+    height: 9px;
+  }
+}
+
+@media (max-width: 480px) {
+  .preloader-center {
+    width: min(88vw, 310px);
+    height: min(88vw, 310px);
+  }
+
+  .preloader-logo-shell {
+    width: 190px;
+    height: 190px;
+    border-radius: 28px;
+  }
+
+  .preloader-logo {
+    width: 138px;
+  }
+
+  .preloader-orbit-outer {
+    width: 275px;
+    height: 275px;
+  }
+
+  .preloader-orbit-middle {
+    width: 236px;
+    height: 236px;
+  }
+
+  .preloader-orbit-inner {
+    width: 204px;
+    height: 204px;
+  }
+
+  .preloader-bg {
+    filter: blur(32px);
+  }
+}

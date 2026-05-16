@@ -1,0 +1,211 @@
+.container,
+.v3-container,
+.contactv3-container {
+  width: 100%;
+  max-width: var(--container);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+section {
+  position: relative;
+  scroll-margin-top: 100px;
+}
+
+/* =========================================
+   GLOBAL LAYOUT SYSTEM
+========================================= */
+
+/* Reset container behavior */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.container-narrow {
+  max-width: var(--container-narrow);
+}
+
+.container-readable {
+  max-width: var(--container-readable);
+}
+
+/* =========================================
+   SECTION SYSTEM
+========================================= */
+
+section {
+  padding: var(--space-section) 0;
+  position: relative;
+}
+
+/* Section spacing variations */
+.section-sm {
+  padding: var(--space-xl) 0;
+}
+
+.section-lg {
+  padding: var(--space-5xl) 0;
+}
+
+/* Remove top padding when needed */
+.section-no-top {
+  padding-top: 0;
+}
+
+/* Remove bottom padding when needed */
+.section-no-bottom {
+  padding-bottom: 0;
+}
+
+/* =========================================
+   SECTION HEADER SYSTEM
+========================================= */
+
+.section-header {
+  max-width: var(--container-readable);
+  margin-bottom: var(--space-3xl);
+}
+
+.section-label {
+  display: inline-block;
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: var(--space-sm);
+}
+
+.section-title {
+  font-size: var(--fs-3xl);
+  line-height: var(--lh-heading);
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: var(--space-md);
+}
+
+.section-subtitle {
+  font-size: var(--fs-md);
+  color: var(--text-body);
+  line-height: var(--lh-body);
+}
+
+/* Centered variation */
+.section-header-center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =========================================
+   GRID SYSTEM
+========================================= */
+
+.grid {
+  display: grid;
+  gap: var(--space-xl);
+}
+
+/* Responsive grid helpers */
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-auto {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* =========================================
+   FLEX HELPERS
+========================================= */
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================================
+   PAGE HERO SYSTEM (BASE)
+========================================= */
+
+.page-hero {
+  padding: var(--space-4xl) 0 var(--space-2xl);
+}
+
+.page-hero-content {
+  max-width: var(--container-readable);
+}
+
+.page-title {
+  font-size: var(--fs-4xl);
+  font-weight: 800;
+  line-height: var(--lh-tight);
+  margin-bottom: var(--space-sm);
+}
+
+.page-breadcrumb {
+  font-size: var(--fs-sm);
+  color: var(--text-soft);
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .section-header {
+    margin-bottom: var(--space-2xl);
+  }
+
+  .section-title {
+    font-size: var(--fs-2xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 18px;
+  }
+
+  section {
+    padding: var(--space-section-mobile) 0;
+  }
+
+  .section-title {
+    font-size: var(--fs-xl);
+  }
+
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}

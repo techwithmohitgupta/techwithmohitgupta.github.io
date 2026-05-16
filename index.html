@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <style>
+    html.preloader-lock,
+    html.preloader-lock body {
+      opacity: 0;
+      visibility: hidden;
+      overflow: hidden;
+    }
+  </style>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta
+    name="description"
+    content="Mohit Gupta - Data Analytics and Business Intelligence portfolio focused on dashboards, insights, decision systems, and business clarity."
+  />
+
+  <meta name="author" content="Mohit Gupta" />
+
+  <title>Mohit Gupta | Data Analytics Portfolio</title>
+
+  <!-- Brand Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/brand/mohit-gupta-logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/brand/mohit-gupta-logo.png">
+  <link rel="shortcut icon" href="./assets/images/brand/mohit-gupta-logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="./assets/images/brand/mohit-gupta-logo.png">
+
+  <!-- UI Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/ui/mohit-favicon-icon-modified.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/ui/mohit-favicon-icon-modified.png">
+  <link rel="shortcut icon" href="./assets/icons/ui/mohit-favicon-icon-modified.png" type="image/png">
+  <link rel="apple-touch-icon" href="./assets/icons/ui/mohit-favicon-icon-modified.png">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="./assets/css/main.css">
+
+  <script>
+    document.documentElement.classList.add("preloader-lock");
+  </script>
+
+</head>
+
+<body data-page="home">
+
+<!-- =========================================
+   PREMIUM PRELOADER
+========================================= -->
+<div id="preloader" aria-hidden="true">
+  <div class="preloader-bg preloader-bg-1"></div>
+  <div class="preloader-bg preloader-bg-2"></div>
+  <div class="preloader-bg preloader-bg-3"></div>
+
+  <div class="preloader-center">
+    <div class="preloader-orbit preloader-orbit-outer"></div>
+    <div class="preloader-orbit preloader-orbit-middle"></div>
+    <div class="preloader-orbit preloader-orbit-inner"></div>
+
+    <div class="preloader-logo-shell">
+      <img
+        src="./assets/images/brand/mohit-gupta-logo.png"
+        alt="Mohit Gupta Brand Logo"
+        class="preloader-logo"
+      />
+    </div>
+  </div>
+</div>
+
+<!-- =========================================
+   GLOBAL HEADER
+========================================= -->
+<header class="v3-header" id="siteHeader">
+  <div class="v3-header-container">
+
+    <!-- Logo -->
+    <a href="index.html" class="v3-logo-link" aria-label="Mohit Gupta Home">
+      <img
+        src="./assets/images/brand/mohit-gupta-logo.png"
+        alt="Mohit Gupta Personal Brand Logo"
+        class="v3-brand-logo"
+      />
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="v3-nav" aria-label="Main Navigation">
+      <a href="index.html" class="v3-nav-link active" aria-current="page">Home</a>
+      <a href="about.html" class="v3-nav-link">About</a>
+      <a href="projects.html" class="v3-nav-link">Projects</a>
+      <a href="skills.html" class="v3-nav-link">Skills</a>
+      <a href="experience.html" class="v3-nav-link">Experience</a>
+    </nav>
+
+    <!-- CTA -->
+    <a href="contact.html" class="v3-cta">
+      Let’s Connect
+    </a>
+
+    <!-- Mobile Menu Toggle -->
+    <button
+      class="v3-menu-toggle"
+      aria-label="Open Menu"
+      aria-expanded="false"
+      aria-controls="v3-mobile-menu"
+      type="button"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="v3-mobile-menu" id="v3-mobile-menu">
+    <div class="v3-mobile-menu-header">
+      <span>Menu</span>
+
+      <button
+        class="v3-menu-close"
+        aria-label="Close Menu"
+        type="button"
+      >
+        &times;
+      </button>
+    </div>
+
+    <nav class="v3-mobile-nav" aria-label="Mobile Navigation">
+      <a href="index.html" class="v3-mobile-link active" aria-current="page">Home</a>
+      <a href="about.html" class="v3-mobile-link">About</a>
+      <a href="projects.html" class="v3-mobile-link">Projects</a>
+      <a href="skills.html" class="v3-mobile-link">Skills</a>
+      <a href="experience.html" class="v3-mobile-link">Experience</a>
+    </nav>
+
+    <div class="v3-mobile-cta-wrap">
+      <a href="contact.html" class="v3-mobile-cta">
+        Let’s Connect
+      </a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ==========================================
+     V3 HERO SECTION — FULLY DYNAMIC STRUCTURE
+     Left + Right side prepared for home.js data rendering
+=========================================== -->
+<section class="v3-hero home-hero" id="home" aria-label="Portfolio homepage hero section">
+  <div class="v3-container home-hero-container">
+
+    <!-- Background decorative layer -->
+    <div class="home-hero-bg" aria-hidden="true">
+      <span class="home-hero-orb home-hero-orb-one"></span>
+      <span class="home-hero-orb home-hero-orb-two"></span>
+      <span class="home-hero-grid"></span>
+    </div>
+
+    <div class="home-hero-layout">
+
+      <!-- LEFT SIDE: Dynamic Hero Content -->
+      <div class="home-hero-content" data-home-hero-left>
+        
+        <div class="home-hero-eyebrow" id="homeHeroEyebrow">
+          Data Analytics • Business Intelligence • Decision Systems
+        </div>
+
+        <h1 class="home-hero-title" aria-label="Turning Data into Business Clarity">
+          <span class="home-hero-title-line">Turning Data</span>
+          <span class="home-hero-title-line home-hero-title-middle">into</span>
+          <span class="home-hero-title-line home-hero-title-dynamic">
+            <span id="homeTypingText" class="home-typing-text">Business Clarity</span>
+          </span>
+        </h1>
+
+        <p class="home-hero-description" id="homeHeroDescription">
+          I work with data to uncover insights that help businesses improve performance,
+          understand customers, and make better decisions across eCommerce, marketing,
+          and analytics domains.
+        </p>
+
+        <div class="home-hero-actions" id="homeHeroActions">
+          <a href="projects.html" class="home-hero-btn home-hero-btn-primary">
+            <span>View Projects</span>
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+
+          <a href="contact.html" class="home-hero-btn home-hero-btn-secondary">
+            <span>Let’s Connect</span>
+            <i class="fa-regular fa-paper-plane" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <div class="home-hero-proof" id="homeHeroProof">
+          <div class="home-proof-item">
+            <strong>Business-first</strong>
+            <span>Analytics thinking</span>
+          </div>
+
+          <div class="home-proof-item">
+            <strong>Project-driven</strong>
+            <span>Portfolio approach</span>
+          </div>
+
+          <div class="home-proof-item">
+            <strong>Decision-focused</strong>
+            <span>Insight delivery</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT SIDE: Dynamic Premium Hero Intelligence Card -->
+      <div class="home-hero-visual" data-home-hero-right>
+        
+        <article class="home-intelligence-card" id="homeHeroCard">
+          
+          <div class="home-card-glow" aria-hidden="true"></div>
+
+          <div class="home-card-header">
+            <div class="home-card-icon" id="homeHeroCardIcon">
+              <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+            </div>
+
+            <div class="home-card-heading">
+              <span class="home-card-kicker" id="homeHeroCardKicker">
+                Analytics Direction
+              </span>
+              <p class="home-card-subtitle" id="homeHeroCardSubtitle">
+                Business-focused dashboard thinking
+              </p>
+            </div>
+          </div>
+
+          <div class="home-card-body">
+            <h2 class="home-card-title" id="homeHeroCardTitle">
+              Transforming raw data into actionable business intelligence
+            </h2>
+
+            <p class="home-card-text" id="homeHeroCardText">
+              I focus on building practical analytics projects that connect data,
+              business problems, and decision-making across growth-focused domains.
+            </p>
+          </div>
+
+          <div class="home-card-focus-list" id="homeHeroFocusList">
+            <div class="home-card-focus-item">
+              <span class="home-focus-dot" aria-hidden="true"></span>
+              <p>Business-driven data decision frameworks</p>
+            </div>
+
+            <div class="home-card-focus-item">
+              <span class="home-focus-dot" aria-hidden="true"></span>
+              <p>KPI design with clarity & impact</p>
+            </div>
+
+            <div class="home-card-focus-item">
+              <span class="home-focus-dot" aria-hidden="true"></span>
+              <p>Real-world analytics across eCommerce & supply chain</p>
+            </div>
+          </div>
+
+          <div class="home-card-metrics" id="homeHeroMetrics">
+            <div class="home-card-metric">
+              <strong>01</strong>
+              <span>Problem</span>
+            </div>
+
+            <div class="home-card-metric">
+              <strong>02</strong>
+              <span>Data</span>
+            </div>
+
+            <div class="home-card-metric">
+              <strong>03</strong>
+              <span>Insight</span>
+            </div>
+
+            <div class="home-card-metric">
+              <strong>04</strong>
+              <span>Decision</span>
+            </div>
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+   HOMEPAGE VALUE SNAPSHOT — DYNAMIC
+========================================= -->
+<section class="home-value-section reveal" id="homeValue">
+  <div class="container">
+
+    <div class="home-section-heading center-heading">
+      <div class="heading-kicker-wrap">
+        <span></span>
+        <p>Portfolio Signal</p>
+        <span></span>
+      </div>
+
+      <h2>Built to show how data thinking becomes business clarity.</h2>
+
+      <p class="home-section-text">
+        This homepage gives a quick view of my analytics direction, decision-making approach,
+        project mindset, and the kind of business problems I’m learning to solve with data.
+      </p>
+    </div>
+
+    <div class="home-value-grid" id="homeValueGrid">
+      <!-- JS render -->
+    </div>
+
+  </div>
+</section>
+
+<!-- =========================================
+   HOMEPAGE DECISION SYSTEM — DYNAMIC
+========================================= -->
+<section class="home-decision-section reveal" id="homeDecisionSystem">
+  <div class="container">
+
+    <div class="home-section-heading center-heading">
+      <div class="heading-kicker-wrap">
+        <span></span>
+        <p>Decision System</p>
+        <span></span>
+      </div>
+
+      <h2>A simple operating system for turning questions into action.</h2>
+
+      <p class="home-section-text">
+        I’m building my analytics work around a clear path: understand the question,
+        structure the data, define useful KPIs, create the dashboard, and translate
+        insights into practical recommendations.
+      </p>
+    </div>
+
+    <div class="home-decision-layout">
+
+      <div class="home-decision-panel">
+        <span class="home-panel-label">How I Think</span>
+
+        <h3>Every dashboard should answer a decision, not just display numbers.</h3>
+
+        <p>
+          The goal is not to make a dashboard look busy. The goal is to make the
+          business problem easier to understand, compare, explain, and act on.
+        </p>
+
+        <div class="home-decision-points" id="homeDecisionPoints">
+          <!-- JS render -->
+        </div>
+      </div>
+
+      <div class="home-decision-steps" id="homeDecisionSteps">
+        <!-- JS render -->
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- =========================================
+   HOMEPAGE LIVE FOCUS AREAS — DYNAMIC
+========================================= -->
+<section class="home-focus-section reveal" id="homeFocusAreas">
+  <div class="container">
+
+    <div class="home-section-heading center-heading">
+      <div class="heading-kicker-wrap">
+        <span></span>
+        <p>Current Direction</p>
+        <span></span>
+      </div>
+
+      <h2>Focus areas that connect analytics with business outcomes.</h2>
+
+      <p class="home-section-text">
+        These focus areas define where I’m building stronger projects, dashboards,
+        and business understanding as I grow my data analytics portfolio.
+      </p>
+    </div>
+
+    <div class="home-focus-shell">
+
+      <div class="home-focus-tabs" id="homeFocusTabs" role="tablist" aria-label="Homepage Focus Areas">
+        <!-- JS render -->
+      </div>
+
+      <div class="home-focus-display" id="homeFocusDisplay">
+        <!-- JS render -->
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- =========================================
+   HOMEPAGE FEATURED WORK PREVIEW — DYNAMIC
+========================================= -->
+<section class="home-work-section reveal" id="homeFeaturedWork">
+  <div class="container">
+
+    <div class="home-section-heading center-heading">
+      <div class="heading-kicker-wrap">
+        <span></span>
+        <p>Featured Preview</p>
+        <span></span>
+      </div>
+
+      <h2>Project previews that show business-first analytics thinking.</h2>
+
+      <p class="home-section-text">
+        A short preview of selected analytics work. The detailed case studies live
+        on the Projects page, while this section highlights the kind of business
+        clarity each project is designed to create.
+      </p>
+    </div>
+
+    <div class="home-work-grid" id="homeFeaturedWorkGrid">
+      <!-- JS render -->
+    </div>
+
+    <div class="home-section-action">
+      <a href="projects.html" class="home-link-btn">
+        Explore Full Projects
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- =========================================
+   HOMEPAGE PROOF OF DIRECTION — DYNAMIC
+========================================= -->
+<section class="home-proof-section reveal" id="homeProof">
+  <div class="container">
+
+    <div class="home-section-heading center-heading">
+      <div class="heading-kicker-wrap">
+        <span></span>
+        <p>Proof of Direction</p>
+        <span></span>
+      </div>
+
+      <h2>Not just tools — a growing system for practical analytics execution.</h2>
+
+      <p class="home-section-text">
+        This portfolio is being built around consistency, domain focus, dashboard
+        execution, and business explanation — the things that make analytics useful.
+      </p>
+    </div>
+
+    <div class="home-proof-layout">
+
+      <div class="home-proof-main">
+        <span class="home-panel-label">Portfolio Building Mode</span>
+
+        <h3>Learning, building, documenting, and improving one project at a time.</h3>
+
+        <p>
+          My current focus is to build practical analytics assets that can be reviewed
+          by recruiters, hiring teams, clients, and collaborators with clear business context.
+        </p>
+      </div>
+
+      <div class="home-proof-grid" id="homeProofGrid">
+        <!-- JS render -->
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- =========================================
+   HOMEPAGE CTA — DYNAMIC
+========================================= -->
+<section class="home-cta-section reveal" id="homeCTA">
+  <div class="container">
+
+    <div class="home-section-heading center-heading">
+      <div class="heading-kicker-wrap">
+        <span></span>
+        <p>Next Step</p>
+        <span></span>
+      </div>
+
+      <h2>Have an analytics opportunity, project, or role in mind?</h2>
+
+      <p class="home-section-text">
+        I’m open to analytics projects, internships, freelance work, referrals,
+        and full-time opportunities where data can support better business decisions.
+      </p>
+    </div>
+
+    <div class="home-cta-actions" id="homeCTAActions">
+      <!-- JS render -->
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<!-- =========================================
+   FOOTER — LOCKED
+========================================= -->
+<footer class="site-footer">
+  <div class="footer-container">
+
+    <div class="footer-content footer-premium">
+
+      <div class="footer-brand-block">
+        <a href="index.html" class="footer-brand-logo" aria-label="Mohit Gupta Home">
+          <img
+            src="./assets/icons/ui/mohit-favicon-icon-modified.png"
+            alt="Mohit Gupta Logo"
+          />
+        </a>
+
+        <p class="footer-brand-text">
+          Data Analytics • Business Intelligence • Decision Systems
+        </p>
+
+        <p class="footer-brand-note">
+          Building practical analytics projects, dashboards, and business-focused insights.
+        </p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer Navigation">
+        <h4>Explore</h4>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="skills.html">Skills</a>
+        <a href="experience.html">Experience</a>
+      </nav>
+
+      <div class="footer-connect">
+        <h4>Connect</h4>
+
+        <div class="footer-social-links">
+          <a href="https://www.linkedin.com/in/mohit-gupta-5971653a7/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+
+          <a href="https://github.com/mohitguptaofficial" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+
+          <a href="https://www.kaggle.com/" target="_blank" rel="noopener noreferrer" aria-label="Kaggle">
+            <i class="fab fa-kaggle"></i>
+          </a>
+        </div>
+
+        <a href="contact.html" class="footer-cta-link">
+          Let’s Connect <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>
+        © 2026 Mohit Gupta. All rights reserved.
+      </p>
+
+      <span>
+        Open for analytics projects, internships, freelance work, and full-time roles.
+      </span>
+    </div>
+
+  </div>
+</footer>
+
+<script type="module" src="./assets/js/main.js"></script>
+
+</body>
+</html>
