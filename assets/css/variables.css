@@ -1,190 +1,79 @@
 /* =========================================
-   PREMIUM PERSONAL BRAND + PORTFOLIO
-   DESIGN SYSTEM VARIABLES
+   CSS VARIABLES / DESIGN TOKENS
+   This file stores the main design system.
 ========================================= */
 
 :root {
-  /* =========================================
-     BRAND COLOR SYSTEM
-     60% neutral | 30% support | 10% accent
-  ========================================= */
+    /* =========================
+       Font System
+    ========================= */
+    --font-main: "Inter", "Segoe UI", Arial, sans-serif;
 
-  /* Base / Background */
-  --bg-main: #f8fafc;
-  --bg-soft: #ffffff;
-  --bg-muted: #eef2ff;
-  --bg-elevated: #f1f5f9;
+    /* =========================
+       Light SaaS Theme Colors
+    ========================= */
+    --color-bg: #f6f9ff;
+    --color-bg-soft: #eef5ff;
+    --color-card: #ffffff;
 
-  /* Text */
-  --text-main: #0f172a;
-  --text-body: #475569;
-  --text-soft: #64748b;
-  --text-muted: #94a3b8;
-  --text-white: #ffffff;
+    --color-text: #0f172a;
+    --color-muted: #64748b;
+    --color-light-text: #94a3b8;
 
-  /* Brand Primary */
-  --primary: #4f46e5;
-  --primary-light: #6366f1;
-  --primary-dark: #3730a3;
+    /* =========================
+       Brand Colors
+    ========================= */
+    --color-primary: #2563eb;
+    --color-primary-light: #38bdf8;
+    --color-primary-dark: #1e3a8a;
 
-  /* Supporting Blue */
-  --secondary: #2563eb;
-  --secondary-light: #60a5fa;
-  --secondary-soft: #dbeafe;
+    --color-accent: #4f46e5;
+    --color-accent-soft: rgba(79, 70, 229, 0.12);
 
-  /* Accent */
-  --accent: #7c3aed;
-  --accent-light: #a855f7;
-  --accent-soft: #ede9fe;
+    /* =========================
+       Dark Data Lab Colors
+    ========================= */
+    --color-dark-bg: #020617;
+    --color-dark-panel: #07111f;
+    --color-dark-card: #0f1b2d;
+    --color-dark-text: #e5f0ff;
+    --color-dark-muted: #94a3b8;
 
-  /* Premium Dark */
-  --brand-dark: #0f172a;
-  --brand-dark-soft: #1e293b;
+    /* =========================
+       Borders
+    ========================= */
+    --border-light: rgba(148, 163, 184, 0.24);
+    --border-blue: rgba(37, 99, 235, 0.22);
+    --border-dark: rgba(148, 163, 184, 0.18);
 
-  /* Semantic */
-  --success: #16a34a;
-  --warning: #f59e0b;
-  --danger: #dc2626;
-  --info: #0284c7;
+    /* =========================
+       Shadows
+    ========================= */
+    --shadow-soft: 0 24px 80px rgba(15, 23, 42, 0.10);
+    --shadow-card: 0 18px 50px rgba(37, 99, 235, 0.14);
+    --shadow-dark: 0 24px 80px rgba(2, 6, 23, 0.35);
 
-  /* Borders */
-  --border-soft: rgba(148, 163, 184, 0.22);
-  --border-medium: rgba(100, 116, 139, 0.28);
-  --border-strong: rgba(79, 70, 229, 0.28);
+    /* =========================
+       Layout
+    ========================= */
+    --container-width: 1180px;
+    --header-height: 88px;
 
-  /* Glass */
-  --glass-bg: rgba(255, 255, 255, 0.72);
-  --glass-bg-strong: rgba(255, 255, 255, 0.9);
-  --glass-border: rgba(226, 232, 240, 0.72);
-  --glass-blur: 16px;
+    --section-padding: 96px;
+    --section-padding-small: 64px;
 
-  /* Gradients */
-  --gradient-primary: linear-gradient(135deg, #4f46e5 0%, #6366f1 35%, #3b82f6 70%, #2563eb 100%);
-  --gradient-dark: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  --gradient-brand: linear-gradient(135deg, #4f46e5 0%, #2563eb 52%, #7c3aed 100%);
-  --gradient-soft: linear-gradient(180deg, #f8fafc 0%, #eef2ff 52%, #f8fafc 100%);
+    /* =========================
+       Border Radius
+    ========================= */
+    --radius-small: 12px;
+    --radius-medium: 18px;
+    --radius-large: 28px;
+    --radius-full: 999px;
 
-  /* =========================================
-     TYPOGRAPHY SYSTEM
-  ========================================= */
-
-  --font-main: "Segoe UI", Roboto, Arial, sans-serif;
-
-  --fs-xs: 0.78rem;
-  --fs-sm: 0.88rem;
-  --fs-base: 1rem;
-  --fs-md: 1.08rem;
-  --fs-lg: 1.22rem;
-  --fs-xl: 1.5rem;
-  --fs-2xl: 2rem;
-  --fs-3xl: 2.6rem;
-  --fs-4xl: 3.4rem;
-  --fs-hero: clamp(2.8rem, 6vw, 5.4rem);
-
-  --lh-tight: 1.08;
-  --lh-heading: 1.15;
-  --lh-body: 1.75;
-  --lh-loose: 1.9;
-
-  --tracking-tight: -0.04em;
-  --tracking-normal: -0.02em;
-  --tracking-wide: 0.12em;
-
-  /* =========================================
-     SPACING SYSTEM
-  ========================================= */
-
-  --space-2xs: 4px;
-  --space-xs: 8px;
-  --space-sm: 12px;
-  --space-md: 16px;
-  --space-lg: 24px;
-  --space-xl: 32px;
-  --space-2xl: 48px;
-  --space-3xl: 64px;
-  --space-4xl: 80px;
-  --space-5xl: 96px;
-
-  --section-space: 96px;
-  --section-space-tablet: 80px;
-  --section-space-mobile: 64px;
-
-  /* Old compatibility variables */
-  --space-section: var(--section-space);
-  --space-section-tablet: var(--section-space-tablet);
-  --space-section-mobile: var(--section-space-mobile);
-
-  /* =========================================
-     LAYOUT SYSTEM
-  ========================================= */
-
-  --container: 1200px;
-  --container-wide: 1320px;
-  --container-narrow: 1080px;
-  --container-readable: 760px;
-
-  /* =========================================
-     RADIUS SYSTEM
-  ========================================= */
-
-  --radius-xs: 8px;
-  --radius-sm: 12px;
-  --radius-md: 18px;
-  --radius-lg: 24px;
-  --radius-xl: 30px;
-  --radius-2xl: 36px;
-  --radius-pill: 999px;
-
-  /* =========================================
-     SHADOW SYSTEM
-  ========================================= */
-
-  --shadow-xs: 0 4px 12px rgba(15, 23, 42, 0.04);
-  --shadow-sm: 0 10px 28px rgba(15, 23, 42, 0.06);
-  --shadow-md: 0 18px 46px rgba(15, 23, 42, 0.08);
-  --shadow-lg: 0 28px 70px rgba(15, 23, 42, 0.12);
-  --shadow-brand: 0 20px 55px rgba(79, 70, 229, 0.18);
-
-  /* Old compatibility variables */
-  --shadow-soft: var(--shadow-sm);
-  --shadow-card: var(--shadow-md);
-  --shadow-hover: var(--shadow-lg);
-
-  /* =========================================
-     MOTION SYSTEM
-  ========================================= */
-
-  --transition-fast: 0.18s ease;
-  --transition-base: 0.28s ease;
-  --transition-slow: 0.45s ease;
-
-  --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
-
-  /* =========================================
-     Z-INDEX SYSTEM
-  ========================================= */
-
-  --z-header: 1000;
-  --z-mobile-menu: 2000;
-  --z-preloader: 9999;
-}
-
-/* =========================================
-   RESPONSIVE VARIABLE ADJUSTMENTS
-========================================= */
-
-@media (max-width: 991px) {
-  :root {
-    --space-section: var(--section-space-tablet);
-  }
-}
-
-@media (max-width: 768px) {
-  :root {
-    --space-section: var(--section-space-mobile);
-
-    --fs-hero: clamp(2.2rem, 9vw, 3.2rem);
-    --fs-3xl: 2.25rem;
-    --fs-4xl: 2.8rem;
-  }
+    /* =========================
+       Transitions
+    ========================= */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.45s ease;
 }

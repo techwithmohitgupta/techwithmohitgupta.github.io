@@ -1,604 +1,237 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IN">
 <head>
+    <meta charset="UTF-8">
 
-  <link rel="canonical" href="https://techwithmohitgupta.github.io/" />
+    <!-- Responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<script>
-  (function () {
-    if (window.location.pathname.endsWith("/index.html")) {
-      window.location.replace(window.location.origin + "/");
+    <!-- Browser compatibility -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Primary SEO Meta Tags -->
+    <title>Mohit Gupta | Data Analytics Portfolio</title>
+    <meta name="title" content="Mohit Gupta | Data Analytics Portfolio">
+    <meta name="description" content="Mohit Gupta's Data Analytics Portfolio featuring SQL, Python, Power BI, Tableau, Streamlit dashboards, business intelligence projects, KPI dashboards, and data-driven business insights.">
+    <meta name="keywords" content="Mohit Gupta Data Analytics Portfolio, Data Analyst Portfolio, SQL Portfolio Projects, Python Data Analysis Projects, Power BI Dashboard Projects, Tableau Dashboard Portfolio, Streamlit Dashboard Projects, Business Intelligence Portfolio, KPI Dashboard, Data Storytelling, Marketing Analytics, E-commerce Analytics, Supply Chain Analytics, Finance Analytics">
+    <meta name="author" content="Mohit Gupta">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="application-name" content="Mohit Gupta Data Analytics Portfolio">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="msapplication-TileColor" content="#2563eb">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://techwithmohitgupta.github.io/">
+
+    <!-- Open Graph / Facebook / LinkedIn Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Mohit Gupta | Data Analytics Portfolio">
+    <meta property="og:description" content="Explore Mohit Gupta's data analytics portfolio featuring SQL, Python, Power BI, Tableau, Streamlit dashboards, business intelligence projects, KPI dashboards, and data-driven insights.">
+    <meta property="og:url" content="https://techwithmohitgupta.github.io/">
+    <meta property="og:site_name" content="Mohit Gupta Data Analytics Portfolio">
+    <meta property="og:locale" content="en_IN">
+    <meta property="og:image" content="https://techwithmohitgupta.github.io/assets/images/og-image.png">
+    <meta property="og:image:alt" content="Mohit Gupta Data Analytics Portfolio website preview showing dashboards, insights, and business intelligence projects.">
+    <meta property="og:image:type" content="image/png">
+
+    <!-- Twitter / X Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mohit Gupta | Data Analytics Portfolio">
+    <meta name="twitter:description" content="Data Analytics portfolio focused on SQL, Python, Power BI, Tableau, Streamlit dashboards, business intelligence, KPI dashboards, and actionable insights.">
+    <meta name="twitter:image" content="https://techwithmohitgupta.github.io/assets/images/og-image.png">
+    <meta name="twitter:image:alt" content="Mohit Gupta Data Analytics Portfolio website preview.">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/ui/mohit-favicon-icon-modified.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/ui/mohit-favicon-icon-modified.png">
+    <link rel="shortcut icon" href="/assets/icons/ui/mohit-favicon-icon-modified.png" type="image/png">
+    <link rel="apple-touch-icon" href="/assets/images/brand/mohit-gupta-logo.png">
+
+    <!-- Performance: Preconnect to external icon CDN -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <!-- Performance: Preload important brand logo used in the header -->
+    <link rel="preload" as="image" href="/assets/images/brand/mohit-gupta-logo.png">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/home.css">
+
+    <!-- Structured Data: Person + Website -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Person",
+                "@id": "https://techwithmohitgupta.github.io/#person",
+                "name": "Mohit Gupta",
+                "url": "https://techwithmohitgupta.github.io/",
+                "jobTitle": "Data Analytics Portfolio Builder",
+                "description": "Mohit Gupta is building a data analytics portfolio focused on SQL, Python, Power BI, Tableau, Streamlit dashboards, business intelligence, KPI dashboards, and data-driven insights.",
+                "knowsAbout": [
+                    "Data Analytics",
+                    "Business Intelligence",
+                    "SQL",
+                    "Python",
+                    "Power BI",
+                    "Tableau",
+                    "Streamlit",
+                    "Data Visualization",
+                    "Dashboard Development",
+                    "KPI Dashboards",
+                    "Data Storytelling",
+                    "Marketing Analytics",
+                    "E-commerce Analytics",
+                    "Supply Chain Analytics",
+                    "Finance Analytics"
+                ],
+                "sameAs": [
+                    "https://github.com/techwithmohitgupta",
+                    "https://www.linkedin.com/in/mohit-gupta-data-analyst/"
+                ]
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://techwithmohitgupta.github.io/#website",
+                "name": "Mohit Gupta Data Analytics Portfolio",
+                "url": "https://techwithmohitgupta.github.io/",
+                "description": "A data analytics portfolio website showcasing projects, dashboards, SQL, Python, Power BI, Tableau, Streamlit, business intelligence, and data-driven insights.",
+                "publisher": {
+                    "@id": "https://techwithmohitgupta.github.io/#person"
+                }
+            }
+        ]
     }
-  })();
-</script>
-
-  <style>
-    html.preloader-lock,
-    html.preloader-lock body {
-      opacity: 0;
-      visibility: hidden;
-      overflow: hidden;
-    }
-  </style>
-
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <meta
-    name="description"
-    content="Mohit Gupta - Data Analytics and Business Intelligence portfolio focused on dashboards, insights, decision systems, and business clarity."
-  />
-
-  <meta name="author" content="Mohit Gupta" />
-
-  <title>Mohit Gupta | Data Analytics Portfolio</title>
-
-  <!-- Brand Favicons -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/brand/mohit-gupta-logo.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/brand/mohit-gupta-logo.png">
-  <link rel="shortcut icon" href="/assets/images/brand/mohit-gupta-logo.png" type="image/png">
-  <link rel="apple-touch-icon" href="/assets/images/brand/mohit-gupta-logo.png">
-
-  <!-- UI Favicons -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/ui/mohit-favicon-icon-modified.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/ui/mohit-favicon-icon-modified.png">
-  <link rel="shortcut icon" href="/assets/icons/ui/mohit-favicon-icon-modified.png" type="image/png">
-  <link rel="apple-touch-icon" href="/assets/icons/ui/mohit-favicon-icon-modified.png">
-
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="/assets/css/main.css">
-
-  <script>
-    document.documentElement.classList.add("preloader-lock");
-  </script>
-
+    </script>
 </head>
 
-<body data-page="home">
+<body data-page="home" class="home-page">
+    <!-- Accessibility: Skip link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<!-- =========================================
-   PREMIUM PRELOADER
-========================================= -->
-<div id="preloader" aria-hidden="true">
-  <div class="preloader-bg preloader-bg-1"></div>
-  <div class="preloader-bg preloader-bg-2"></div>
-  <div class="preloader-bg preloader-bg-3"></div>
+    <!-- Header: Global navigation is rendered by navigation.js -->
+    <header id="site-header" class="site-header" aria-label="Website header"></header>
 
-  <div class="preloader-center">
-    <div class="preloader-orbit preloader-orbit-outer"></div>
-    <div class="preloader-orbit preloader-orbit-middle"></div>
-    <div class="preloader-orbit preloader-orbit-inner"></div>
+    <!-- Main: Homepage sections are rendered by home.js -->
+    <main id="main-content" class="site-main">
+        <div id="app"></div>
 
-    <div class="preloader-logo-shell">
-      <img
-        src="/assets/images/brand/mohit-gupta-logo.png"
-        alt="Mohit Gupta Brand Logo"
-        class="preloader-logo"
-      />
-    </div>
-  </div>
-</div>
+        <!-- No JavaScript fallback content -->
+        <noscript>
+            <section class="noscript-fallback">
+                <h1>Mohit Gupta | Data Analytics Portfolio</h1>
 
-<!-- =========================================
-   GLOBAL HEADER
-========================================= -->
-<header class="v3-header" id="siteHeader">
-  <div class="v3-header-container">
+                <p>
+                    This website showcases Mohit Gupta's data analytics portfolio, including SQL, Python,
+                    Power BI, Tableau, Streamlit dashboards, business intelligence projects, KPI dashboards,
+                    and data-driven business insights.
+                </p>
 
-    <!-- Logo -->
-    <a href="/" class="v3-logo-link" aria-label="Mohit Gupta Home">
-      <img
-        src="/assets/images/brand/mohit-gupta-logo.png"
-        alt="Mohit Gupta Personal Brand Logo"
-        class="v3-brand-logo"
-      />
-    </a>
+                <p>
+                    Please enable JavaScript to view the full interactive portfolio experience.
+                </p>
 
-    <!-- Desktop Navigation -->
-    <nav class="v3-nav" aria-label="Main Navigation">
-      <a href="/" class="v3-nav-link active" aria-current="page">Home</a>
-      <a href="/about" class="v3-nav-link">About</a>
-      <a href="/projects" class="v3-nav-link">Projects</a>
-      <a href="/skills" class="v3-nav-link">Skills</a>
-      <a href="/experience" class="v3-nav-link">Experience</a>
-    </nav>
+                <p>
+                    You can also connect with Mohit Gupta on
+                    <a href="https://www.linkedin.com/in/mohit-gupta-data-analyst/">LinkedIn</a>
+                    or view projects on
+                    <a href="https://github.com/techwithmohitgupta">GitHub</a>.
+                </p>
+            </section>
+        </noscript>
+    </main>
 
-    <!-- CTA -->
-    <a href="/contact" class="v3-cta">
-      Let’s Connect
-    </a>
+    <!-- Homepage Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-content footer-premium">
+                <div class="footer-brand-block">
+                    <a href="/" class="footer-brand-logo" aria-label="Mohit Gupta Home">
+                        <img
+                            src="/assets/icons/ui/mohit-favicon-icon-modified.png"
+                            alt="Mohit Gupta Logo"
+                            width="38"
+                            height="38"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                    </a>
 
-    <!-- Mobile Menu Toggle -->
-    <button
-      class="v3-menu-toggle"
-      aria-label="Open Menu"
-      aria-expanded="false"
-      aria-controls="v3-mobile-menu"
-      type="button"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+                    <p class="footer-brand-text">
+                        Data Analytics • Business Intelligence • Decision Systems
+                    </p>
 
-  </div>
+                    <p class="footer-brand-note">
+                        Building practical analytics projects, dashboards, and business-focused insights.
+                    </p>
+                </div>
 
-  <!-- Mobile Menu -->
-  <div class="v3-mobile-menu" id="v3-mobile-menu">
-    <div class="v3-mobile-menu-header">
-      <span>Menu</span>
+                <nav class="footer-nav" aria-label="Footer Navigation">
+                    <h4>Explore</h4>
+                    <a href="/">Home</a>
+                    <a href="/about/">About</a>
+                    <a href="/projects/">Projects</a>
+                    <a href="/skills/">Skills</a>
+                    <a href="/experience/">Experience</a>
+                </nav>
 
-      <button
-        class="v3-menu-close"
-        aria-label="Close Menu"
-        type="button"
-      >
-        &times;
-      </button>
-    </div>
+                <div class="footer-connect">
+                    <h4>Connect</h4>
 
-    <nav class="v3-mobile-nav" aria-label="Mobile Navigation">
-      <a href="/" class="v3-mobile-link active" aria-current="page">Home</a>
-      <a href="/about" class="v3-mobile-link">About</a>
-      <a href="/projects" class="v3-mobile-link">Projects</a>
-      <a href="/skills" class="v3-mobile-link">Skills</a>
-      <a href="/experience" class="v3-mobile-link">Experience</a>
-    </nav>
+                    <div class="footer-social-links">
+                        <a
+                            href="https://www.linkedin.com/in/mohit-gupta-data-analyst/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn"
+                        >
+                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                        </a>
 
-    <div class="v3-mobile-cta-wrap">
-      <a href="/contact" class="v3-mobile-cta">
-        Let’s Connect
-      </a>
-    </div>
-  </div>
-</header>
+                        <a
+                            href="https://github.com/techwithmohitgupta"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="GitHub"
+                        >
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                        </a>
 
-<main>
+                        <a
+                            href="https://www.kaggle.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Kaggle"
+                        >
+                            <i class="fab fa-kaggle" aria-hidden="true"></i>
+                        </a>
+                    </div>
 
-<!-- ==========================================
-     V3 HERO SECTION — FULLY DYNAMIC STRUCTURE
-     Left + Right side prepared for home.js data rendering
-=========================================== -->
-<section class="v3-hero home-hero" id="home" aria-label="Portfolio homepage hero section">
-  <div class="v3-container home-hero-container">
+                    <a href="/contact/" class="footer-cta-link">
+                        Let’s Connect <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
 
-    <!-- Background decorative layer -->
-    <div class="home-hero-bg" aria-hidden="true">
-      <span class="home-hero-orb home-hero-orb-one"></span>
-      <span class="home-hero-orb home-hero-orb-two"></span>
-      <span class="home-hero-grid"></span>
-    </div>
+            <div class="footer-bottom">
+                <p>
+                    © 2026 Mohit Gupta. All rights reserved.
+                </p>
 
-    <div class="home-hero-layout">
-
-      <!-- LEFT SIDE: Dynamic Hero Content -->
-      <div class="home-hero-content" data-home-hero-left>
-        
-        <div class="home-hero-eyebrow" id="homeHeroEyebrow">
-          Data Analytics • Business Intelligence • Decision Systems
+                <span>
+                    Open for analytics projects, internships, freelance work, and full-time roles.
+                </span>
+            </div>
         </div>
-
-        <h1 class="home-hero-title" aria-label="Turning Data into Business Clarity">
-          <span class="home-hero-title-line">Turning Data</span>
-          <span class="home-hero-title-line home-hero-title-middle">into</span>
-          <span class="home-hero-title-line home-hero-title-dynamic">
-            <span id="homeTypingText" class="home-typing-text">Business Clarity</span>
-          </span>
-        </h1>
-
-        <p class="home-hero-description" id="homeHeroDescription">
-          I work with data to uncover insights that help businesses improve performance,
-          understand customers, and make better decisions across eCommerce, marketing,
-          and analytics domains.
-        </p>
-
-        <div class="home-hero-actions" id="homeHeroActions">
-          <a href="/projects" class="home-hero-btn home-hero-btn-primary">
-            <span>View Projects</span>
-            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-          </a>
-
-          <a href="/contact" class="home-hero-btn home-hero-btn-secondary">
-            <span>Let’s Connect</span>
-            <i class="fa-regular fa-paper-plane" aria-hidden="true"></i>
-          </a>
-        </div>
-
-        <div class="home-hero-proof" id="homeHeroProof">
-          <div class="home-proof-item">
-            <strong>Business-first</strong>
-            <span>Analytics thinking</span>
-          </div>
-
-          <div class="home-proof-item">
-            <strong>Project-driven</strong>
-            <span>Portfolio approach</span>
-          </div>
-
-          <div class="home-proof-item">
-            <strong>Decision-focused</strong>
-            <span>Insight delivery</span>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- RIGHT SIDE: Dynamic Premium Hero Intelligence Card -->
-      <div class="home-hero-visual" data-home-hero-right>
-        
-        <article class="home-intelligence-card" id="homeHeroCard">
-          
-          <div class="home-card-glow" aria-hidden="true"></div>
-
-          <div class="home-card-header">
-            <div class="home-card-icon" id="homeHeroCardIcon">
-              <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
-            </div>
-
-            <div class="home-card-heading">
-              <span class="home-card-kicker" id="homeHeroCardKicker">
-                Analytics Direction
-              </span>
-              <p class="home-card-subtitle" id="homeHeroCardSubtitle">
-                Business-focused dashboard thinking
-              </p>
-            </div>
-          </div>
-
-          <div class="home-card-body">
-            <h2 class="home-card-title" id="homeHeroCardTitle">
-              Transforming raw data into actionable business intelligence
-            </h2>
-
-            <p class="home-card-text" id="homeHeroCardText">
-              I focus on building practical analytics projects that connect data,
-              business problems, and decision-making across growth-focused domains.
-            </p>
-          </div>
-
-          <div class="home-card-focus-list" id="homeHeroFocusList">
-            <div class="home-card-focus-item">
-              <span class="home-focus-dot" aria-hidden="true"></span>
-              <p>Business-driven data decision frameworks</p>
-            </div>
-
-            <div class="home-card-focus-item">
-              <span class="home-focus-dot" aria-hidden="true"></span>
-              <p>KPI design with clarity & impact</p>
-            </div>
-
-            <div class="home-card-focus-item">
-              <span class="home-focus-dot" aria-hidden="true"></span>
-              <p>Real-world analytics across eCommerce & supply chain</p>
-            </div>
-          </div>
-
-          <div class="home-card-metrics" id="homeHeroMetrics">
-            <div class="home-card-metric">
-              <strong>01</strong>
-              <span>Problem</span>
-            </div>
-
-            <div class="home-card-metric">
-              <strong>02</strong>
-              <span>Data</span>
-            </div>
-
-            <div class="home-card-metric">
-              <strong>03</strong>
-              <span>Insight</span>
-            </div>
-
-            <div class="home-card-metric">
-              <strong>04</strong>
-              <span>Decision</span>
-            </div>
-          </div>
-
-        </article>
-
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- =========================================
-   HOMEPAGE VALUE SNAPSHOT — DYNAMIC
-========================================= -->
-<section class="home-value-section reveal" id="homeValue">
-  <div class="container">
-
-    <div class="home-section-heading center-heading">
-      <div class="heading-kicker-wrap">
-        <span></span>
-        <p>Portfolio Signal</p>
-        <span></span>
-      </div>
-
-      <h2>Built to show how data thinking becomes business clarity.</h2>
-
-      <p class="home-section-text">
-        This homepage gives a quick view of my analytics direction, decision-making approach,
-        project mindset, and the kind of business problems I’m learning to solve with data.
-      </p>
-    </div>
-
-    <div class="home-value-grid" id="homeValueGrid">
-      <!-- JS render -->
-    </div>
-
-  </div>
-</section>
-
-<!-- =========================================
-   HOMEPAGE DECISION SYSTEM — DYNAMIC
-========================================= -->
-<section class="home-decision-section reveal" id="homeDecisionSystem">
-  <div class="container">
-
-    <div class="home-section-heading center-heading">
-      <div class="heading-kicker-wrap">
-        <span></span>
-        <p>Decision System</p>
-        <span></span>
-      </div>
-
-      <h2>A simple operating system for turning questions into action.</h2>
-
-      <p class="home-section-text">
-        I’m building my analytics work around a clear path: understand the question,
-        structure the data, define useful KPIs, create the dashboard, and translate
-        insights into practical recommendations.
-      </p>
-    </div>
-
-    <div class="home-decision-layout">
-
-      <div class="home-decision-panel">
-        <span class="home-panel-label">How I Think</span>
-
-        <h3>Every dashboard should answer a decision, not just display numbers.</h3>
-
-        <p>
-          The goal is not to make a dashboard look busy. The goal is to make the
-          business problem easier to understand, compare, explain, and act on.
-        </p>
-
-        <div class="home-decision-points" id="homeDecisionPoints">
-          <!-- JS render -->
-        </div>
-      </div>
-
-      <div class="home-decision-steps" id="homeDecisionSteps">
-        <!-- JS render -->
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- =========================================
-   HOMEPAGE LIVE FOCUS AREAS — DYNAMIC
-========================================= -->
-<section class="home-focus-section reveal" id="homeFocusAreas">
-  <div class="container">
-
-    <div class="home-section-heading center-heading">
-      <div class="heading-kicker-wrap">
-        <span></span>
-        <p>Current Direction</p>
-        <span></span>
-      </div>
-
-      <h2>Focus areas that connect analytics with business outcomes.</h2>
-
-      <p class="home-section-text">
-        These focus areas define where I’m building stronger projects, dashboards,
-        and business understanding as I grow my data analytics portfolio.
-      </p>
-    </div>
-
-    <div class="home-focus-shell">
-
-      <div class="home-focus-tabs" id="homeFocusTabs" role="tablist" aria-label="Homepage Focus Areas">
-        <!-- JS render -->
-      </div>
-
-      <div class="home-focus-display" id="homeFocusDisplay">
-        <!-- JS render -->
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- =========================================
-   HOMEPAGE FEATURED WORK PREVIEW — DYNAMIC
-========================================= -->
-<section class="home-work-section reveal" id="homeFeaturedWork">
-  <div class="container">
-
-    <div class="home-section-heading center-heading">
-      <div class="heading-kicker-wrap">
-        <span></span>
-        <p>Featured Preview</p>
-        <span></span>
-      </div>
-
-      <h2>Project previews that show business-first analytics thinking.</h2>
-
-      <p class="home-section-text">
-        A short preview of selected analytics work. The detailed case studies live
-        on the Projects page, while this section highlights the kind of business
-        clarity each project is designed to create.
-      </p>
-    </div>
-
-    <div class="home-work-grid" id="homeFeaturedWorkGrid">
-      <!-- JS render -->
-    </div>
-
-    <div class="home-section-action">
-      <a href="/projects" class="home-link-btn">
-        Explore Full Projects
-        <i class="fa-solid fa-arrow-right"></i>
-      </a>
-    </div>
-
-  </div>
-</section>
-
-<!-- =========================================
-   HOMEPAGE PROOF OF DIRECTION — DYNAMIC
-========================================= -->
-<section class="home-proof-section reveal" id="homeProof">
-  <div class="container">
-
-    <div class="home-section-heading center-heading">
-      <div class="heading-kicker-wrap">
-        <span></span>
-        <p>Proof of Direction</p>
-        <span></span>
-      </div>
-
-      <h2>Not just tools — a growing system for practical analytics execution.</h2>
-
-      <p class="home-section-text">
-        This portfolio is being built around consistency, domain focus, dashboard
-        execution, and business explanation — the things that make analytics useful.
-      </p>
-    </div>
-
-    <div class="home-proof-layout">
-
-      <div class="home-proof-main">
-        <span class="home-panel-label">Portfolio Building Mode</span>
-
-        <h3>Learning, building, documenting, and improving one project at a time.</h3>
-
-        <p>
-          My current focus is to build practical analytics assets that can be reviewed
-          by recruiters, hiring teams, clients, and collaborators with clear business context.
-        </p>
-      </div>
-
-      <div class="home-proof-grid" id="homeProofGrid">
-        <!-- JS render -->
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- =========================================
-   HOMEPAGE CTA — DYNAMIC
-========================================= -->
-<section class="home-cta-section reveal" id="homeCTA">
-  <div class="container">
-
-    <div class="home-section-heading center-heading">
-      <div class="heading-kicker-wrap">
-        <span></span>
-        <p>Next Step</p>
-        <span></span>
-      </div>
-
-      <h2>Have an analytics opportunity, project, or role in mind?</h2>
-
-      <p class="home-section-text">
-        I’m open to analytics projects, internships, freelance work, referrals,
-        and full-time opportunities where data can support better business decisions.
-      </p>
-    </div>
-
-    <div class="home-cta-actions" id="homeCTAActions">
-      <!-- JS render -->
-    </div>
-
-  </div>
-</section>
-
-</main>
-
-<!-- =========================================
-   FOOTER — LOCKED
-========================================= -->
-<footer class="site-footer">
-  <div class="footer-container">
-
-    <div class="footer-content footer-premium">
-
-      <div class="footer-brand-block">
-        <a href="/" class="footer-brand-logo" aria-label="Mohit Gupta Home">
-          <img
-            src="/assets/icons/ui/mohit-favicon-icon-modified.png"
-            alt="Mohit Gupta Logo"
-          />
-        </a>
-
-        <p class="footer-brand-text">
-          Data Analytics • Business Intelligence • Decision Systems
-        </p>
-
-        <p class="footer-brand-note">
-          Building practical analytics projects, dashboards, and business-focused insights.
-        </p>
-      </div>
-
-      <nav class="footer-nav" aria-label="Footer Navigation">
-        <h4>Explore</h4>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/projects">Projects</a>
-        <a href="/skills">Skills</a>
-        <a href="/experience">Experience</a>
-      </nav>
-
-      <div class="footer-connect">
-        <h4>Connect</h4>
-
-        <div class="footer-social-links">
-          <a href="https://www.linkedin.com/in/mohit-gupta-data-analyst/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-
-          <a href="https://github.com/techwithmohitgupta" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-            <i class="fab fa-github"></i>
-          </a>
-
-          <a href="https://www.kaggle.com/" target="_blank" rel="noopener noreferrer" aria-label="Kaggle">
-            <i class="fab fa-kaggle"></i>
-          </a>
-        </div>
-
-        <a href="/contact" class="footer-cta-link">
-          Let’s Connect <i class="fa-solid fa-arrow-right"></i>
-        </a>
-      </div>
-
-    </div>
-
-    <div class="footer-bottom">
-      <p>
-        © 2026 Mohit Gupta. All rights reserved.
-      </p>
-
-      <span>
-        Open for analytics projects, internships, freelance work, and full-time roles.
-      </span>
-    </div>
-
-  </div>
-</footer>
-
-<script type="module" src="/assets/js/main.js"></script>
-
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script type="module" src="/assets/js/main.js"></script>
+    <script type="module" src="/assets/js/home.js"></script>
 </body>
 </html>
