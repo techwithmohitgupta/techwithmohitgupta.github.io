@@ -872,3 +872,370 @@
         padding: 18px;
     }
 }
+
+/* =========================================
+   INNER PAGE FOOTER - PREMIUM ANALYTICS BAR
+   Unique compact footer for inner pages
+   Safe-mode: does not affect homepage footer
+========================================= */
+
+.inner-footer-modern {
+    position: relative;
+    overflow: hidden;
+    margin-top: auto;
+    padding: 34px 0;
+    color: #e5f0ff;
+    background:
+        linear-gradient(135deg, #020617 0%, #07111f 48%, #0b1220 100%);
+    border-top: 1px solid rgba(56, 189, 248, 0.22);
+    isolation: isolate;
+}
+
+.inner-footer-modern::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background-image:
+        linear-gradient(rgba(56, 189, 248, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(56, 189, 248, 0.045) 1px, transparent 1px);
+    background-size: 34px 34px;
+    opacity: 0.55;
+}
+
+.inner-footer-modern::after {
+    content: "";
+    position: absolute;
+    inset: -140px -120px auto auto;
+    z-index: -1;
+    width: 360px;
+    height: 360px;
+    border-radius: 999px;
+    background:
+        radial-gradient(circle, rgba(37, 99, 235, 0.34), transparent 64%);
+    filter: blur(4px);
+    opacity: 0.9;
+    pointer-events: none;
+}
+
+.inner-footer-wrap {
+    width: min(100% - 44px, var(--container-width));
+    margin: 0 auto;
+}
+
+.inner-footer-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(300px, 0.7fr);
+    align-items: stretch;
+    gap: 18px;
+    padding: 22px;
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    border-radius: 28px;
+    background:
+        linear-gradient(135deg, rgba(15, 23, 42, 0.82), rgba(2, 6, 23, 0.70)),
+        radial-gradient(circle at 0% 0%, rgba(56, 189, 248, 0.12), transparent 34%);
+    box-shadow:
+        0 24px 70px rgba(2, 6, 23, 0.34),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+.inner-footer-left {
+    position: relative;
+    padding: 4px 0 4px 20px;
+}
+
+.inner-footer-left::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 0;
+    width: 4px;
+    height: calc(100% - 12px);
+    border-radius: 999px;
+    background: linear-gradient(180deg, #38bdf8, #2563eb, #7c3aed);
+    box-shadow: 0 0 24px rgba(56, 189, 248, 0.32);
+}
+
+.inner-footer-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    color: #67e8f9;
+    font-size: 0.73rem;
+    font-weight: 950;
+    line-height: 1.35;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.inner-footer-kicker::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: #22c55e;
+    box-shadow: 0 0 16px rgba(34, 197, 94, 0.62);
+}
+
+.inner-footer-title {
+    margin: 0 0 8px;
+    color: #ffffff;
+    font-size: clamp(1.05rem, 1.6vw, 1.22rem);
+    font-weight: 950;
+    line-height: 1.35;
+    letter-spacing: -0.025em;
+}
+
+.inner-footer-text {
+    max-width: 720px;
+    margin: 0;
+    color: #a8b7cc;
+    font-size: 0.94rem;
+    line-height: 1.75;
+}
+
+.inner-footer-right {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 14px;
+    padding: 18px;
+    border: 1px solid rgba(56, 189, 248, 0.14);
+    border-radius: 22px;
+    background:
+        linear-gradient(135deg, rgba(56, 189, 248, 0.08), rgba(37, 99, 235, 0.05));
+}
+
+.inner-footer-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 14px;
+    border: 1px solid rgba(34, 197, 94, 0.24);
+    border-radius: var(--radius-full);
+    background: rgba(34, 197, 94, 0.08);
+    color: #bbf7d0;
+    font-size: 0.8rem;
+    font-weight: 900;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.inner-footer-socials {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 9px;
+    flex-wrap: wrap;
+}
+
+.inner-footer-socials a {
+    position: relative;
+    overflow: hidden;
+    min-height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px;
+    border: 1px solid rgba(148, 163, 184, 0.20);
+    border-radius: 14px;
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.035));
+    color: #e5f0ff;
+    font-size: 0.88rem;
+    font-weight: 900;
+    line-height: 1;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    transition:
+        transform var(--transition-normal),
+        border-color var(--transition-normal),
+        background var(--transition-normal),
+        color var(--transition-normal),
+        box-shadow var(--transition-normal);
+}
+
+.inner-footer-socials a::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.18), rgba(37, 99, 235, 0.10));
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.inner-footer-socials a:hover {
+    transform: translateY(-3px);
+    border-color: rgba(56, 189, 248, 0.42);
+    color: #ffffff;
+    box-shadow: 0 14px 30px rgba(2, 6, 23, 0.28);
+}
+
+.inner-footer-socials a:hover::before {
+    opacity: 1;
+}
+
+.inner-footer-socials a {
+    isolation: isolate;
+}
+
+.inner-footer-bottom {
+    margin-top: 14px;
+    padding: 0 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    color: #94a3b8;
+    font-size: 0.86rem;
+    line-height: 1.5;
+}
+
+.inner-footer-bottom p {
+    margin: 0;
+}
+
+.inner-footer-bottom a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #bae6fd;
+    font-weight: 900;
+    transition:
+        color var(--transition-normal),
+        transform var(--transition-normal);
+}
+
+.inner-footer-bottom a::after {
+    content: "→";
+    font-size: 0.95rem;
+    transition: transform var(--transition-normal);
+}
+
+.inner-footer-bottom a:hover {
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.inner-footer-bottom a:hover::after {
+    transform: translateX(3px);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .inner-footer-grid {
+        grid-template-columns: 1fr;
+        padding: 22px;
+    }
+
+    .inner-footer-left {
+        padding-left: 18px;
+    }
+
+    .inner-footer-right {
+        align-items: flex-start;
+    }
+
+    .inner-footer-socials {
+        justify-content: flex-start;
+    }
+
+    .inner-footer-bottom {
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 640px) {
+    .inner-footer-modern {
+        padding: 28px 0;
+    }
+
+    .inner-footer-wrap {
+        width: min(100% - 28px, 100%);
+    }
+
+    .inner-footer-grid {
+        padding: 20px;
+        border-radius: 24px;
+    }
+
+    .inner-footer-left {
+        padding-left: 16px;
+    }
+
+    .inner-footer-kicker {
+        font-size: 0.66rem;
+        letter-spacing: 0.11em;
+    }
+
+    .inner-footer-right {
+        padding: 16px;
+    }
+
+    .inner-footer-status {
+        white-space: normal;
+        line-height: 1.35;
+        text-align: center;
+    }
+
+    .inner-footer-socials {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .inner-footer-socials a {
+        width: 100%;
+        min-height: 42px;
+    }
+
+    .inner-footer-bottom {
+        margin-top: 16px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* =========================================
+   INNER PAGE STICKY FOOTER LAYOUT FIX
+   Keeps footer near bottom on empty/hold pages
+========================================= */
+
+html,
+body {
+    min-height: 100%;
+}
+
+body.inner-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+body.inner-page #main-content {
+    flex: 1 0 auto;
+    min-height: calc(100vh - 92px - 300px);
+}
+
+body.inner-page .inner-footer-modern {
+    flex-shrink: 0;
+}
+
+.inner-footer-modern {
+    padding: 28px 0;
+}
+
+.inner-footer-grid {
+    padding: 20px;
+}
+
+.inner-footer-bottom {
+    margin-top: 12px;
+    padding: 0 4px;
+}

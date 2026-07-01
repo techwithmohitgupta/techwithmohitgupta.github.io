@@ -1377,7 +1377,6 @@ function initHomepage() {
     initStaticInteractiveBackground();
     initSmoothScroll();
     initActiveNav();
-    initHeroTyping();
     initAboutCardTilt();
     initImageFallbacks();
     initExternalLinkSecurity();
